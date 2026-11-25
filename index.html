@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="artifact-thumbnail" href="thumb.jpg">
+<meta name="description" content="Bienvenue chez CBS – Creative Business Solutions. Choisissez votre service : logo, réseaux sociaux, stratégie, vidéos, affiches, site web.">
+<title>CBS · Bienvenue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: chaleureux, premium, une seule interlocutrice qui accueille
+   IDEA: le hall d'accueil d'une agence : on choisit sa porte, puis on remplit le brief
+   PICTURE: Prisca en blazer marine, posée sur le fond diagonal marine / rose et ses zigzags
+   COLOUR and TYPE: marine #1b2550, rose poudré #f3cdd5, rose vif #e07a95 ; Newsreader titres, Sora textes
+   LAYOUT: accueil + choix des services, profil, puis formulaire une colonne par service */
+:root{color-scheme:light dark;
+--navy:#1b2550;--rose:#f3cdd5;--pink:#e07a95;
+--card:light-dark(#ffffff,#1d2547);--ink:light-dark(#1b2550,#f6eef1);
+--mute:light-dark(#5b6283,#b9bdd6);--line:light-dark(#e6e2ea,#34406e);--chip:light-dark(#faf3f5,#252f58)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);font:16px/1.55 Sora,system-ui,sans-serif;overflow-x:clip;min-height:100vh;
+background:linear-gradient(135deg,var(--navy) 0 50%,var(--rose) 50% 100%);background-attachment:fixed}
+.zz{position:fixed;pointer-events:none;opacity:.5;z-index:0}
+.zz.a{top:90px;right:-10px;width:220px}.zz.b{bottom:30px;left:-10px;width:260px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+.logo{background:#fff;border-radius:16px;padding:8px 14px;display:inline-flex;box-shadow:0 8px 24px rgba(10,14,40,.25)}
+.logo img{height:58px;width:auto;display:block}
+.lang{display:flex;background:rgba(255,255,255,.14);border-radius:99px;padding:4px}
+.lang button{background:transparent;color:#fff;font:600 14px Sora,sans-serif;border:0;border-radius:99px;min-height:40px;min-width:48px;cursor:pointer}
+.lang button[aria-pressed=true]{background:#fff;color:var(--navy)}
+.slogan{color:var(--rose);font:500 italic 18px/1.3 Newsreader,serif;margin:4px 0 0}
+h1,h2,h3{font-family:Newsreader,serif;font-weight:600;margin:0;text-wrap:balance}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:end;padding:26px 0 10px}
+.hero h1{color:#fff;font-size:clamp(34px,6vw,52px);line-height:1.05;margin-bottom:12px}
+.hero p{color:#e4e7f5;margin:0 0 18px;max-width:52ch;font-size:17px}
+.portrait{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center}
+.portrait img{width:100%;max-width:330px;border-radius:200px 200px 24px 24px;background:var(--rose);display:block;box-shadow:0 24px 60px rgba(10,14,40,.35)}
+.portrait .badge{position:absolute;left:0;bottom:22px;background:#fff;color:var(--navy);border-radius:14px;padding:10px 14px;font-size:13px;line-height:1.3;box-shadow:0 10px 30px rgba(10,14,40,.25)}
+.portrait .badge b{display:block;font:600 17px Newsreader,serif}
+.btn{font:600 16px Sora,sans-serif;min-height:48px;padding:12px 22px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.pri{background:var(--pink);color:#fff}.light{background:#fff;color:var(--navy)}
+.sec{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.wa{background:#1f9d55;color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.panel{background:var(--card);border-radius:24px;padding:clamp(20px,4vw,36px);box-shadow:0 24px 60px rgba(10,14,40,.3);margin:22px 0}
+.panel h2{font-size:clamp(28px,4.5vw,40px);line-height:1.08;margin-bottom:6px}
+.lead{color:var(--mute);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px}
+.svc{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--chip);border:1.5px solid var(--line);border-radius:18px;padding:18px;cursor:pointer;color:var(--ink);font:inherit;transition:transform .2s,border-color .2s}
+.svc:hover{transform:translateY(-3px);border-color:var(--c)}
+.svc .ic{width:48px;height:48px;border-radius:14px;background:var(--c);display:grid;place-items:center}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:23px;line-height:1.15}
+.svc p{margin:0;color:var(--mute);font-size:14px;flex:1}
+.svc .go{font-weight:600;color:var(--c);font-size:15px}
+.svc.full{background:linear-gradient(135deg,var(--navy),#3a3f78);color:#fff;border:0}
+.svc.full p{color:#dfe2f2}.svc.full .go{color:var(--rose)}
+.prof{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start}
+.prof img{width:100%;border-radius:20px;background:var(--rose);display:block}
+.prof p{margin:0 0 14px}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin:18px 0}
+.pts div{background:var(--chip);border-radius:14px;padding:14px;font-size:14px}
+.pts b{display:block;font:600 18px Newsreader,serif;margin-bottom:2px}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.brands span{background:var(--chip);border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;font-size:14px}
+.brands small{color:var(--mute)}
+h4{font:600 15px Sora,sans-serif;margin:18px 0 6px}
+/* formulaire */
+.fhead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.fhead .ic{width:44px;height:44px;border-radius:12px;background:var(--c);display:grid;place-items:center;flex:none}
+.fhead .ic svg{width:24px;height:24px}
+.fhead small{display:block;color:var(--mute);font-size:13px}
+.fhead b{font:600 22px/1.1 Newsreader,serif}
+.back{background:none;border:0;color:#fff;font:600 15px Sora,sans-serif;cursor:pointer;min-height:44px;padding:0;margin-top:14px}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--mute)}
+.bar{flex:1;height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--c);transition:width .4s}
+.step h2{font-size:28px;line-height:1.1;margin-bottom:4px}
+.f{margin-bottom:22px}
+.f>label,.f>.q{display:block;font-weight:600;margin-bottom:4px}
+.req{color:var(--pink)}
+.help{font-size:13px;color:var(--mute);margin:0 0 8px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:16px Sora,sans-serif;color:var(--ink);background:var(--chip);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible,.chips label:focus-within{outline:3px solid var(--pink);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--chip);cursor:pointer;font-size:15px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label:has(input:checked){background:var(--navy);border-color:var(--navy);color:#fff}
+.chips input:checked+.dot{box-shadow:0 0 0 2px #fff}
+.chips .dot{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:none}
+.tiers{display:grid;gap:10px}
+.tiers label{display:block;padding:14px 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--chip);cursor:pointer}
+.tiers input{position:absolute;opacity:0;width:1px;height:1px}
+.tiers b{display:block;font:600 19px/1.2 Newsreader,serif;margin-bottom:2px}
+.tiers span{font-size:14px;color:var(--mute)}
+.tiers label:has(input:checked){border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
+.tiers label:focus-within{outline:3px solid var(--pink);outline-offset:2px}
+.from{font-size:14px;font-weight:600}
+.soc span{display:inline-flex;align-items:center;gap:8px;font-weight:500}.soc svg{width:22px;height:22px;flex:none}
+.wk{margin:10px 0 2px;font-size:14px;font-weight:600;color:var(--mute)}
+input[type=file]{font:15px Sora,sans-serif;max-width:100%}
+.count{font-size:13px;color:var(--pink);font-weight:600;margin-left:6px}
+.sc{display:grid;grid-template-columns:7.5em minmax(0,1fr) 7.5em;align-items:center;gap:10px;font-size:14px;margin-bottom:10px}
+.sc span:last-child{text-align:right}
+input[type=range]{width:100%;accent-color:var(--pink);height:44px}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:8px;flex-wrap:wrap}
+.err{color:#c0284d;font-size:14px;margin:0 0 12px;min-height:1em}
+.apercu{background:var(--rose);color:#1b2550;border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;margin:0 0 16px}
+.recap{background:var(--chip);border-radius:14px;padding:16px;font-size:14px;max-height:340px;overflow:auto;white-space:pre-wrap;margin-bottom:16px}
+.ok{color:#1f9d55;font-weight:600;font-size:15px;margin:12px 0 0}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+footer{text-align:center;font-size:14px;color:var(--navy);padding:10px 0 40px;font-weight:500}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .chips label:has(input:checked){background:var(--pink);border-color:var(--pink)}}
+:root[data-theme=dark] .chips label:has(input:checked){background:var(--pink);border-color:var(--pink)}
+@media(max-width:760px){body{background:linear-gradient(170deg,var(--navy) 0 60%,var(--rose) 60% 100%);background-attachment:fixed}.hero,.prof{grid-template-columns:1fr}.portrait img{max-width:260px}.prof img{max-width:320px}}
+@media(max-width:600px){.logo img{height:48px}.sc{grid-template-columns:1fr 1fr}.sc input{grid-column:1/-1;grid-row:2}.zz{width:150px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i,.svc{transition:none}}
+</style>
+</head>
+<body>
+<svg class="zz a" viewBox="0 0 220 60" aria-hidden="true"><path d="M0 40 L20 15 L40 40 L60 15 L80 40 L100 15 L120 40 L140 15 L160 40 L180 15 L200 40 L220 15" fill="none" stroke="#f3cdd5" stroke-width="5"/></svg>
+<svg class="zz b" viewBox="0 0 260 60" aria-hidden="true"><path d="M0 40 L20 15 L40 40 L60 15 L80 40 L100 15 L120 40 L140 15 L160 40 L180 15 L200 40 L220 15 L240 40 L260 15" fill="none" stroke="#1b2550" stroke-width="5"/></svg>
+<div class="wrap">
+  <header>
+    <div><div class="logo"><img src="logo-cbs.png" alt="CBS Creative Business Solutions"></div><p class="slogan" data-t="slogan"></p></div>
+    <div class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></div>
+  </header>
+  <div id="view"></div>
+  <footer>Prisca Ornela · CBS · WhatsApp +237 673 77 78 52 · priscabikoi97@gmail.com</footer>
+</div>
+<form name="brief" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="service"><input name="nom"><input name="whatsapp"><input name="email"><input name="entreprise"><input name="formule"><input name="langue"><input name="fichiers"><textarea name="reponses"></textarea></form>
+<form name="debut" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="service"><input name="nom"><input name="whatsapp"><input name="email"><input name="langue"></form>
+<script>
+{
+const WA='237673777852';
+const APERCU=!/netlify\.app$/.test(location.hostname); // aperçu hors Netlify : champs obligatoires désactivés
+let lang='fr';try{lang=localStorage.getItem('cbs-lang')||'fr'}catch(e){}
+const L=x=>Array.isArray(x)?(x[lang==='en'?1:0]):x;
+const FR=x=>Array.isArray(x)?x[0]:x;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+
+/* ---------- textes de l'interface ---------- */
+const U={
+slogan:["Donnez une nouvelle dimension à votre business","Take your business to a new dimension"],
+welcome:["Bienvenue chez CBS","Welcome to CBS"],
+help:["Comment pouvons-nous vous aider ? Choisissez le service qui vous intéresse : un court questionnaire, et je reviens vers vous avec une proposition sur mesure.","How can we help you? Choose the service you need: answer a short questionnaire and I will get back to you with a tailored proposal."],
+choose:["Choisir un service","Choose a service"],
+meet:["Découvrir Prisca","Meet Prisca"],
+badge:["Fondatrice de CBS","Founder of CBS"],
+svcTitle:["Choisissez votre service","Choose your service"],
+svcLead:["Un service, un questionnaire, des formules claires. Vous pouvez en remplir plusieurs.","One service, one questionnaire, clear packages. You can fill in several."],
+from:["À partir de","From"],works:["Voir toutes mes réalisations sur WhatsApp","See all my work on WhatsApp"],more:["et bien d'autres réalisations","and many more projects"],
+start:["Commencer","Start"],
+min:["min","min"],
+profTitle:["Qui suis-je ?","Who am I?"],
+p1:["Je suis Prisca Ornela, fondatrice de Creative Business Solutions (CBS). Stratège en marketing et communication digitale, basée à Douala, j'accompagne les entrepreneurs, les PME et les marques qui veulent être vus, compris et choisis.","I am Prisca Ornela, founder of Creative Business Solutions (CBS). A marketing and digital communication strategist based in Douala, Cameroon, I help entrepreneurs, SMEs and brands get seen, understood and chosen."],
+p2:["Mon rôle : transformer votre visibilité en clients. Stratégie, communication digitale, contenus et accompagnement : chaque action est pensée pour vos objectifs et mesurée par vos résultats.","My role: turning your visibility into customers. Strategy, digital communication, content and support: every action is designed around your goals and measured by your results."],
+follow:["Retrouvez-moi","Find me on"],
+pt1:["Une seule interlocutrice","One single contact"],pt1d:["De la stratégie à la création, vous parlez à la même personne.","From strategy to creation, you talk to the same person."],
+pt2:["Des tarifs accessibles","Affordable rates"],pt2d:["Une qualité d'agence, adaptée à votre budget.","Agency quality, adapted to your budget."],
+pt3:["Un suivi direct","Direct follow-up"],pt3d:["Un accompagnement personnalisé, à distance, partout dans le monde.","Personal support, remotely, anywhere in the world."],
+does:["Ce que je fais","What I do"],
+trust:["Ils m'ont fait confiance","They trusted me"],
+contactMe:["M'écrire sur WhatsApp","Message me on WhatsApp"],
+allSvc:["← Tous les services","← All services"],
+step:["Étape","Step"],
+next:["Continuer","Continue"],prev:["Retour","Back"],seeRecap:["Voir le récapitulatif","See summary"],
+apercu:["Mode aperçu : vous pouvez avancer sans remplir les champs.","Preview mode: you can move on without filling in the fields."],
+missing:["Merci de remplir : ","Please fill in: "],
+maxErr:["3 couleurs maximum.","3 colours maximum."],
+doneT:["Votre demande est prête","Your request is ready"],
+doneL:["Vérifiez vos réponses, puis envoyez-les-moi sur WhatsApp. Je reviens vers vous avec une proposition et un devis.","Check your answers, then send them to me on WhatsApp. I will get back to you with a proposal and a quote."],
+send:["Envoyer sur WhatsApp","Send on WhatsApp"],copy:["Copier mes réponses","Copy my answers"],copied:["Réponses copiées","Answers copied"],
+copyFail:["Copie impossible, sélectionnez le texte","Copy failed, select the text"],
+noteWa:["Si WhatsApp ne s'ouvre pas, copiez vos réponses et envoyez-les au +237 673 77 78 52.","If WhatsApp does not open, copy your answers and send them to +237 673 77 78 52."],
+other:["Un autre service","Another service"],
+received:["✓ Votre demande a bien été reçue par CBS. Cliquez sur WhatsApp pour en discuter avec moi.","✓ Your request has been received by CBS. Tap WhatsApp to discuss it with me."]
+};
+const T=k=>L(U[k]);
+
+/* ---------- formules et prix (FCFA, équivalent euro) ---------- */
+const fmt=(n,en)=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,en?',':' ');
+const eur=n=>Math.round(n/655.957);
+const P=(p,m,fr,en,plus)=>({p,m,plus,d:[fr,en]});
+const priceL=(o,l)=>{const en=l==='en';return fmt(o.p,en)+' FCFA'+(o.m?(en?' /month':' /mois'):'')+(o.plus?(en?' and up':' et plus'):'')+(en?' (≈ €'+eur(o.p)+')':' (≈ '+eur(o.p)+' €)')};
+const R=(a,b,m)=>{const sf=m?[' /mois',' /month']:['',''];
+ if(a==null)return ["Moins de "+fmt(b)+" FCFA"+sf[0],"Under "+fmt(b,1)+" FCFA"+sf[1]];
+ if(b==null)return ["Plus de "+fmt(a)+" FCFA"+sf[0],"Over "+fmt(a,1)+" FCFA"+sf[1]];
+ return [fmt(a)+" – "+fmt(b)+" FCFA"+sf[0],fmt(a,1)+" – "+fmt(b,1)+" FCFA"+sf[1]]};
+
+/* ---------- options réutilisées ---------- */
+const ANC=[["Projet pas encore lancé","Not launched yet"],["Moins d'1 an","Less than 1 year"],["1 à 3 ans","1 to 3 years"],["Plus de 3 ans","Over 3 years"]];
+const DELAI=[["Urgent (moins d'une semaine)","Urgent (under a week)"],["Dans 2 semaines","Within 2 weeks"],["Dans le mois","Within a month"],["Pas pressé","No rush"]];
+const RESEAUX=["Facebook","Instagram","TikTok","LinkedIn","WhatsApp Business","YouTube"];
+const SWATCH=[["#1b2550","Bleu marine","Navy blue"],["#2f6fd6","Bleu","Blue"],["#2a9d8f","Vert émeraude","Emerald green"],["#5a8f3c","Vert nature","Nature green"],["#e0b100","Jaune / or","Yellow / gold"],["#f08a24","Orange","Orange"],["#d62839","Rouge","Red"],["#e07a95","Rose","Pink"],["#7b4fd0","Violet","Purple"],["#8b5e3c","Marron / terre","Brown / earth"],["#111111","Noir","Black"],["#ffffff","Blanc","White"],["#9aa0a6","Gris / argent","Grey / silver"],["#f1e3c8","Beige","Beige"]];
+const COUL={id:'couleurs',q:["Choisissez vos couleurs (3 maximum)","Choose your colours (3 maximum)"],type:'swatch',max:3,h:["Touchez une couleur pour la sélectionner.","Tap a colour to select it."]};
+const TIERQ=["Choisissez votre formule","Choose your package"];
+const TIERH=["Chaque formule précise ce qui est inclus.","Each package shows what is included."];
+
+/* ---------- bibliothèque d'étapes ---------- */
+const ST={
+contact:{t:["Vos coordonnées","Your contact details"],l:["Pour que je puisse revenir vers vous rapidement.","So I can get back to you quickly."],f:[
+ {id:'nom',q:["Votre nom et prénom","Your full name"],type:'text',req:1},
+ {id:'fonction',q:["Votre fonction","Your role"],type:'text',h:["Ex. fondatrice, gérant, responsable marketing","E.g. founder, manager, marketing lead"]},
+ {id:'whatsapp',q:["Votre numéro WhatsApp (avec indicatif)","Your WhatsApp number (with country code)"],type:'tel',req:1,h:["Ex. +237 6XX XX XX XX","E.g. +237 6XX XX XX XX"]},
+ {id:'email',q:["Votre e-mail","Your email"],type:'email'},
+ {id:'pays',q:["Pays et ville","Country and city"],type:'text'},
+ {id:'contactpref',q:["Comment préférez-vous être contacté ?","How do you prefer to be contacted?"],type:'radio',o:["WhatsApp",["Appel","Phone call"],"E-mail"]},
+ {id:'dispo',q:["Meilleur moment pour vous joindre","Best time to reach you"],type:'radio',o:[["Le matin","Morning"],["L'après-midi","Afternoon"],["Le soir","Evening"]]}]},
+dirigeant:{t:["Vous, le dirigeant","You, the business owner"],l:["Derrière chaque marque, il y a une personne. Je veux vous connaître.","Behind every brand, there is a person. I want to know you."],f:[
+ {id:'pourquoi',q:["Pourquoi avez-vous créé cette entreprise ?","Why did you start this business?"],type:'area'},
+ {id:'parcours',q:["Votre parcours en quelques mots","Your background in a few words"],type:'area',h:["Études, expériences, ce qui vous a mené ici.","Studies, experience, what led you here."]},
+ {id:'moi3',q:["Décrivez-vous en 3 mots","Describe yourself in 3 words"],type:'text'},
+ {id:'visage',q:["Êtes-vous le visage de votre marque ?","Are you the face of your brand?"],type:'radio',o:[["Oui, on me connaît personnellement","Yes, people know me personally"],["Non, la marque passe avant moi","No, the brand comes first"]]},
+ {id:'camera',q:["Êtes-vous à l'aise devant la caméra ?","Are you comfortable on camera?"],type:'radio',o:[["Oui","Yes"],["Un peu","A little"],["Pas du tout","Not at all"]]},
+ {id:'temps',q:["Temps que vous pouvez consacrer à votre communication","Time you can give to your communication"],type:'radio',o:[["Moins d'1 h par semaine","Under 1 h a week"],["1 à 3 h par semaine","1 to 3 h a week"],["Plus de 3 h par semaine","Over 3 h a week"]]},
+ {id:'fierte',q:["De quoi êtes-vous le plus fier ?","What are you most proud of?"],type:'area'},
+ {id:'peur',q:["Qu'est-ce qui vous empêche d'avancer aujourd'hui ?","What is holding you back today?"],type:'area'},
+ {id:'vision',q:["Où voyez-vous votre entreprise dans 5 ans ?","Where do you see your business in 5 years?"],type:'area'},
+ {id:'decideur',q:["Qui valide le travail final ?","Who approves the final work?"],type:'radio',o:[["Moi seul","Only me"],["Moi et un associé","Me and a partner"],["Un groupe / comité","A group / committee"]]}]},
+entreprise:{t:["Votre entreprise","Your business"],l:["Le point de départ de tout le travail.","The starting point of everything."],f:[
+ {id:'societe',q:["Nom de votre entreprise","Business name"],type:'text',req:1},
+ {id:'secteur',q:["Secteur d'activité","Industry"],type:'text',h:["Ex. restauration, cosmétiques, BTP, formation","E.g. food, cosmetics, construction, training"]},
+ {id:'activite',q:["Décrivez votre activité en une ou deux phrases","Describe what you do in one or two sentences"],type:'area'},
+ {id:'phare',q:["Votre produit ou service phare, et son prix","Your flagship product or service, and its price"],type:'text'},
+ {id:'stade',q:["Âge de l'entreprise","Age of the business"],type:'radio',o:ANC},
+ {id:'taille',q:["Taille de l'équipe","Team size"],type:'radio',o:[["Je travaille seul","Just me"],["2 à 5 personnes","2 to 5 people"],["6 à 20 personnes","6 to 20 people"],["Plus de 20 personnes","Over 20 people"]]},
+ {id:'lieu',q:["Où se trouve votre activité ?","Where is your business?"],type:'radio',o:[["Boutique / bureau physique","Shop / office"],["En ligne uniquement","Online only"],["Les deux","Both"]]},
+ {id:'diff',q:["Qu'est-ce qui vous rend différent de vos concurrents ?","What makes you different from competitors?"],type:'area'},
+ {id:'valeurs',q:["Vos 3 valeurs principales","Your 3 core values"],type:'text',h:["Ex. confiance, qualité, proximité","E.g. trust, quality, closeness"]},
+ {id:'presence',q:["Où êtes-vous présent en ligne ?","Where are you online?"],type:'check',o:[...RESEAUX,["Site web","Website"],["Nulle part encore","Nowhere yet"]]},
+ {id:'liens',q:["Liens de vos pages (Facebook, Instagram, TikTok, site…)","Links to your pages (Facebook, Instagram, TikTok, website…)"],type:'area'}]},
+evaluation:{t:["Évaluez votre marque aujourd'hui","Rate your brand today"],l:["Soyez honnête : c'est ce qui me permet de vous faire progresser.","Be honest: it helps me help you grow."],f:[
+ {id:'note',q:["Quelle note donnez-vous à votre image actuelle ?","How would you rate your current image?"],type:'radio',o:[["1 · Très faible","1 · Very poor"],["2 · Faible","2 · Poor"],["3 · Moyenne","3 · Average"],["4 · Bonne","4 · Good"],["5 · Excellente","5 · Excellent"]]},
+ {id:'notoriete',q:["Votre marque est…","Your brand is…"],type:'radio',o:[["Peu connue","Little known"],["Connue localement","Known locally"],["Bien connue dans mon secteur","Well known in my industry"]]},
+ {id:'reflete',q:["Votre image reflète-t-elle la qualité de votre travail ?","Does your image reflect the quality of your work?"],type:'radio',o:[["Oui","Yes"],["En partie","Partly"],["Pas du tout","Not at all"]]},
+ {id:'forces',q:["Vos points forts","Your strengths"],type:'check',o:[["Qualité","Quality"],["Prix","Price"],["Service client","Customer service"],["Rapidité","Speed"],["Expérience","Experience"],["Innovation","Innovation"],["Proximité","Closeness"]]},
+ {id:'faiblesse',q:["Votre principale faiblesse aujourd'hui","Your main weakness today"],type:'area'},
+ {id:'avis',q:["Que disent vos clients de vous ?","What do your customers say about you?"],type:'area'},
+ {id:'dejaagence',q:["Avez-vous déjà travaillé avec une agence ou un freelance ?","Have you worked with an agency or freelancer before?"],type:'radio',o:[["Non, jamais","No, never"],["Oui, j'étais satisfait","Yes, I was satisfied"],["Oui, j'ai été déçu","Yes, I was disappointed"]]},
+ {id:'decu',q:["Si déçu : qu'est-ce qui n'a pas marché ?","If disappointed: what went wrong?"],type:'area'}]},
+positionnement:{t:["Votre positionnement","Your positioning"],l:["La place que vous voulez occuper dans la tête de vos clients.","The place you want in your customers' minds."],f:[
+ {id:'percu',q:["Comment voulez-vous être perçu ?","How do you want to be perceived?"],type:'radio',o:[["Le moins cher","The cheapest"],["Le meilleur rapport qualité-prix","Best value for money"],["Premium","Premium"],["Exclusif / luxe","Exclusive / luxury"]]},
+ {id:'role',q:["Votre place sur le marché","Your place in the market"],type:'radio',o:[["Le leader","The leader"],["Le challenger qui monte","The rising challenger"],["Le spécialiste d'une niche","The niche specialist"]]},
+ {id:'argument',q:["Votre argument numéro 1","Your number 1 selling point"],type:'radio',o:[["La qualité","Quality"],["Le prix","Price"],["La proximité","Closeness"],["L'innovation","Innovation"]]},
+ {id:'ambition',q:["Votre ambition à 3 ans","Your 3-year ambition"],type:'radio',o:[["Ma ville","My city"],["Tout mon pays","My whole country"],["L'Afrique","Africa"],["Le monde","The world"]]},
+ {id:'phrase',q:["La phrase que vous rêvez d'entendre de vos clients","The sentence you dream of hearing from customers"],type:'text'}]},
+clients:{t:["Vos clients","Your customers"],l:["Tout part de ceux qui achètent.","Everything starts with the people who buy."],f:[
+ {id:'cible',q:["Vous vendez surtout à…","You mainly sell to…"],type:'check',o:[["Particuliers","Individuals"],["Entreprises","Businesses"],["Institutions / ONG","Institutions / NGOs"],["Jeunes","Young people"],["Familles","Families"],["Femmes","Women"],["Hommes","Men"],["Clientèle haut de gamme","High-end clients"]]},
+ {id:'age',q:["Âge principal de vos clients","Main age of your customers"],type:'radio',o:[["18-25 ans","18-25"],["25-35 ans","25-35"],["35-50 ans","35-50"],["Plus de 50 ans","Over 50"]]},
+ {id:'zone',q:["Zone de vos clients","Where your customers are"],type:'radio',o:[["Ma ville","My city"],["Mon pays","My country"],["Afrique","Africa"],["International","International"]]},
+ {id:'prix',q:["Votre gamme de prix","Your price range"],type:'radio',o:[["Accessible","Affordable"],["Milieu de gamme","Mid-range"],["Premium","Premium"],["Luxe","Luxury"]]},
+ {id:'probleme',q:["Quel problème réglez-vous pour vos clients ?","What problem do you solve for customers?"],type:'area'},
+ {id:'clientideal',q:["Décrivez votre client idéal","Describe your ideal customer"],type:'area',h:["Âge, métier, habitudes, où il passe son temps.","Age, job, habits, where they spend their time."]}]},
+/* LOGO */
+logoNom:{t:["Le nom de votre logo","Your logo name"],l:["L'orthographe exacte compte.","Exact spelling matters."],f:[
+ {id:'nomlogo',q:["Nom exact à écrire sur le logo","Exact name to write on the logo"],type:'text',req:1,h:["Respectez majuscules, accents et espaces.","Mind capitals, accents and spaces."]},
+ {id:'signif',q:["Que signifie ce nom ? Son histoire ?","What does the name mean? Its story?"],type:'area'},
+ {id:'sloganlogo',q:["Slogan à intégrer (si oui, lequel ?)","Slogan to include (if so, which one?)"],type:'text'},
+ {id:'existant',q:["Avez-vous déjà un logo ?","Do you already have a logo?"],type:'radio',o:[["Non, c'est une création","No, it's a new one"],["Oui, je veux le moderniser","Yes, I want to modernise it"],["Oui, je veux en changer complètement","Yes, I want a completely new one"]]},
+ {id:'garder',q:["Si oui : qu'est-ce qu'on garde ?","If so: what do we keep?"],type:'text'},
+ {id:'objlogo',q:["Ce que le logo doit vous apporter","What the logo should bring you"],type:'check',o:[["Inspirer confiance","Build trust"],["Attirer une nouvelle clientèle","Attract new customers"],["Se démarquer","Stand out"],["Monter en gamme","Move upmarket"],["S'ouvrir à l'international","Go international"],["Paraître plus professionnel","Look more professional"]]}]},
+personnalite:{t:["La personnalité de votre marque","Your brand personality"],l:["Placez le curseur là où se situe votre marque.","Move the slider to where your brand stands."],f:[
+ {id:'perso',type:'scale',o:[[["Classique","Classic"],["Moderne","Modern"]],[["Sérieuse","Serious"],["Ludique","Playful"]],[["Féminine","Feminine"],["Masculine","Masculine"]],[["Simple","Simple"],["Détaillée","Detailed"]],[["Discrète","Subtle"],["Audacieuse","Bold"]],[["Abordable","Affordable"],["Luxueuse","Luxurious"]],[["Locale","Local"],["Internationale","International"]]]},
+ {id:'ton',q:["Le ton de votre marque","Your brand's tone"],type:'radio',o:[["Chaleureux","Warm"],["Expert","Expert"],["Audacieux","Bold"]]},
+ {id:'adj',q:["3 mots que vos clients doivent ressentir","3 words your customers should feel"],type:'text'},
+ {id:'personne',q:["Si votre marque était une personne, qui serait-elle ?","If your brand were a person, who would it be?"],type:'area'},
+ {id:'adjnon',q:["Ce que le logo ne doit surtout pas évoquer","What the logo must not suggest"],type:'text'}]},
+style:{t:["Le style de logo","Logo style"],l:["Plusieurs choix possibles.","Several answers possible."],f:[
+ {id:'typelogo',q:["Quel type de logo vous attire ?","Which type of logo do you like?"],type:'check',o:[["Le nom seul","The name only"],["Les initiales (monogramme)","Initials (monogram)"],["Un symbole + le nom","A symbol + the name"],["Un symbole seul","A symbol only"],["Un emblème / badge","An emblem / badge"],["Une mascotte","A mascot"],["Je laisse l'experte choisir","I'll let the expert choose"]]},
+ {id:'rendu',q:["Plutôt…","Rather…"],type:'radio',o:[["Épuré et minimaliste","Clean and minimal"],["Riche en détails","Rich in detail"]]},
+ {id:'forme',q:["Format préféré","Preferred shape"],type:'radio',o:[["Horizontal","Horizontal"],["Vertical","Vertical"],["Carré / rond","Square / round"],["Peu importe","No preference"]]},
+ {id:'symbole',q:["Un symbole ou une idée à intégrer ?","A symbol or idea to include?"],type:'area'},
+ {id:'eviter',q:["Des éléments à éviter absolument ?","Anything to avoid?"],type:'area'}]},
+couleurs:{t:["Les couleurs","Colours"],l:["3 couleurs maximum pour une marque forte et mémorable.","3 colours maximum for a strong, memorable brand."],f:[
+ COUL,
+ {id:'ambiance',q:["Ambiance souhaitée","Desired mood"],type:'radio',o:[["Vive","Bright"],["Douce / pastel","Soft / pastel"],["Sombre et élégante","Dark and elegant"],["Je vous fais confiance","I trust you"]]},
+ {id:'coulcode',q:["Codes couleur que vous avez déjà (facultatif)","Colour codes you already use (optional)"],type:'text'},
+ {id:'coulnon',q:["Couleurs interdites","Colours to avoid"],type:'text'}]},
+typo:{t:["L'écriture","Lettering"],l:["Le style des lettres du nom.","The style of the letters."],f:[
+ {id:'typostyle',q:["Style d'écriture préféré","Preferred lettering style"],type:'check',o:[["Classique avec empattements","Classic serif"],["Moderne et épurée","Modern and clean"],["Manuscrite / signature","Handwritten / signature"],["Arrondie et chaleureuse","Rounded and friendly"],["Grasse et impactante","Bold and strong"],["Je laisse l'experte choisir","I'll let the expert choose"]]},
+ {id:'epaisseur',q:["Des lettres plutôt…","Letters rather…"],type:'radio',o:[["Fines","Thin"],["Épaisses","Thick"]]},
+ {id:'casse',q:["Le nom plutôt en…","The name rather in…"],type:'radio',o:[["MAJUSCULES","CAPITALS"],["minuscules","lowercase"],["Première lettre en majuscule","First letter capital"],["Peu importe","No preference"]]}]},
+inspirations:{t:["Vos inspirations","Your inspirations"],l:["Ce que vous aimez, et ce que vous n'aimez pas.","What you like, and what you don't."],f:[
+ {id:'concurrents',q:["Vos principaux concurrents","Your main competitors"],type:'area'},
+ {id:'aime',q:["Logos ou marques que vous aimez, et pourquoi","Logos or brands you like, and why"],type:'area'},
+ {id:'aimepas',q:["Ce que vous n'aimez pas, et pourquoi","What you don't like, and why"],type:'area'},
+ {id:'pistes',q:["Combien de propositions souhaitez-vous ?","How many proposals would you like?"],type:'radio',o:[["1 piste","1 option"],["2 pistes","2 options"],["3 pistes","3 options"]]}]},
+supports:{t:["Où sera utilisé le logo","Where the logo will be used"],l:["Pour qu'il soit lisible partout.","So it reads well everywhere."],f:[
+ {id:'supp',q:["Supports prévus","Planned uses"],type:'check',o:[["Réseaux sociaux","Social media"],["Site web","Website"],["Cartes de visite","Business cards"],["Enseigne / façade","Shop sign"],["Emballages / étiquettes","Packaging / labels"],["Tenues / t-shirts","Uniforms / t-shirts"],["Véhicules","Vehicles"],["Documents","Documents"],["Flyers et affiches","Flyers and posters"]]},
+ {id:'brode',q:["Sera-t-il brodé, gravé ou imprimé en une couleur ?","Will it be embroidered, engraved or one-colour printed?"],type:'radio',o:[["Oui","Yes"],["Non","No"],["Je ne sais pas","I don't know"]]}]},
+budgetLogo:{t:["Votre formule logo","Your logo package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budlogo',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(30000,0,"Logo simple : 1 proposition, 2 retouches, fichiers PNG","Simple logo: 1 proposal, 2 revisions, PNG files"),
+  P(60000,0,"2 propositions, déclinaisons couleur, noir et blanc, fichiers impression et web","2 proposals, colour, black and white versions, print and web files"),
+  P(100000,0,"Identité visuelle : 3 propositions, charte graphique, mises en situation","Visual identity: 3 proposals, brand guidelines, mockups"),
+  P(200000,0,"Identité complète : charte, kit réseaux sociaux, cartes de visite, affiche de lancement","Full identity: guidelines, social media kit, business cards, launch poster",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI},
+ {id:'apres',q:["Après le logo, souhaitez-vous être accompagné pour…","After the logo, would you like support with…"],type:'check',o:[["Community management","Social media management"],["Affiches PRO IA","AI posters"],["Vidéos IA et montage","AI videos and editing"],["Motion design","Motion design"],["Stratégie et campagnes","Strategy and campaigns"],["Site web","Website"],["Pas pour l'instant","Not for now"]]},
+ {id:'budaccomp',q:["Budget mensuel prévu pour cet accompagnement","Monthly budget planned for that support"],type:'radio',o:[R(50000,100000,1),R(100000,200000,1),R(200000,null,1),["Pas pour l'instant","Not for now"]]}]},
+/* COMMUNITY MANAGEMENT */
+cm:{t:["Vos réseaux sociaux","Your social media"],l:["Pour animer vos pages comme une grande marque.","To run your pages like a big brand."],f:[
+ {id:'cmres',q:["Réseaux à gérer","Networks to manage"],type:'check',o:RESEAUX},
+ {id:'abonnes',q:["Nombre d'abonnés actuel (environ)","Current followers (approx.)"],type:'text'},
+ {id:'cmqui',q:["Qui gère vos pages aujourd'hui ?","Who runs your pages today?"],type:'radio',o:[["Personne","Nobody"],["Moi-même","Myself"],["Quelqu'un d'autre","Someone else"]]},
+ {id:'cmobj',q:["Vos objectifs","Your goals"],type:'check',o:[["Plus d'abonnés","More followers"],["Plus de ventes","More sales"],["Plus de notoriété","More awareness"],["Fidéliser mes clients","Customer loyalty"],["Recruter","Recruiting"]]},
+ {id:'cmcontenu',q:["Avez-vous des photos et vidéos de vos produits ?","Do you have photos and videos of your products?"],type:'radio',o:[["Oui, beaucoup","Yes, many"],["Quelques-unes","A few"],["Non, tout est à créer","No, everything to create"]]},
+ {id:'cmmsg',q:["Qui répond aux messages des clients ?","Who answers customer messages?"],type:'radio',o:[["Moi","Me"],["Mon équipe","My team"],["Je veux que CBS s'en occupe","I want CBS to handle it"]]},
+ {id:'pub',q:["Budget publicité prévu (payé par vous à Facebook / TikTok, en plus de la formule)","Ad budget planned (paid by you to Facebook / TikTok, on top of the package)"],type:'radio',o:[["Pas de publicité","No ads"],R(null,25000,1),R(25000,75000,1),R(75000,null,1)]},
+ {id:'cmconc',q:["Pages concurrentes ou modèles que vous aimez","Competitor or model pages you like"],type:'area'}]},
+budgetCM:{t:["Votre formule community management","Your social media package"],l:["Formules mensuelles.","Monthly packages."],f:[
+ {id:'budcm',q:["Combien de pages voulez-vous confier à CBS ?","How many pages do you want CBS to manage?"],h:["50 000 FCFA par page et par mois. Le contenu exact de votre formule sera précisé avec vous.","50,000 FCFA per page per month. The exact content of your package will be set with you."],type:'tier',req:1,o:[
+  P(50000,1,"1 page : publications, visuels, légendes et calendrier éditorial","1 page: posts, visuals, captions and content calendar"),
+  P(100000,1,"2 pages","2 pages"),
+  P(150000,1,"3 pages","3 pages"),
+  P(200000,1,"4 pages et plus","4 pages or more",1)]},
+ {id:'cmduree',q:["Durée d'engagement","Commitment length"],type:'radio',o:[["1 mois pour tester","1 month trial"],["3 mois","3 months"],["6 mois","6 months"],["12 mois","12 months"]]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* STRATÉGIE ET CAMPAGNES */
+strat:{t:["Votre situation","Your situation"],l:["Où vous en êtes, et où vous voulez aller.","Where you are, and where you want to go."],f:[
+ {id:'stobj',q:["Votre objectif principal","Your main goal"],type:'radio',o:[["Avoir plus de clients","Get more customers"],["Augmenter mon chiffre d'affaires","Increase revenue"],["Lancer un produit ou service","Launch a product or service"],["Structurer mon entreprise","Structure my business"]]},
+ {id:'objchiffre',q:["Votre objectif chiffré dans 3 mois","Your target in 3 months"],type:'text',h:["Ex. 30 clients par mois, 1 million FCFA de ventes","E.g. 30 customers a month, 1 million FCFA in sales"]},
+ {id:'ca',q:["Chiffre d'affaires mensuel actuel (facultatif)","Current monthly revenue (optional)"],type:'radio',o:[R(null,500000,1),R(500000,2000000,1),R(2000000,10000000,1),R(10000000,null,1),["Je préfère ne pas dire","I'd rather not say"]]},
+ {id:'clientsmois',q:["Combien de clients par mois aujourd'hui ?","How many customers a month today?"],type:'radio',o:[["Moins de 10","Under 10"],["10 à 50","10 to 50"],["50 à 200","50 to 200"],["Plus de 200","Over 200"]]},
+ {id:'panier',q:["Montant moyen dépensé par un client","Average amount a customer spends"],type:'text'},
+ {id:'fidel',q:["Vos clients reviennent-ils ?","Do your customers come back?"],type:'radio',o:[["La plupart","Most do"],["Certains","Some"],["Rarement","Rarely"]]},
+ {id:'defis',q:["Vos plus grands défis","Your biggest challenges"],type:'check',o:[["Trouver des clients","Finding customers"],["Convaincre et vendre","Convincing and selling"],["Fidéliser","Retaining customers"],["Fixer mes prix","Setting prices"],["Me démarquer","Standing out"],["Manque de temps","Lack of time"]]},
+ {id:'canaux',q:["Comment vos clients vous trouvent-ils ?","How do customers find you?"],type:'check',o:[["Bouche-à-oreille","Word of mouth"],["Réseaux sociaux","Social media"],["Publicité payante","Paid ads"],["WhatsApp","WhatsApp"],["Recherche Google","Google search"],["Passage en boutique","Walk-ins"],["Partenaires / revendeurs","Partners / resellers"]]},
+ {id:'equipe',q:["Avez-vous une équipe commerciale ?","Do you have a sales team?"],type:'radio',o:[["Non","No"],["1 à 2 personnes","1 to 2 people"],["Plus de 2 personnes","More than 2"]]}]},
+marche:{t:["Votre marché","Your market"],l:["Pour bâtir une stratégie qui tient face à la concurrence.","To build a strategy that beats the competition."],f:[
+ {id:'concur',q:["Vos 3 principaux concurrents, et ce qu'ils font mieux que vous","Your 3 main competitors, and what they do better"],type:'area'},
+ {id:'prixvs',q:["Vos prix par rapport aux concurrents","Your prices compared to competitors"],type:'radio',o:[["Moins chers","Cheaper"],["Pareils","The same"],["Plus chers","Higher"]]},
+ {id:'objections',q:["Pourquoi certains prospects n'achètent pas ?","Why do some prospects not buy?"],type:'area',h:["Les objections que vous entendez le plus.","The objections you hear most."]},
+ {id:'saison',q:["Vos périodes fortes et faibles dans l'année","Your strong and weak periods in the year"],type:'area'},
+ {id:'essaye',q:["Ce que vous avez déjà essayé, et le résultat","What you have tried, and the result"],type:'area'}]},
+campagne:{t:["Vos campagnes de communication","Your communication campaigns"],l:["Une campagne, c'est un message fort, au bon moment, sur les bons canaux.","A campaign is a strong message, at the right time, on the right channels."],f:[
+ {id:'camptype',q:["Avez-vous besoin d'une campagne ?","Do you need a campaign?"],type:'radio',o:[["Oui, pour un lancement","Yes, for a launch"],["Oui, pour une promotion","Yes, for a promotion"],["Oui, pour la notoriété","Yes, for awareness"],["Non, la stratégie seulement","No, strategy only"]]},
+ {id:'campoffre',q:["L'offre ou le produit à mettre en avant","The offer or product to push"],type:'area'},
+ {id:'campdate',q:["Période ou événement visé","Target period or event"],type:'text',h:["Ex. Noël, rentrée, Saint-Valentin, ouverture","E.g. Christmas, back to school, Valentine's, opening"]},
+ {id:'campcanaux',q:["Canaux envisagés","Planned channels"],type:'check',o:["Facebook","Instagram","TikTok","WhatsApp",["Affichage terrain","Street posters"],["Radio / télé","Radio / TV"],["Événement","Event"],["Influenceurs","Influencers"]]},
+ {id:'campres',q:["Ressources disponibles","Available resources"],type:'check',o:[["Photos de mes produits","Product photos"],["Vidéos","Videos"],["Clients prêts à témoigner","Customers ready to give testimonials"],["Une équipe pour exécuter","A team to execute"],["Rien pour l'instant","Nothing yet"]]},
+ {id:'camppub',q:["Budget publicité prévu (payé par vous, en plus de la formule)","Ad budget planned (paid by you, on top of the package)"],type:'radio',o:[["Pas de publicité","No ads"],R(null,50000),R(50000,150000),R(150000,null)]},
+ {id:'campprev',q:["Vos campagnes passées et leurs résultats","Your past campaigns and their results"],type:'area'}]},
+budgetStrat:{t:["Votre formule stratégie","Your strategy package"],l:["Plus je vous accompagne, plus la formule est complète.","The more I support you, the fuller the package."],f:[
+ {id:'budstrat',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(70000,0,"La stratégie établie : diagnostic et plan d'action écrit, sans accompagnement","The strategy itself: diagnosis and written action plan, no follow-up"),
+  P(150000,0,"Stratégie + plan de campagne (messages, calendrier, canaux) + séance d'explication","Strategy + campaign plan (messages, calendar, channels) + walkthrough session"),
+  P(300000,0,"Stratégie + campagne + accompagnement 1 mois pour la mise en œuvre (point chaque semaine)","Strategy + campaign + 1 month of hands-on support (weekly check-in)"),
+  P(500000,0,"Accompagnement 3 mois : mise en œuvre, suivi des résultats et ajustements","3-month support: execution, results tracking and adjustments",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* VIDÉO & MOTION */
+video:{t:["Votre projet vidéo","Your video project"],l:["Vidéos IA, montage et motion design.","AI videos, editing and motion design."],f:[
+ {id:'vtype',q:["Quel type de vidéo ?","What kind of video?"],type:'check',o:[["Publicité / film promotionnel","Ad / promo film"],["Reels et TikTok","Reels and TikTok"],["Présentation d'entreprise","Company presentation"],["Témoignage client","Customer testimonial"],["Animation de logo","Logo animation"],["Affiche animée","Animated poster"],["Infographie animée","Animated infographic"],["Montage de mes vidéos","Editing my footage"]]},
+ {id:'vobj',q:["Objectif de la vidéo","Video goal"],type:'radio',o:[["Me faire connaître","Get known"],["Convaincre","Convince"],["Vendre tout de suite","Sell now"]]},
+ {id:'vformat',q:["Formats","Formats"],type:'check',o:[["Vertical 9:16 (TikTok, Reels, Status)","Vertical 9:16 (TikTok, Reels, Status)"],["Portrait 4:5 (Facebook, Instagram)","Portrait 4:5 (Facebook, Instagram)"],["Horizontal 16:9 (YouTube, écran)","Landscape 16:9 (YouTube, screen)"]]},
+ {id:'vduree',q:["Durée idéale","Ideal length"],type:'radio',o:[["15 secondes","15 seconds"],["30 secondes","30 seconds"],["1 minute","1 minute"],["Plus d'1 minute","Over 1 minute"]]},
+ {id:'voix',q:["Voix off","Voice-over"],type:'radio',o:[["Voix IA","AI voice"],["Ma propre voix","My own voice"],["Sans voix, texte à l'écran","No voice, on-screen text"]]},
+ {id:'vlangue',q:["Langue de la vidéo","Video language"],type:'check',o:[["Français","French"],["Anglais","English"],["Langue locale","Local language"]]},
+ {id:'vmusique',q:["Ambiance musicale","Music mood"],type:'radio',o:[["Entraînante","Upbeat"],["Émouvante","Emotional"],["Élégante","Elegant"]]},
+ {id:'vfournis',q:["Ce que vous pouvez fournir","What you can provide"],type:'check',o:[["Logo","Logo"],["Photos","Photos"],["Vidéos","Videos"],["Textes","Texts"],["Rien, tout est à créer","Nothing, create it all"]]},
+ {id:'vmsg',q:["Le message principal à faire passer","The main message"],type:'area'}]},
+budgetVideo:{t:["Votre formule vidéo","Your video package"],l:["Le montage demande du temps et du soin : les formules commencent à 25 000 FCFA.","Editing takes time and care: packages start at 25,000 FCFA."],f:[
+ {id:'budvid',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(25000,0,"1 vidéo courte (jusqu'à 30 s) : montage, sous-titres, musique","1 short video (up to 30 s): editing, subtitles, music"),
+  P(50000,0,"1 vidéo jusqu'à 60 s : script, voix off IA, motion design simple","1 video up to 60 s: script, AI voice-over, simple motion design"),
+  P(100000,0,"3 vidéos, ou 1 film publicitaire IA complet","3 videos, or 1 full AI ad film"),
+  P(200000,0,"Campagne vidéo : 6 vidéos et plus, animations de logo et d'affiches","Video campaign: 6+ videos, logo and poster animations",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* AFFICHES */
+affiche:{t:["Vos affiches","Your posters"],l:["Des visuels PRO créés avec l'IA.","PRO visuals created with AI."],f:[
+ {id:'ause',q:["Pour quelle occasion ?","For what occasion?"],type:'check',o:[["Promotion","Promotion"],["Lancement de produit","Product launch"],["Événement","Event"],["Fête (Noël, Saint-Valentin…)","Holiday (Christmas, Valentine's…)"],["Recrutement","Recruiting"],["Liste de prix / menu","Price list / menu"],["Image de marque","Brand image"]]},
+ {id:'aformat',q:["Formats","Formats"],type:'check',o:[["Publication 4:5","Post 4:5"],["Statut / story 9:16","Status / story 9:16"],["Carré","Square"],["Impression A4 / A3","Print A4 / A3"],["Bannière / kakémono","Banner / roll-up"]]},
+ {id:'astyle',q:["Style souhaité","Desired style"],type:'radio',o:[["Premium et élégant","Premium and elegant"],["Coloré et festif","Colourful and festive"],["Minimaliste","Minimalist"],["Corporate","Corporate"]]},
+ {id:'acharte',q:["Avez-vous une charte graphique ?","Do you have brand guidelines?"],type:'radio',o:[["Oui, logo et couleurs","Yes, logo and colours"],["Juste un logo","Just a logo"],["Rien","Nothing"]]},
+ COUL,
+ {id:'aphotos',q:["Avez-vous des photos à intégrer ?","Do you have photos to include?"],type:'radio',o:[["Oui","Yes"],["Quelques-unes","A few"],["Non, créez-les avec l'IA","No, create them with AI"]]},
+ {id:'atexte',q:["Textes à mettre sur l'affiche","Text to put on the poster"],type:'area',h:["Titre, offre, prix, date, contacts…","Title, offer, price, date, contacts…"]}]},
+budgetAffiche:{t:["Votre formule affiches","Your poster package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budaff',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(10000,0,"1 affiche, 1 format","1 poster, 1 format"),
+  P(25000,0,"3 affiches, ou 1 affiche déclinée en 3 formats","3 posters, or 1 poster in 3 formats"),
+  P(50000,0,"Campagne de 6 affiches cohérentes","Campaign of 6 matching posters"),
+  P(100000,0,"15 affiches et plus, ou abonnement mensuel","15+ posters, or a monthly plan",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* SITE WEB */
+web:{t:["Votre site web","Your website"],l:["Un site qui présente, rassure et fait vendre.","A website that presents, reassures and sells."],f:[
+ {id:'wtype',q:["Quel type de site ?","What kind of website?"],type:'radio',o:[["Page de présentation unique","Single landing page"],["Site vitrine","Showcase website"],["Boutique en ligne","Online shop"],["Site de réservation","Booking website"],["Portfolio","Portfolio"],["Blog","Blog"]]},
+ {id:'wexist',q:["Avez-vous déjà un site ?","Do you already have a website?"],type:'radio',o:[["Non","No"],["Oui, à refaire","Yes, to rebuild"],["Oui, à améliorer","Yes, to improve"]]},
+ {id:'wurl',q:["Si oui, son adresse","If so, its address"],type:'text'},
+ {id:'wobj',q:["Ce que le site doit vous apporter","What the site should bring you"],type:'check',o:[["Présenter mon activité","Present my business"],["Recevoir des demandes sur WhatsApp","Get WhatsApp enquiries"],["Vendre en ligne","Sell online"],["Prendre des rendez-vous","Take bookings"],["Paraître crédible","Look credible"],["Toucher l'international","Reach international clients"]]},
+ {id:'wpages',q:["Pages souhaitées","Pages you want"],type:'check',o:[["Accueil","Home"],["À propos","About"],["Services / produits","Services / products"],["Réalisations","Portfolio"],["Tarifs","Pricing"],["Témoignages","Testimonials"],["Blog","Blog"],["Questions fréquentes","FAQ"],["Contact","Contact"]]},
+ {id:'wfonc',q:["Fonctionnalités","Features"],type:'check',o:[["Bouton WhatsApp","WhatsApp button"],["Formulaire de contact","Contact form"],["Paiement en ligne","Online payment"],["Réservation","Booking"],["Catalogue de produits","Product catalogue"],["Galerie photos / vidéos","Photo / video gallery"],["Français et anglais","French and English"],["Carte Google Maps","Google Maps"]]},
+ {id:'wpay',q:["Moyens de paiement (si vente en ligne)","Payment methods (if selling online)"],type:'check',o:["Orange Money","MTN Mobile Money",["Carte bancaire","Bank card"],"PayPal",["Paiement à la livraison","Cash on delivery"]]},
+ {id:'wnb',q:["Nombre de produits à mettre en ligne","Number of products to list"],type:'radio',o:[["Aucun","None"],["Moins de 20","Under 20"],["20 à 100","20 to 100"],["Plus de 100","Over 100"]]},
+ {id:'wcont',q:["Vos textes et photos sont-ils prêts ?","Are your texts and photos ready?"],type:'radio',o:[["Oui","Yes"],["En partie","Partly"],["Non, tout est à créer","No, create it all"]]},
+ {id:'wdom',q:["Avez-vous un nom de domaine (ex. monentreprise.com) ?","Do you have a domain name (e.g. mybusiness.com)?"],type:'radio',o:[["Oui","Yes"],["Non, à acheter","No, to buy"],["Je ne sais pas ce que c'est","I don't know what it is"]]},
+ {id:'wstyle',q:["Style souhaité","Desired style"],type:'radio',o:[["Premium et élégant","Premium and elegant"],["Moderne et coloré","Modern and colourful"],["Minimaliste","Minimalist"],["Corporate","Corporate"]]},
+ COUL,
+ {id:'wref',q:["Sites que vous aimez (liens) et pourquoi","Websites you like (links) and why"],type:'area'},
+ {id:'wmaj',q:["Qui mettra le site à jour ?","Who will update the site?"],type:'radio',o:[["Moi-même","Myself"],["CBS, avec un suivi mensuel","CBS, with monthly maintenance"],["Pas besoin de mises à jour","No updates needed"]]}]},
+budgetWeb:{t:["Votre formule site web","Your website package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budweb',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(100000,0,"Page de présentation unique avec bouton WhatsApp","Single landing page with WhatsApp button"),
+  P(200000,0,"Site vitrine jusqu'à 5 pages, formulaire de contact","Showcase site up to 5 pages, contact form"),
+  P(350000,0,"Site complet : catalogue ou réservation, français et anglais","Full site: catalogue or booking, French and English"),
+  P(600000,0,"Boutique en ligne avec paiement","Online shop with payment",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* COMPLET */
+complet:{t:["Votre accompagnement complet","Your full package"],l:["Stratégie, community management et vidéos, avec une seule interlocutrice.","Strategy, social media and videos, with one single contact."],f:[
+ {id:'cprio',q:["Votre priorité numéro 1","Your number 1 priority"],type:'radio',o:[["Être visible","Be visible"],["Vendre plus","Sell more"],["Avoir une image pro","Look professional"],["Lancer ma marque","Launch my brand"]]},
+ {id:'cres',q:["Réseaux à gérer","Networks to manage"],type:'check',o:RESEAUX},
+ {id:'cobj',q:["Votre objectif chiffré","Your target in numbers"],type:'text',h:["Ex. 20 nouveaux clients par mois, 1 000 abonnés de plus","E.g. 20 new customers a month, 1,000 more followers"]},
+ {id:'cextra',q:["Besoins en plus (facturés à part)","Extra needs (billed separately)"],type:'check',o:[["Logo","Logo"],["Affiches supplémentaires","Extra posters"],["Site web","Website"],["Rien d'autre","Nothing else"]]}]},
+budgetComplet:{t:["Votre formule accompagnement complet","Your full package"],l:["Formules mensuelles. Le budget publicité reste à votre charge, en plus de la formule.","Monthly packages. Ad spend is paid by you, on top of the package."],f:[
+ {id:'budcomp',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(150000,1,"Stratégie du mois + community management 1 réseau (12 publications) + 2 vidéos","Monthly strategy + 1 network (12 posts) + 2 videos"),
+  P(250000,1,"Stratégie + 2 réseaux (20 publications) + 4 vidéos + 4 affiches","Strategy + 2 networks (20 posts) + 4 videos + 4 posters"),
+  P(400000,1,"Stratégie + 3 réseaux (30 publications) + 6 vidéos + 1 campagne par mois + rapport","Strategy + 3 networks (30 posts) + 6 videos + 1 campaign a month + report"),
+  P(700000,1,"Premium : tous vos réseaux, publication quotidienne, 10 vidéos, campagnes, suivi chaque semaine","Premium: all networks, daily posts, 10 videos, campaigns, weekly follow-up",1)]},
+ {id:'cduree',q:["Durée de l'accompagnement","Length of support"],type:'radio',o:[["3 mois","3 months"],["6 mois","6 months"],["12 mois","12 months"]]},
+ {id:'delai',q:["Quand voulez-vous démarrer ?","When do you want to start?"],type:'radio',o:DELAI}]},
+docs:{t:["Vos documents","Your documents"],l:["Logo, photos, cahier des charges, présentation… tout ce qui peut m'aider.","Logo, photos, brief, presentation… anything that can help."],f:[
+ {id:'liensdocs',q:["Liens utiles","Useful links"],type:'area',h:["Google Drive, Dropbox, pages, photos, vidéos…","Google Drive, Dropbox, pages, photos, videos…"]},
+ {id:'fichiers',q:["Vos fichiers (Word, PDF, images)","Your files (Word, PDF, images)"],type:'files',h:["Sélectionnez-les ici, puis joignez-les dans la conversation WhatsApp après l'envoi : je saurai quels fichiers attendre.","Select them here, then attach them in the WhatsApp chat after sending: I will know which files to expect."]}]},
+fin:{t:["Pour finir","To finish"],l:["Merci pour votre temps !","Thank you for your time!"],f:[
+ {id:'source',q:["Comment avez-vous connu CBS ?","How did you hear about CBS?"],type:'radio',o:["Facebook","Instagram","TikTok","WhatsApp","LinkedIn",["Recommandation","Referral"]]},
+ {id:'plus',q:["Autre chose à me dire ?","Anything else to tell me?"],type:'area'}]}
+};
+
+/* ---------- services ---------- */
+const IC={
+logo:'<path d="M12 3l2.6 5.6L20 9.3l-4 4 1 5.7L12 16.3 7 19l1-5.7-4-4 5.4-.7z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>',
+cm:'<path d="M4 5h16v10H9l-5 4z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>',
+strat:'<path d="M4 19l5-6 4 3 7-9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h5v5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>',
+video:'<rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M16 10l5-3v10l-5-3z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>',
+affiche:'<rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M5 15l4-4 4 4 2-2 4 4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="14.5" cy="8" r="1.6" fill="#fff"/>',
+web:'<rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M3 9h18" stroke="#fff" stroke-width="1.8"/><circle cx="6.5" cy="6.5" r=".9" fill="#fff"/><circle cx="9.5" cy="6.5" r=".9" fill="#fff"/>',
+complet:'<path d="M4 10l8-6 8 6M6 9v10h12V9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 19v-5h4v5" fill="none" stroke="#fff" stroke-width="1.8"/>'};
+const SV=[
+{id:'logo',c:'#e07a95',from:30000,n:["Création de logo","Logo design"],d:["Un logo unique qui vous ressemble, avec ses déclinaisons et votre charte.","A unique logo that looks like you, with variations and brand guidelines."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','logoNom','personnalite','style','couleurs','typo','inspirations','supports','budgetLogo','docs','fin']},
+{id:'cm',c:'#2a9d8f',from:50000,mo:1,n:["Community management","Social media management"],d:["Animation de vos pages, calendrier éditorial et gestion de vos publicités.","Page management, content calendar and ad management."],m:8,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','cm','budgetCM','docs','fin']},
+{id:'strat',c:'#3b6fd6',from:70000,n:["Stratégie et campagnes de communication","Strategy and communication campaigns"],d:["Un plan clair et des campagnes pour attirer, convaincre et convertir.","A clear plan and campaigns to attract, convince and convert."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','strat','marche','campagne','budgetStrat','docs','fin']},
+{id:'video',c:'#7b61d9',from:25000,n:["Vidéos IA, montage et motion design","AI videos, editing and motion design"],d:["Films publicitaires, Reels, TikTok, animations de logo et d'affiches.","Ad films, Reels, TikTok, logo and poster animations."],m:6,
+ s:['contact','entreprise','positionnement','clients','video','budgetVideo','docs','fin']},
+{id:'affiche',c:'#c98f0a',from:10000,n:["Affiches PRO IA","AI PRO posters"],d:["Affiches, visuels de campagne et flyers premium qui font vendre.","Posters, campaign visuals and premium flyers that sell."],m:5,
+ s:['contact','entreprise','positionnement','clients','affiche','budgetAffiche','docs','fin']},
+{id:'web',c:'#1e8fb5',from:100000,n:["Site web","Website"],d:["Site vitrine, page de présentation ou boutique en ligne, relié à votre WhatsApp.","Showcase site, landing page or online shop, linked to your WhatsApp."],m:8,
+ s:['contact','dirigeant','entreprise','positionnement','clients','web','budgetWeb','docs','fin']},
+{id:'complet',c:'#1b2550',full:1,from:150000,mo:1,n:["Accompagnement complet","Full package"],d:["Stratégie, community management et vidéos chaque mois : je m'occupe de tout.","Strategy, social media and videos every month: I handle everything."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','strat','complet','budgetComplet','docs','fin']}];
+const WORK=[
+ {s:["Community management","Social media management"],b:["TCHM Formations (William Tchemi)","Grace Clean","Babo Wipe"]},
+ {s:["Affiches PRO IA","AI PRO posters"],b:["NaturAfrik","Visite Kribi","Awe's Rent Cars","PaySika","KTLM Group"]},
+ {s:["Motion design et montage vidéo","Motion design and video editing"],b:["Visite Kribi","Grace Clean","TCHM Formations (William Tchemi)"]}];
+
+/* ---------- état ---------- */
+let D={};try{D=JSON.parse(localStorage.getItem('cbs-data'))||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('cbs-data',JSON.stringify(D))}catch(e){}};
+let svc=null,cur=0,started=false,sent=false;
+const post=(name,obj)=>fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':name,...obj}).toString()}).then(r=>r.ok);
+const base=()=>({service:FR(svc.n),nom:D.nom||'',whatsapp:D.whatsapp||'',email:D.email||'',langue:lang==='en'?'anglais':'français'});
+const formule=()=>{for(const st of steps())for(const f of st.f)if(f.type==='tier'&&D[f.id]!=null)return val(f);return ''};
+
+/* ---------- rendu accueil ---------- */
+const home=()=>`
+<section class="hero">
+ <div><h1>${esc(T('welcome'))}</h1><p>${esc(T('help'))}</p>
+ <div class="row"><a class="btn pri" href="#services">${esc(T('choose'))}</a><a class="btn light" href="#profil">${esc(T('meet'))}</a></div></div>
+ <div class="portrait"><img src="prisca.jpg" alt="Prisca Ornela"><div class="badge"><b>Prisca Ornela</b>${esc(T('badge'))}</div></div>
+</section>
+<section class="panel" id="services"><h2>${esc(T('svcTitle'))}</h2><p class="lead">${esc(T('svcLead'))}</p>
+ <div class="grid">${SV.map(s=>`<button type="button" class="svc${s.full?' full':''}" data-s="${s.id}" style="--c:${s.full?'#e07a95':s.c}">
+  <span class="ic" style="background:${s.full?'#e07a95':s.c}"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[s.id]}</svg></span>
+  <h3>${esc(L(s.n))}</h3><p>${esc(L(s.d))}</p><span class="go">${esc(T('start'))} · ${s.m} ${esc(T('min'))} →</span></button>`).join('')}</div>
+</section>
+<section class="panel" id="profil"><div class="prof">
+ <img src="prisca.jpg" alt="Prisca Ornela">
+ <div><h2>${esc(T('profTitle'))}</h2><p>${esc(T('p1'))}</p><p>${esc(T('p2'))}</p>
+ <div class="pts">${[1,2,3].map(i=>`<div><b>${esc(T('pt'+i))}</b>${esc(T('pt'+i+'d'))}</div>`).join('')}</div>
+ <h4>${esc(T('does'))}</h4><div class="brands">${SV.slice(0,6).map(s=>`<span>${esc(L(s.n))}</span>`).join('')}</div>
+ <h4>${esc(T('trust'))}</h4>${WORK.map(w=>`<p class="wk">${esc(L(w.s))}</p><div class="brands">${w.b.map(b=>`<span>${esc(b)}</span>`).join('')}<span><small>${esc(T('more'))}…</small></span></div>`).join('')}
+ <h4>${esc(T('follow'))}</h4><div class="brands soc"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2"/><path d="M7 10v7M7 7.2v.1M11 17v-4.2c0-1.6 1-2.6 2.3-2.6s2.2 1 2.2 2.6V17M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg>LinkedIn · Prisca Ornela</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#111"/><path d="M13.5 5.5v8.3a2.6 2.6 0 1 1-2.6-2.6" stroke="#25f4ee" stroke-width="2.2" fill="none" stroke-linecap="round" transform="translate(-.6 .5)"/><path d="M13.5 5.5v8.3a2.6 2.6 0 1 1-2.6-2.6M13.5 5.5c.4 1.8 1.6 3 3.6 3.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>TikTok · Prisca Ornela</span></div>
+ <div class="row" style="margin-top:20px"><a class="btn wa" href="https://wa.me/${WA}?text=${encodeURIComponent('Bonjour Prisca, j\'aimerais voir vos réalisations.')}" target="_blank" rel="noopener">${esc(T('works'))}</a><a class="btn sec" href="https://wa.me/${WA}" target="_blank" rel="noopener">${esc(T('contactMe'))}</a></div></div>
+</div></section>`;
+
+/* ---------- rendu formulaire ---------- */
+const field=f=>{
+ const r=f.req&&!APERCU?' <span class="req">*</span>':(f.req?' <span class="req">*</span>':'');const h=f.h?`<p class="help">${esc(L(f.h))}</p>`:'';
+ if(f.type==='text'||f.type==='tel'||f.type==='email')return `<div class="f"><label for="${f.id}">${esc(L(f.q))}${r}</label>${h}<input type="${f.type}" id="${f.id}" value="${esc(D[f.id]||'')}"></div>`;
+ if(f.type==='area')return `<div class="f"><label for="${f.id}">${esc(L(f.q))}${r}</label>${h}<textarea id="${f.id}">${esc(D[f.id]||'')}</textarea></div>`;
+ if(f.type==='radio'||f.type==='check'){const v=D[f.id];const t=f.type==='radio'?'radio':'checkbox';
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}${r}</span>${h}<div class="chips">${f.o.map((o,i)=>`<label><input type="${t}" name="${f.id}" value="${i}" ${(t==='radio'?v===i:Array.isArray(v)&&v.includes(i))?'checked':''}>${esc(L(o))}</label>`).join('')}</div></div>`}
+ if(f.type==='swatch'){const v=Array.isArray(D[f.id])?D[f.id]:[];
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}<span class="count" id="cnt">${v.length}/${f.max}</span></span>${h}<div class="chips">${SWATCH.map((c,i)=>`<label><input type="checkbox" name="${f.id}" data-max="${f.max}" value="${i}" ${v.includes(i)?'checked':''}><span class="dot" style="background:${c[0]}"></span>${esc(lang==='en'?c[2]:c[1])}</label>`).join('')}</div></div>`}
+ if(f.type==='tier'){const v=D[f.id];
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}${r}</span>${h}<div class="tiers">${f.o.map((o,i)=>`<label><input type="radio" name="${f.id}" value="${i}" ${v===i?'checked':''}><b>${esc(priceL(o,lang))}</b><span>${esc(L(o.d))}</span></label>`).join('')}</div></div>`}
+ if(f.type==='files'){const v=Array.isArray(D[f.id])?D[f.id]:[];
+  return `<div class="f"><label for="${f.id}">${esc(L(f.q))}</label>${h}<input type="file" id="${f.id}" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,image/*" data-files="1"><p class="help" id="${f.id}-list">${v.map(esc).join(' · ')}</p></div>`}
+ if(f.type==='scale')return `<div class="f">${f.o.map((p,i)=>`<div class="sc"><span>${esc(L(p[0]))}</span><input type="range" min="1" max="5" step="1" id="${f.id}${i}" aria-label="${esc(L(p[0])+' / '+L(p[1]))}" value="${D[f.id+i]||3}"><span>${esc(L(p[1]))}</span></div>`).join('')}</div>`;
+};
+const steps=()=>svc.s.map(k=>ST[k]);
+const form=()=>{
+ const S=steps(),n=S.length+1,c=svc.full?'#e07a95':svc.c;
+ let body;
+ if(cur<S.length){const s=S[cur];body=`<div class="step"><h2>${esc(L(s.t))}</h2><p class="lead">${esc(L(s.l))}</p>${s.f.map(field).join('')}</div>`}
+ else body=`<div class="step"><h2>${esc(T('doneT'))}</h2><p class="lead">${esc(T('doneL'))}</p><div class="recap" id="recap"></div>
+  <div class="row"><a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">${esc(T('send'))}</a><button type="button" class="btn sec" id="copy">${esc(T('copy'))}</button><button type="button" class="btn sec" id="other">${esc(T('other'))}</button></div>
+  <p class="ok" id="status"></p><p class="note">${esc(T('noteWa'))}</p></div>`;
+ return `<button type="button" class="back" id="home">${esc(T('allSvc'))}</button>
+ <form class="panel" id="form" novalidate style="--c:${c}">
+  <div class="fhead"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[svc.id]}</svg></span><div><small>CBS</small><b>${esc(L(svc.n))}</b></div></div>
+  ${APERCU?`<p class="apercu">${esc(T('apercu'))}</p>`:''}
+  <div class="prog"><span>${esc(T('step'))} ${Math.min(cur+1,n)} / ${n}</span><div class="bar"><i style="width:${(cur+1)/n*100}%"></i></div></div>
+  ${body}<p class="err" id="err" role="alert"></p>
+  ${cur<S.length?`<div class="nav"><button type="button" class="btn sec" id="prev" style="visibility:${cur?'visible':'hidden'}">${esc(T('prev'))}</button><button type="submit" class="btn pri" style="background:${c}">${esc(cur===S.length-1?T('seeRecap'):T('next'))}</button></div>`:''}
+ </form>`;
+};
+
+/* ---------- collecte et récapitulatif (toujours en français pour Prisca) ---------- */
+const collect=()=>{const S=steps();if(cur>=S.length)return;for(const f of S[cur].f){
+ if(f.type==='scale')f.o.forEach((p,i)=>D[f.id+i]=+$(f.id+i).value);
+ else if(f.type==='files'){}
+ else if(f.type==='radio'||f.type==='tier'){const c=document.querySelector(`input[name="${f.id}"]:checked`);D[f.id]=c?+c.value:undefined}
+ else if(f.type==='check'||f.type==='swatch')D[f.id]=[...document.querySelectorAll(`input[name="${f.id}"]:checked`)].map(c=>+c.value);
+ else D[f.id]=$(f.id).value.trim()}save()};
+const val=f=>{const v=D[f.id];
+ if(f.type==='radio')return v==null?'':FR(f.o[v]);
+ if(f.type==='tier')return v==null?'':priceL(f.o[v],'fr')+' – '+f.o[v].d[0];
+ if(f.type==='files')return (v||[]).length?(v.join(', ')+' (à joindre sur WhatsApp)'):'';
+ if(f.type==='check')return (v||[]).map(i=>FR(f.o[i])).join(', ');
+ if(f.type==='swatch')return (v||[]).map(i=>SWATCH[i][1]+' '+SWATCH[i][0]).join(', ');
+ return v||''};
+const recap=()=>{let o=`*CBS GROUP – ${FR(svc.n).toUpperCase()}*\nLangue du client : ${lang==='en'?'anglais':'français'}\n`;
+ for(const s of steps()){o+=`\n*${FR(s.t).toUpperCase()}*\n`;for(const f of s.f){
+  if(f.type==='scale'){f.o.forEach((p,i)=>{const v=D[f.id+i]||3;o+=`• ${FR(p[0])} ↔ ${FR(p[1])} : ${v<3?FR(p[0]):v>3?FR(p[1]):'équilibre'} (${v}/5)\n`});continue}
+  o+=`• ${FR(f.q)} : ${val(f)||'—'}\n`}}return o};
+
+/* ---------- navigation ---------- */
+const view=$('view');
+const draw=(top)=>{document.documentElement.lang=lang;
+ document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T(e.dataset.t));
+ document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang));
+ view.innerHTML=svc?form():home();
+ if(svc&&cur>=steps().length){const t=recap();$('recap').textContent=t;$('wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(t)}`}
+ if(top)window.scrollTo({top:0})};
+view.addEventListener('click',e=>{
+ const s=e.target.closest('[data-s]');if(s){svc=SV.find(x=>x.id===s.dataset.s);cur=0;started=false;sent=false;draw(1);return}
+ const id=e.target.id;
+ if(id==='home'||id==='other'){svc=null;draw(1);setTimeout(()=>{const g=$('services');if(g)g.scrollIntoView()},0)}
+ else if(id==='prev'){collect();cur--;draw(1)}
+ else if(id==='copy'){const b=e.target;navigator.clipboard.writeText(recap()).then(()=>b.textContent=T('copied')).catch(()=>b.textContent=T('copyFail'))}
+});
+view.addEventListener('change',e=>{const i=e.target;
+ if(i.dataset&&i.dataset.files){D[i.id]=[...i.files].map(x=>x.name);save();$(i.id+'-list').textContent=D[i.id].join(' · ');return}
+ if(!i.dataset||!i.dataset.max)return;
+ const all=[...document.querySelectorAll(`input[name="${i.name}"]:checked`)];
+ if(all.length>+i.dataset.max){i.checked=false;$('err').textContent=T('maxErr')}else $('err').textContent='';
+ $('cnt').textContent=Math.min(all.length,+i.dataset.max)+'/'+i.dataset.max});
+view.addEventListener('submit',e=>{e.preventDefault();collect();
+ const miss=steps()[cur].f.filter(f=>f.req&&(D[f.id]==null||D[f.id]===''));
+ if(miss.length&&!APERCU){$('err').textContent=T('missing')+miss.map(f=>L(f.q)).join(', ');return}
+ if(cur===0&&!started){started=true;post('debut',base()).catch(()=>{})}
+ cur++;draw(1);
+ if(cur>=steps().length&&!sent){sent=true;const st=$('status');
+  post('brief',{...base(),entreprise:D.societe||'',formule:formule(),fichiers:(D.fichiers||[]).join(', '),reponses:recap()})
+   .then(ok=>{if(st)st.textContent=ok?T('received'):''}).catch(()=>{})}
+});
+document.querySelector('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(svc)collect();lang=b.dataset.l;try{localStorage.setItem('cbs-lang',lang)}catch(x){}draw(0)});
+draw(0);
+}
+</script>
+</body>
+</html>
