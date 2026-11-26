@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="artifact-thumbnail" href="thumb.jpg">
+<meta name="description" content="Bienvenue chez CBS – Creative Business Solutions. Choisissez votre service : logo, réseaux sociaux, stratégie, vidéos, affiches, site web.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cbs-creative.netlify.app/">
+<meta property="og:title" content="Bienvenue chez CBS – Creative Business Solutions">
+<meta property="og:description" content="Donnez une nouvelle dimension à votre business. Choisissez votre service : logo, réseaux sociaux, stratégie, vidéos, affiches, site web.">
+<meta property="og:image" content="https://cbs-creative.netlify.app/thumb.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cbs-creative.netlify.app/thumb.jpg">
+<title>CBS · Bienvenue</title>
+<link rel="preload" href="newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="sora-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Newsreader;src:url(newsreader-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Newsreader;src:url(newsreader-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Newsreader;src:url(newsreader-latin-500-italic.woff2) format("woff2");font-weight:500 600;font-style:italic;font-display:swap}
+@font-face{font-family:Sora;src:url(sora-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Sora;src:url(sora-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Sora;src:url(sora-latin-600-normal.woff2) format("woff2");font-weight:600 700;font-display:swap}
+
+/* VOICE: chaleureux, premium, une seule interlocutrice qui accueille
+   IDEA: le hall d'accueil d'une agence : on choisit sa porte, puis on remplit le brief
+   PICTURE: Prisca en blazer marine, posée sur le fond diagonal marine / rose et ses zigzags
+   COLOUR and TYPE: marine #1b2550, rose poudré #f3cdd5, rose vif #e07a95 ; Newsreader titres, Sora textes
+   LAYOUT: accueil + choix des services, profil, puis formulaire une colonne par service */
+:root{color-scheme:light dark;
+--navy:#1b2550;--rose:#f3cdd5;--pink:#e07a95;
+--card:light-dark(#ffffff,#1d2547);--ink:light-dark(#1b2550,#f6eef1);
+--mute:light-dark(#5b6283,#b9bdd6);--line:light-dark(#e6e2ea,#34406e);--chip:light-dark(#faf3f5,#252f58)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;color:var(--ink);font:16px/1.55 Sora,system-ui,sans-serif;overflow-x:clip;min-height:100vh;
+background:linear-gradient(172deg,var(--navy) 0 620px,var(--rose) 620px 100%)}
+.zz{position:fixed;pointer-events:none;opacity:.35;z-index:0}
+.zz.a{top:90px;right:-10px;width:220px}.zz.b{bottom:30px;left:-10px;width:260px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+.logo{background:#fff;border-radius:16px;padding:8px 14px;display:inline-flex;box-shadow:0 8px 24px rgba(10,14,40,.25)}
+.logo img{height:58px;width:auto;display:block}
+.lang{display:flex;background:rgba(255,255,255,.14);border-radius:99px;padding:4px}
+.lang button{background:transparent;color:#fff;font:600 14px Sora,sans-serif;border:0;border-radius:99px;min-height:40px;min-width:48px;cursor:pointer}
+.lang button[aria-pressed=true]{background:#fff;color:var(--navy)}
+.slogan{color:var(--rose);font:500 italic 18px/1.3 Newsreader,serif;margin:4px 0 0}
+h1,h2,h3{font-family:Newsreader,serif;font-weight:600;margin:0;text-wrap:balance}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:end;padding:26px 0 10px}
+.hero h1{color:#fff;font-size:clamp(34px,6vw,52px);line-height:1.05;margin-bottom:12px}
+.hero p{color:#e4e7f5;margin:0 0 18px;max-width:52ch;font-size:17px}
+.portrait{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center}
+.portrait img{width:100%;max-width:330px;border-radius:200px 200px 24px 24px;background:var(--rose);display:block;box-shadow:0 24px 60px rgba(10,14,40,.35)}
+.portrait .badge{position:absolute;left:0;bottom:22px;background:#fff;color:var(--navy);border-radius:14px;padding:10px 14px;font-size:13px;line-height:1.3;box-shadow:0 10px 30px rgba(10,14,40,.25)}
+.portrait .badge b{display:block;font:600 17px Newsreader,serif}
+.btn{font:600 16px Sora,sans-serif;min-height:48px;padding:12px 22px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.pri{background:var(--pink);color:#fff}.light{background:#fff;color:var(--navy)}
+.sec{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.wa{background:#1f9d55;color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.panel{background:var(--card);border-radius:24px;padding:clamp(20px,4vw,36px);box-shadow:0 24px 60px rgba(10,14,40,.3);margin:22px 0}
+.panel h2{font-size:clamp(28px,4.5vw,40px);line-height:1.08;margin-bottom:6px}
+.lead{color:var(--mute);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:14px}
+.svc{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--chip);border:1.5px solid var(--line);border-radius:18px;padding:18px;cursor:pointer;color:var(--ink);font:inherit;transition:transform .2s,border-color .2s}
+.svc:hover{transform:translateY(-3px);border-color:var(--c)}
+.svc .ic{width:48px;height:48px;border-radius:14px;background:var(--c);display:grid;place-items:center}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:23px;line-height:1.15}
+.svc p{margin:0;color:var(--mute);font-size:14px;flex:1}
+.svc .go{font-weight:600;color:var(--c);font-size:15px}
+.svc.full{background:linear-gradient(135deg,var(--navy),#3a3f78);color:#fff;border:0}
+.svc.full p{color:#dfe2f2}.svc.full .go{color:var(--rose)}
+.prof{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start}
+.prof img{width:100%;border-radius:20px;background:var(--rose);display:block}
+.prof p{margin:0 0 14px}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin:18px 0}
+.pts div{background:var(--chip);border-radius:14px;padding:14px;font-size:14px}
+.pts b{display:block;font:600 18px Newsreader,serif;margin-bottom:2px}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.brands span{background:var(--chip);border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;font-size:14px}
+.brands small{color:var(--mute)}
+h4{font:600 15px Sora,sans-serif;margin:18px 0 6px}
+/* formulaire */
+.fhead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.fhead .ic{width:44px;height:44px;border-radius:12px;background:var(--navy);display:grid;place-items:center;flex:none}
+.fhead .ic svg{width:24px;height:24px}
+.fhead small{display:block;color:var(--mute);font-size:13px}
+.fhead b{font:600 22px/1.1 Newsreader,serif}
+.back{background:none;border:0;color:#fff;font:600 15px Sora,sans-serif;cursor:pointer;min-height:44px;padding:0;margin-top:14px}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--mute)}
+.bar{flex:1;height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--c);transition:width .4s}
+.step h2{font-size:28px;line-height:1.1;margin-bottom:4px}
+.f{margin-bottom:22px}
+.f>label,.f>.q{display:block;font-weight:600;margin-bottom:4px}
+.req{color:var(--pink)}
+.help{font-size:13px;color:var(--mute);margin:0 0 8px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:16px Sora,sans-serif;color:var(--ink);background:var(--chip);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible,.chips label:focus-within{outline:3px solid var(--pink);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--chip);cursor:pointer;font-size:15px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label:has(input:checked){background:var(--navy);border-color:var(--navy);color:#fff}
+.chips input:checked+.dot{box-shadow:0 0 0 2px #fff}
+.chips .dot{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:none}
+.tiers{display:grid;gap:10px}
+.tiers label{display:block;padding:14px 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--chip);cursor:pointer}
+.tiers input{position:absolute;opacity:0;width:1px;height:1px}
+.tiers b{display:block;font:600 19px/1.2 Newsreader,serif;margin-bottom:2px}
+.tiers span{font-size:14px;color:var(--mute)}
+.tiers label:has(input:checked){border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
+.tiers label:focus-within{outline:3px solid var(--pink);outline-offset:2px}
+.from{font-size:14px;font-weight:600}
+.soc span,.soc a{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--ink);text-decoration:none;background:var(--chip);border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;min-height:44px}.soc a:hover{border-color:var(--pink)}.soc svg{width:22px;height:22px;flex:none}
+.wk{margin:10px 0 2px;font-size:14px;font-weight:600;color:var(--mute)}
+input[type=file]{font:15px Sora,sans-serif;max-width:100%}
+.count{font-size:13px;color:var(--pink);font-weight:600;margin-left:6px}
+.sc{display:grid;grid-template-columns:7.5em minmax(0,1fr) 7.5em;align-items:center;gap:10px;font-size:14px;margin-bottom:10px}
+.sc span:last-child{text-align:right}
+input[type=range]{width:100%;accent-color:var(--pink);height:44px}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:8px;flex-wrap:wrap}
+.err{color:#c0284d;font-size:14px;margin:0 0 12px;min-height:1em}
+.apercu{background:var(--rose);color:#1b2550;border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;margin:0 0 16px}
+.recap{background:var(--chip);border-radius:14px;padding:16px;font-size:14px;max-height:340px;overflow:auto;white-space:pre-wrap;margin-bottom:16px}
+.ok{color:#1f9d55;font-weight:600;font-size:15px;margin:12px 0 0}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+footer{text-align:center;font-size:14px;color:var(--navy);padding:10px 0 40px;font-weight:500}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .chips label:has(input:checked){background:var(--pink);border-color:var(--pink)}}
+:root[data-theme=dark] .chips label:has(input:checked){background:var(--pink);border-color:var(--pink)}
+@media(max-width:760px){.hero,.prof{grid-template-columns:1fr}.portrait img{max-width:260px}.prof img{max-width:320px}}
+@media(max-width:600px){.logo img{height:48px}.sc{grid-template-columns:1fr 1fr}.sc input{grid-column:1/-1;grid-row:2}.zz{width:150px!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i,.svc{transition:none}}
+/* ---- agence : navigation, ouverture, sections ---- */
+.loader{position:fixed;inset:0;z-index:100;background:var(--navy);display:grid;place-items:center;transition:opacity .5s,visibility .5s}
+.loader.off{opacity:0;visibility:hidden}
+.loader .lg{background:#fff;border-radius:18px;padding:12px 18px;animation:pop .7s cubic-bezier(.2,.8,.2,1) both}
+.loader .lg img{height:64px;display:block}
+.loader svg{width:200px;margin-top:18px}
+.loader path{stroke-dasharray:420;stroke-dashoffset:420;animation:drawz 1s .2s ease forwards}
+@keyframes drawz{to{stroke-dashoffset:0}}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(27,37,80,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topnav .in{max-width:1140px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.topnav .logo{padding:5px 10px;border-radius:12px;box-shadow:none;cursor:pointer}
+.topnav .logo img{height:38px}
+.links{display:flex;gap:4px;margin-left:auto}
+.links button{background:none;border:0;color:#e4e7f5;font:500 15px Sora,sans-serif;padding:10px 12px;border-radius:99px;cursor:pointer;min-height:44px}
+.links button:hover{background:rgba(255,255,255,.1);color:#fff}
+.topnav .cta{min-height:42px;padding:8px 18px;font-size:15px}
+.burger{display:none;margin-left:auto;background:none;border:0;width:46px;height:46px;border-radius:12px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto;transition:transform .3s,opacity .3s}
+.topnav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.topnav.open .burger span:nth-child(2){opacity:0}
+.topnav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.kick{display:inline-flex;align-items:center;gap:8px;color:var(--rose);font:500 italic 18px Newsreader,serif;margin-bottom:10px}
+.kick:before{display:none}
+.hero{padding:44px 0 26px;align-items:center}
+.hero h1{font-size:clamp(38px,6.4vw,62px)}
+.portrait .float{position:absolute;width:31%;border-radius:12px;box-shadow:0 18px 40px rgba(10,14,40,.4);animation:floaty 6s ease-in-out infinite}
+.portrait .f1{right:-4%;top:6%;transform:rotate(6deg)}
+.portrait .f2{right:0;bottom:16%;animation-delay:-3s;transform:rotate(-5deg)}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.zzanim path{stroke-dasharray:14 0;animation:zz 3s linear infinite}
+@keyframes zz{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+.marq{overflow:hidden;margin:18px 0 4px;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq .tr{display:flex;gap:12px;width:max-content;animation:mq 38s linear infinite}
+.marq span{white-space:nowrap;background:var(--navy);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 18px;font-weight:500;font-size:15px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--chip);border-radius:18px;padding:18px}
+.stat b{display:block;font:600 clamp(30px,4.6vw,44px)/1 Newsreader,serif;color:var(--pink)}
+.stat span{font-size:14px;color:var(--mute)}
+.src{font-size:12px;color:var(--mute);margin:10px 0 0}
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps4 div{background:var(--chip);border-radius:18px;padding:18px;position:relative}
+.steps4 i{font:600 italic 34px Newsreader,serif;color:var(--pink);font-style:italic;display:block;line-height:1}
+.steps4 b{display:block;font:600 21px Newsreader,serif;margin:8px 0 4px}
+.steps4 p{margin:0;font-size:14px;color:var(--mute)}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;scrollbar-width:none}
+.filters button{flex:none;min-height:42px;padding:8px 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--chip);color:var(--ink);font:500 14px Sora,sans-serif;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.gal{columns:4 220px;column-gap:12px}
+.gal button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--chip);position:relative;break-inside:avoid}
+.gal img{width:100%;display:block;transition:transform .5s}
+.gal button:hover img{transform:scale(1.04)}
+.gal small{position:absolute;left:8px;bottom:8px;background:rgba(27,37,80,.85);color:#fff;border-radius:99px;padding:4px 10px;font-size:12px}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,14,40,.92);display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column;gap:12px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:78vh;border-radius:12px}
+.lb p{color:#fff;margin:0;text-align:center}
+.lb .x{position:absolute;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:22px;cursor:pointer}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.case{background:var(--chip);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.case .im{aspect-ratio:16/10;overflow:hidden;background:var(--navy)}
+.case .im img{width:100%;height:100%;object-fit:cover;display:block}
+.case .tx{padding:18px}
+.case small{color:var(--pink);font-weight:600;font-size:13px}
+.case h3{font-size:24px;margin:4px 0 6px}
+.case p{margin:0 0 10px;font-size:14.5px;color:var(--mute)}
+.case .kp{display:flex;flex-wrap:wrap;gap:16px;margin-top:4px}
+.case .kp b{display:block;font:600 24px Newsreader,serif}
+.case .kp span{font-size:12.5px;color:var(--mute)}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools span{background:var(--chip);border:1.5px solid var(--line);border-radius:10px;padding:7px 12px;font-size:14px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;list-style:none;font-weight:600;padding:14px 34px 14px 0;position:relative;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:4px;top:10px;font-size:24px;color:var(--pink);transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p{margin:0 0 14px;color:var(--mute)}
+.ctaband{background:linear-gradient(135deg,var(--navy),#2c3570);color:#fff;border-radius:26px;padding:clamp(26px,5vw,48px);text-align:center;margin:22px 0;position:relative;overflow:hidden}
+.ctaband h2{font-size:clamp(30px,5vw,46px);margin-bottom:10px}
+.ctaband p{color:#dfe2f2;margin:0 auto 20px;max-width:52ch}
+.ctaband .row{justify-content:center}
+.foot{background:var(--navy);color:#dfe2f2;margin-top:30px;padding:36px 16px 90px;text-align:left}
+.foot .in{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+.foot b{color:#fff;display:block;margin-bottom:8px}
+.foot a,.foot button{color:#dfe2f2;text-decoration:none;background:none;border:0;padding:4px 0;font:15px Sora,sans-serif;cursor:pointer;display:block;text-align:left}
+.foot .logo{display:inline-flex;margin-bottom:10px}
+.foot .logo img{height:44px}
+.foot .legal{max-width:1140px;margin:22px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#b9bdd6}
+.fab{position:fixed;right:16px;bottom:16px;z-index:60;width:60px;height:60px;border-radius:50%;background:#1f9d55;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:pulse 2.6s infinite}
+.fab svg{width:32px;height:32px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,157,85,.5)}70%{box-shadow:0 0 0 16px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.step{animation:slidein .45s ease both}
+@keyframes slidein{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}
+.mode{text-align:left;border:1.5px solid var(--line);background:var(--chip);border-radius:18px;padding:20px;cursor:pointer;color:var(--ink);font:inherit;transition:border-color .2s,transform .2s}
+.mode:hover{border-color:var(--c);transform:translateY(-2px)}
+.mode b{display:block;font:600 22px Newsreader,serif;margin-bottom:4px}
+.mode .t{display:inline-block;background:var(--navy);color:#fff;border-radius:99px;padding:3px 10px;font-size:12.5px;font-weight:600;margin-bottom:10px}
+.mode p{margin:0;font-size:14px;color:var(--mute)}
+.privacy{font-size:12.5px;color:var(--mute);margin:14px 0 0}
+@media(max-width:900px){
+ .topnav.open .links{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--navy);padding:10px 16px 18px;gap:2px}
+ .topnav.open .links button{text-align:left;font-size:17px}
+ .stats,.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}.cases{grid-template-columns:1fr}.foot .in{grid-template-columns:1fr}}
+@media(max-width:600px){.modes{grid-template-columns:1fr}.gal{columns:2}.portrait .float{width:34%}}
+@media(prefers-reduced-motion:reduce){.loader,.rv,.step,.portrait .float,.marq .tr,.fab,.loader path{animation:none!important;transition:none!important;opacity:1;transform:none;stroke-dashoffset:0}}
+
+
+.menubtn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:99px;padding:8px 16px;min-height:44px;font:600 15px Sora,sans-serif;cursor:pointer}
+.menubtn .bars i{display:block;width:18px;height:2px;background:#fff;margin:4px 0;transition:transform .3s,opacity .3s}
+.topnav.open .menubtn .bars i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.topnav.open .menubtn .bars i:nth-child(2){opacity:0}
+.topnav.open .menubtn .bars i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mpanel{display:none;position:absolute;right:max(16px,calc((100vw - 1140px)/2 + 16px));top:calc(100% + 8px);width:min(330px,calc(100vw - 32px));max-height:calc(100vh - 100px);overflow:auto;background:var(--card);color:var(--ink);border-radius:18px;box-shadow:0 24px 60px rgba(10,14,40,.4);padding:12px}
+.topnav.open .mpanel{display:block;animation:drop .25s ease both}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.mpanel h5{display:flex;align-items:center;gap:8px;font:500 italic 15px Newsreader,serif;color:var(--pink);margin:8px 8px 4px}
+.mpanel h5 svg{width:34px;flex:none}
+.mpanel button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;padding:7px 8px;border-radius:10px;font:500 14px Sora,sans-serif;color:var(--ink);min-height:40px;cursor:pointer}
+.mpanel button:hover,.mpanel button:focus-visible{background:var(--chip)}
+.mpanel .mi{width:28px;height:28px;border-radius:8px;background:var(--navy);display:grid;place-items:center;flex:none}
+.mpanel .mi svg{width:16px;height:16px}
+.mpanel hr{border:0;border-top:1px solid var(--line);margin:8px}
+.sk{color:var(--pink)!important;margin-bottom:6px}
+.sk:before{display:none}
+.sk svg{width:36px;flex:none}
+.hero .kick svg{width:36px}
+@media(max-width:600px){.topnav .cta{display:none}}
+.prof.one{grid-template-columns:1fr}.prof.one p{max-width:72ch}
+
+.menubtn{width:48px;height:48px;padding:0;border-radius:12px;background:var(--pink);justify-content:center;box-shadow:0 6px 16px rgba(224,122,149,.35)}
+.menubtn .bars i{width:20px;margin:4px auto}
+.scrim{position:fixed;inset:0;z-index:79;background:rgba(10,14,40,.55);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.drawer{position:fixed;top:0;left:0;bottom:0;z-index:80;width:min(330px,86vw);background:#fff;color:#1b2550;transform:translateX(-102%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding:16px 22px 22px;overflow-y:auto;box-shadow:20px 0 60px rgba(10,14,40,.3)}
+body.menu-open{overflow:hidden}
+body.menu-open .scrim{opacity:1;visibility:visible}
+body.menu-open .drawer{transform:none}
+.dhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.dhead img{height:44px}
+.dclose{width:46px;height:46px;border-radius:12px;border:0;background:#1b2550;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+.dnav{display:flex;flex-direction:column}
+.dnav>button{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:0;border-bottom:1px solid #eadbe0;padding:15px 2px;font:600 13px Sora,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#1b2550;cursor:pointer;text-align:left;min-height:48px}
+.dnav>button:hover{color:var(--pink)}
+.dnav .chev{width:12px;height:12px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .3s;margin-right:4px}
+.dnav>button[aria-expanded=true] .chev{transform:rotate(-135deg)}
+.dsub{max-height:0;overflow:hidden;transition:max-height .4s ease;border-bottom:1px solid #eadbe0}
+.dsub.on{max-height:520px}
+.dsub button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;padding:9px 4px;font:500 14px Sora,sans-serif;color:#1b2550;cursor:pointer;text-align:left;min-height:44px}
+.dsub button:hover{color:var(--pink)}
+.dsub .mi{width:28px;height:28px;border-radius:8px;background:#1b2550;display:grid;place-items:center;flex:none}
+.dsub .mi svg{width:16px;height:16px}
+.dsub div{padding:6px 0 10px}
+.dcta{margin-top:22px;align-self:flex-start;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+.dsoc{margin-top:auto;padding-top:24px;display:flex;gap:10px;align-items:center;font-size:13px;color:#5b6283}
+.dsoc a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#f6eef1}
+.dsoc a svg{width:22px;height:22px}
+@media(prefers-reduced-motion:reduce){.drawer,.scrim,.dsub{transition:none}}
+/* ===== V5 : premium minimaliste ===== */
+:root,:root[data-theme=dark],:root[data-theme=light]{color-scheme:light;--card:#fff;--ink:#1b2550;--mute:#6b7190;--line:#ece6ea;--chip:#fbf6f8}
+body{background:#fff!important;font-size:15.5px;line-height:1.65}
+.zz{display:none}
+h1,h2,h3{font-weight:500}
+.wrap{max-width:none;padding:0}
+.topnav{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line)}
+.topnav .in{max-width:1160px;padding:10px 20px}
+.topnav .logo{box-shadow:none;padding:0;background:none}
+.topnav .logo img{height:44px}
+.topnav .lang{background:var(--chip)}
+.topnav .lang button{color:var(--ink)}
+.topnav .lang button[aria-pressed=true]{background:var(--navy);color:#fff}
+.sec5{padding:clamp(56px,9vw,110px) 20px}
+.sec5 .in{max-width:1160px;margin:0 auto}
+.sec5.alt{background:#fbf6f8}
+.sec5.dark{background:var(--navy);color:#fff}
+.sec5.dark .lead5,.sec5.dark .src{color:#c9cde4}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 italic 16px Newsreader,serif;color:var(--pink);margin-bottom:10px}
+.eyebrow svg{width:34px}
+.h2{font:500 clamp(28px,4.2vw,40px)/1.12 Newsreader,serif;margin:0 0 12px;letter-spacing:-.01em;text-wrap:balance}
+.lead5{color:var(--mute);max-width:60ch;margin:0 0 34px;font-size:16px}
+.center{text-align:center}.center .lead5{margin-left:auto;margin-right:auto}
+/* carrousel */
+.slider{position:relative;background:var(--navy);color:#fff;overflow:hidden;min-height:clamp(560px,86vh,720px)}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:30px;max-width:1160px;margin:0 auto;padding:40px 20px 90px;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.slide.on{opacity:1;visibility:visible}
+.slide .txt{transform:translateY(16px);transition:transform 1s ease}
+.slide.on .txt{transform:none}
+.slide h1,.slide h2{font:500 clamp(36px,5.6vw,58px)/1.06 Newsreader,serif;margin:0 0 16px;letter-spacing:-.015em;text-wrap:balance}
+.slide p{color:#d7dbee;max-width:46ch;margin:0 0 26px;font-size:16.5px}
+.slide .vis{position:relative;height:100%;max-height:520px;display:flex;align-items:center;justify-content:center}
+.slide .vis img{max-height:480px;max-width:100%;border-radius:22px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:scale(.96);transition:transform 6s ease}
+.slide.on .vis img{transform:scale(1)}
+.slide .vis.round img{border-radius:220px 220px 22px 22px;background:var(--rose)}
+.slider:after{content:"";position:absolute;right:-10%;bottom:-30%;width:70%;height:80%;background:var(--rose);opacity:.12;transform:rotate(-12deg);pointer-events:none}
+.sctl{position:absolute;left:0;right:0;bottom:24px;z-index:3}
+.sctl .in{max-width:1160px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px}
+.dots{display:flex;gap:8px;flex:1}
+.dots button{width:28px;height:4px;border-radius:4px;border:0;background:rgba(255,255,255,.3);cursor:pointer;padding:0;position:relative}
+.dots button:after{content:"";position:absolute;inset:-12px 0}
+.dots button[aria-current=true]{background:var(--pink);width:44px}
+.arr{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;font-size:18px}
+.arr:hover{background:#fff;color:var(--navy)}
+.btn{font-weight:500;letter-spacing:.01em}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+/* clients */
+.clients5{border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.clients5 .tr{display:flex;gap:48px;width:max-content;animation:mq 40s linear infinite}
+.clients5 span{white-space:nowrap;font:500 italic 19px Newsreader,serif;color:#9aa0b8}
+/* qui sommes-nous */
+.about5{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,80px);align-items:start}
+.vals{display:grid;gap:22px}
+.val{display:flex;gap:16px;align-items:flex-start}
+.val .vi{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;color:var(--pink)}
+.val .vi svg{width:20px;height:20px}
+.val b{display:block;font:500 19px Newsreader,serif;margin-bottom:2px}
+.val p{margin:0;color:var(--mute);font-size:14.5px}
+/* services */
+.svc5{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.svc5 button{background:#fff;border:0;text-align:left;padding:28px 26px;cursor:pointer;color:var(--ink);font:inherit;display:flex;flex-direction:column;gap:10px;transition:background .3s}
+.svc5 button:hover{background:#fbf6f8}
+.svc5 .si{width:40px;height:40px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.svc5 .si svg{width:20px;height:20px}
+.svc5 h3{font:500 21px/1.2 Newsreader,serif;margin:4px 0 0}
+.svc5 p{margin:0;color:var(--mute);font-size:14.5px;flex:1}
+.svc5 .go5{font-size:14px;color:var(--pink);font-weight:500}
+/* méthode */
+.meth5{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;border-top:1px solid var(--line);padding-top:28px}
+.meth5 i{font:500 italic 15px Newsreader,serif;color:var(--pink)}
+.meth5 b{display:block;font:500 21px Newsreader,serif;margin:6px 0 6px}
+.meth5 p{margin:0;color:var(--mute);font-size:14.5px}
+/* chiffres */
+.stats5{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12);border-radius:18px;overflow:hidden}
+.stats5 div{background:var(--navy);padding:26px 22px}
+.stats5 b{display:block;font:500 clamp(34px,4.6vw,46px)/1 Newsreader,serif;color:#fff;margin-bottom:8px}
+.stats5 span{font-size:13.5px;color:#c9cde4}
+/* galerie & cas */
+.filters button{border-color:var(--line);background:#fff}
+.gal button{border-radius:12px}
+.cases{gap:22px}
+.case{background:#fff;border:1px solid var(--line);border-radius:18px}
+.case h3{font-weight:500}
+.case .kp b{font-weight:500;color:var(--pink)}
+/* fondatrice */
+.found{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,6vw,70px);align-items:center}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:center;box-shadow:0 20px 50px rgba(27,37,80,.06)}
+.pcard img{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--rose);border:4px solid #fff;box-shadow:0 0 0 1px var(--line);display:block;margin:0 auto 14px}
+.pcard b{display:block;font:500 22px Newsreader,serif}
+.pcard small{display:block;color:var(--mute);font-size:13.5px;margin:2px 0 14px}
+.pcard .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px}
+.pcard .tags span{font-size:12.5px;background:#fbf6f8;border-radius:99px;padding:5px 10px}
+.pcard .soc5{display:flex;gap:10px;justify-content:center}
+.pcard .soc5 a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#fbf6f8}
+.pcard .soc5 svg{width:22px;height:22px}
+.found blockquote{margin:0;font:500 italic clamp(20px,2.6vw,26px)/1.4 Newsreader,serif;color:var(--ink);border-left:2px solid var(--pink);padding-left:20px;margin-bottom:22px}
+/* faq & cta */
+.faq5{max-width:820px;margin:0 auto}
+.faq5 details{border-bottom:1px solid var(--line)}
+.faq5 summary{font:500 18px Newsreader,serif}
+.cta5{text-align:center}
+.cta5 .h2{color:#fff}
+.cta5 .row{justify-content:center}
+.foot{margin-top:0}
+.panel{box-shadow:0 10px 40px rgba(27,37,80,.06);border:1px solid var(--line)}
+#view>.back,#view>.panel,#view>form{max-width:760px;margin-left:auto;margin-right:auto}
+#view>.back{display:block;color:var(--ink);padding:20px 20px 0}
+#view>.panel,#view>form{margin:16px auto 40px}
+@media(max-width:860px){.slide{grid-template-columns:1fr;align-content:start;padding-top:34px;gap:18px}.slide .vis{max-height:260px;justify-content:flex-start}.slide .vis img{max-height:250px}
+ .about5,.found{grid-template-columns:1fr}.meth5,.stats5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.slider{min-height:640px}.slide h1,.slide h2{font-size:34px}.slide p{font-size:15.5px}#view>.panel,#view>form{margin:12px 12px 32px}}
+@media(prefers-reduced-motion:reduce){.slide,.slide .txt,.slide .vis img{transition:none}.clients5 .tr{animation:none}}
+
+.slide{z-index:1}.slider:after{z-index:0}.sctl{z-index:3}
+.topnav .logo{border:0}
+@media(max-width:600px){.slider{min-height:720px}.slide{padding-bottom:100px}.slide .vis{max-height:230px}.slide .vis img{max-height:220px}.slide .row .btn{min-height:46px}}
+
+/* ===== essai fond rose ===== */
+body{background:#fbedf1!important}
+.topnav{background:rgba(251,237,241,.94);border-bottom-color:#f1d6de}
+.topnav .lang{background:#fff}
+.sec5.alt{background:#f6dce3}
+.clients5{border-bottom-color:#f1d6de}
+.clients5 span{color:#a5839a}
+.svc5{background:#f1d6de;border-color:#f1d6de}
+.svc5 button{background:#fffafb}
+.svc5 button:hover{background:#fff}
+.meth5{border-top-color:#eccbd5}
+.filters button{background:#fff;border-color:#f1d6de}
+.case,.pcard{border-color:#f1d6de;background:#fffafb}
+.pcard .tags span,.pcard .soc5 a{background:#fbedf1}
+.faq5 details{border-bottom-color:#eccbd5}
+.val .vi{border-color:#eccbd5;background:#fffafb}
+#view>.panel,#view>form{background:#fffafb}
+/* avis */
+.rev{max-width:640px;margin:0 auto;background:#fffafb;border:1px solid #f1d6de;border-radius:22px;padding:clamp(22px,4vw,34px)}
+.stars{display:flex;gap:6px;justify-content:center;margin:6px 0 18px;flex-direction:row-reverse}
+.stars input{position:absolute;opacity:0;width:1px;height:1px}
+.stars label{font-size:34px;line-height:1;color:#e6c3cd;cursor:pointer;padding:4px;transition:color .2s,transform .2s}
+.stars label:hover,.stars label:hover~label,.stars input:checked~label{color:var(--pink)}
+.stars label:hover{transform:scale(1.12)}
+.stars input:focus-visible+label{outline:3px solid var(--pink);border-radius:6px}
+.rev .f{margin-bottom:16px}
+.rev .ok{text-align:center}
+
+.vcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:10px}
+.vcard{background:#fffafb;border:1px solid #f1d6de;border-radius:20px;padding:30px 26px;text-align:center;transition:transform .3s,box-shadow .3s}
+.vcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(27,37,80,.08)}
+.vci{width:58px;height:58px;border-radius:50%;background:#fbedf1;color:var(--pink);display:grid;place-items:center;margin:0 auto 14px;border:1px solid #f1d6de}
+.vci svg{width:26px;height:26px}
+.vcard b{display:block;font:500 22px Newsreader,serif;margin-bottom:6px}
+.vcard p{margin:0;color:var(--mute);font-size:14.5px}
+.sti{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:rgba(224,122,149,.16);color:var(--pink);margin-bottom:14px}
+.sti svg{width:20px;height:20px}
+.tes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+.tcard{margin:0;background:#fffafb;border:1px solid #f1d6de;border-radius:20px;padding:26px}
+.tst{color:var(--pink);letter-spacing:2px;margin-bottom:10px}
+.tcard blockquote{margin:0 0 14px;font:500 italic 18px/1.5 Newsreader,serif}
+.tcard b{display:block}
+.tcard figcaption{font-size:13.5px;color:var(--mute)}
+.foot .nl{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.nlf{display:flex;gap:8px;flex-wrap:wrap;position:relative}
+.nlf input{min-width:0;width:min(320px,70vw);font:16px Sora,sans-serif;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;padding:12px 18px;min-height:48px}
+.nlf input::placeholder{color:#b9bdd6}
+.foot .nlf .btn{min-width:52px;width:52px;height:48px;padding:0;background:var(--pink);color:#fff;border-radius:99px;display:grid;place-items:center;font-size:20px;text-align:center}
+.nlmsg{flex-basis:100%;margin:4px 0 0;font-size:13.5px;color:var(--rose)}
+.foot .pol{margin-top:22px;font-size:13.5px;color:#c9cde4}
+.foot .pol summary{cursor:pointer;color:#fff;font-weight:500;min-height:40px;padding:8px 0}
+.foot .pol p{margin:6px 0;max-width:80ch}
+@media(max-width:860px){.vcards{grid-template-columns:1fr}}
+.ccards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px}
+.ccard{display:flex;flex-direction:column;text-align:left;background:#fffafb;border:1px solid #f1d6de;border-radius:20px;overflow:hidden;padding:0;cursor:pointer;font:inherit;color:var(--ink);transition:transform .35s,box-shadow .35s}
+.ccard:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(27,37,80,.1)}
+.cim{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy)}
+.cim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.ccard:hover .cim img{transform:scale(1.05)}
+.play{position:absolute;right:12px;bottom:12px;width:38px;height:38px;border-radius:50%;background:rgba(27,37,80,.85);color:#fff;display:grid;place-items:center;font-size:13px;padding-left:2px}
+.ctx{padding:16px 18px 18px;display:flex;flex-direction:column;gap:3px}
+.ctx small{color:var(--mute);font-size:12.5px}
+.ctx b{font:500 22px/1.2 Newsreader,serif}
+.ctx .cm{font-size:13px;color:var(--mute);margin-bottom:6px}
+.chead{background:var(--navy);color:#fff;padding:28px 20px 44px}
+.chead .in{max-width:1160px;margin:0 auto}
+.chead .lead5{color:#c9cde4}
+.back5{background:none;border:0;color:#fff;font:500 15px Sora,sans-serif;cursor:pointer;padding:8px 0;margin-bottom:18px;min-height:44px}
+.ckp{display:flex;flex-wrap:wrap;gap:28px;margin-top:24px}
+.ckp b{display:block;font:500 36px/1 Newsreader,serif;color:var(--pink)}
+.ckp span{font-size:13px;color:#c9cde4}
+.cbody{max-width:1160px;margin:0 auto;padding:10px 20px 60px}
+.ct{font:500 26px Newsreader,serif;margin:36px 0 16px}
+.vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px;align-items:start}
+.vid{margin:0;background:#fffafb;border:1px solid #f1d6de;border-radius:18px;overflow:hidden}
+.vid video{width:100%;display:block;background:#000;max-height:70vh}
+.vid figcaption{padding:12px 16px 14px}
+.vid figcaption b{display:block;font:500 17px Newsreader,serif}
+.vid figcaption span{font-size:12.5px;color:var(--mute)}
+.cnav{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:30px;padding-top:24px;border-top:1px solid #f1d6de}
+
+
+/* ===== v9 : fluidité, Noël, showreel ===== */
+.hbg{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;opacity:.9;z-index:0;filter:blur(2px) saturate(1.15)}
+.hshade{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(27,37,80,.82) 0%,rgba(27,37,80,.5) 50%,rgba(27,37,80,.15) 100%)}
+.sbar{position:absolute;left:0;right:0;top:0;height:3px;z-index:4;background:rgba(255,255,255,.08)}
+.sbar i{display:block;height:100%;width:0;background:var(--pink)}
+.sbar i.run{animation:sfill 5.5s linear forwards}
+@keyframes sfill{from{width:0}to{width:100%}}
+.prog5{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--pink),#f3cdd5);z-index:70;transition:width .1s linear}
+#view{animation:vfade .55s ease both}
+#view.swap{animation:none}
+@keyframes vfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rv .svc5 button,.rv .ccard,.rv .vcard,.rv .meth5>div,.rv .stats5>div,.rv .vid{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in .svc5 button,.rv.in .ccard,.rv.in .vcard,.rv.in .meth5>div,.rv.in .stats5>div,.rv.in .vid{opacity:1;transform:none}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(2){transition-delay:.08s}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(3){transition-delay:.16s}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(4){transition-delay:.24s}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(5){transition-delay:.32s}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(6){transition-delay:.4s}
+.rv.in :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid):nth-child(7){transition-delay:.48s}
+.vid.dk{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.vid.dk figcaption b{color:#fff}.vid.dk figcaption span{color:#c9cde4}
+.others{margin:26px 0 0;color:var(--mute);font-size:14.5px;line-height:1.9}
+.others span{font-style:italic;font-family:Newsreader,serif;font-size:16px;color:var(--pink)}
+.others b{color:var(--ink);font-weight:500}
+.xmas{position:relative;z-index:51;background:var(--navy);color:#fff;font-size:13.5px;text-align:center;padding:9px 44px 9px 14px}
+.xmas b{color:var(--rose)}
+.xmas button.go{background:none;border:0;color:var(--rose);text-decoration:underline;font:inherit;cursor:pointer;padding:0 4px}
+.xmas .xx{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:20px;width:36px;height:36px;cursor:pointer}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:65}
+.sdet{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px;margin:6px 0 26px;align-items:start}
+.sdet ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.sdet li{display:flex;gap:10px;font-size:14.5px}
+.sdet li:before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;background:#fbedf1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' fill='none' stroke='%23e07a95' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.sex{display:block;border-radius:16px;overflow:hidden;border:1px solid #f1d6de;background:#fff;cursor:pointer;padding:0;text-align:left;font:inherit;color:var(--ink);width:100%}
+.sex img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.sex span{display:block;padding:10px 12px;font-size:13px}
+.sex span b{display:block;font:500 16px Newsreader,serif}
+.chooser5 h2.h3{font:500 24px Newsreader,serif;margin:8px 0 12px}
+@media(max-width:700px){.sdet{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#view{animation:none}.rv :is(.svc5 button,.ccard,.vcard,.meth5>div,.stats5>div,.vid){opacity:1!important;transform:none!important;transition:none!important}.sbar i.run{animation:none}.hbg{display:none}}
+@media(max-width:600px){.arr{display:none}}
+@media(max-width:860px){.hshade{background:linear-gradient(180deg,rgba(27,37,80,.8) 0%,rgba(27,37,80,.55) 55%,rgba(27,37,80,.35) 100%)}}
+.slide .txt{text-shadow:0 2px 18px rgba(10,14,40,.45)}
+</style>
+</head>
+<body>
+<svg class="zz a" viewBox="0 0 220 60" aria-hidden="true"><path d="M0 40 L20 15 L40 40 L60 15 L80 40 L100 15 L120 40 L140 15 L160 40 L180 15 L200 40 L220 15" fill="none" stroke="#f3cdd5" stroke-width="5"/></svg>
+<svg class="zz b" viewBox="0 0 260 60" aria-hidden="true"><path d="M0 40 L20 15 L40 40 L60 15 L80 40 L100 15 L120 40 L140 15 L160 40 L180 15 L200 40 L220 15 L240 40 L260 15" fill="none" stroke="#1b2550" stroke-width="5"/></svg>
+<div class="loader" id="loader" aria-hidden="true"><div style="text-align:center"><div class="lg"><img src="logo-cbs.png" alt=""></div>
+<svg viewBox="0 0 220 40"><path d="M0 30 L20 8 L40 30 L60 8 L80 30 L100 8 L120 30 L140 8 L160 30 L180 8 L200 30 L220 8" fill="none" stroke="#e07a95" stroke-width="5" stroke-linejoin="round"/></svg></div></div>
+<div class="prog5" id="prog5"></div>
+<canvas id="snow" aria-hidden="true"></canvas>
+<nav class="topnav" id="topnav"><div class="xmas" id="xmas" hidden></div><div class="in">
+ <button type="button" class="logo" data-go="top" aria-label="CBS"><img src="logo-cbs.png" alt="CBS Creative Business Solutions"></button>
+ <div style="flex:1"></div>
+ <div class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></div>
+ <button type="button" class="btn pri cta" data-go="services" data-t="startP"></button>
+ <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span class="bars"><i></i><i></i><i></i></span></button>
+</div></nav>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu"></aside>
+<div class="wrap">
+  <div id="view"></div>
+</div>
+<footer class="foot" id="foot"></footer>
+<a class="fab" id="fab" href="https://wa.me/237673777852" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" class="x" id="lbx" aria-label="Fermer">×</button><img id="lbimg" alt=""><p id="lbcap"></p></div>
+<form name="brief" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="service"><input name="nom"><input name="whatsapp"><input name="email"><input name="entreprise"><input name="formule"><input name="langue"><input name="fichiers"><textarea name="reponses"></textarea></form>
+<form name="avis" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="note"><input name="nom"><input name="langue"><textarea name="commentaire"></textarea></form>
+<form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="email"><input name="langue"></form>
+<form name="debut" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="service"><input name="nom"><input name="whatsapp"><input name="email"><input name="langue"></form>
+<script>
+{
+const WA='237673777852';
+const APERCU=!/netlify\.app$/.test(location.hostname); // aperçu hors Netlify : champs obligatoires désactivés
+let lang='fr';try{lang=localStorage.getItem('cbs-lang')||'fr'}catch(e){}
+const L=x=>Array.isArray(x)?(x[lang==='en'?1:0]):x;
+const FR=x=>Array.isArray(x)?x[0]:x;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+
+/* ---------- textes de l'interface ---------- */
+const U={
+startP:["Démarrer un projet","Start a project"],
+xm:["🎄 Offre de Noël : <b>-5 %</b> sur votre projet CBS","🎄 Christmas offer: <b>-5%</b> on your CBS project"],xmGo:["J'en profite","Claim it"],
+incT:["Ce que vous pouvez obtenir","What you can get"],exT:["Un exemple réel","A real example"],
+kVal:["Nos valeurs","Our values"],valT:["Ce qui guide chaque projet","What guides every project"],
+kTes:["Témoignages","Testimonials"],tesT:["Ce que nos clients disent de nous","What our clients say"],
+nlT:["Restez informé","Stay in the loop"],nlP:["Offres, conseils marketing et nouveautés CBS, une fois par mois.","Offers, marketing tips and CBS news, once a month."],nlPh:["Votre adresse e-mail","Your email address"],nlOk:["Merci, vous êtes inscrit !","Thanks, you're subscribed!"],nlErr:["Merci d'entrer une adresse e-mail valide.","Please enter a valid email address."],
+polT:["Politique de confidentialité","Privacy policy"],
+pol:[["Les informations que vous nous confiez (nom, numéro WhatsApp, e-mail, réponses aux questionnaires, avis) servent uniquement à préparer votre proposition, à vous recontacter et à améliorer nos services.","The information you share (name, WhatsApp number, email, questionnaire answers, feedback) is only used to prepare your proposal, contact you back and improve our services."],["Elles sont reçues via notre hébergeur Netlify et sur WhatsApp. Elles ne sont jamais vendues ni partagées avec des tiers.","It is received through our host Netlify and on WhatsApp. It is never sold or shared with third parties."],["Vous pouvez demander à tout moment la modification ou la suppression de vos données en écrivant au +237 673 77 78 52 (WhatsApp) ou à priscabikoi97@gmail.com.","You can ask at any time for your data to be changed or deleted by writing to +237 673 77 78 52 (WhatsApp) or priscabikoi97@gmail.com."]],
+kRev:["Votre avis","Your feedback"],revT:["Que pensez-vous de notre site ?","What do you think of our website?"],revL:["Votre avis nous aide à nous améliorer. Il ne prend que 30 secondes.","Your feedback helps us improve. It only takes 30 seconds."],
+revNote:["Votre note","Your rating"],revCom:["Votre commentaire","Your comment"],revComH:["Ce que vous aimez, ce qui manque, ce qu'on peut améliorer…","What you like, what's missing, what we can improve…"],revNom:["Votre nom (facultatif)","Your name (optional)"],
+revSend:["Envoyer mon avis","Send my feedback"],revThx:["Merci pour votre avis ! 🙏","Thank you for your feedback! 🙏"],revWa:["Envoyer aussi sur WhatsApp","Also send on WhatsApp"],revNeed:["Merci de choisir une note ou d'écrire un commentaire.","Please choose a rating or write a comment."],
+menu:["Menu","Menu"],mSvc:["Nos services","Our services"],mDisc:["Découvrir CBS","Discover CBS"],
+kPres:["Présentation","About"],kSvc:["Nos services","Our services"],kMeth:["Notre méthode","Our method"],kRes:["Résultats","Results"],kWork:["Portfolio","Portfolio"],kCas:["Études de cas","Case studies"],kFaq:["Questions fréquentes","FAQ"],kCt:["Contact","Contact"],
+moreW:["Voir plus de réalisations","See more work"],
+nav:[[["Qui sommes-nous","About us"],"apropos"],[["Services","Services"],"services"],[["Nos vidéos","Our videos"],"showreel"],[["Réalisations","Work"],"realisations"],[["Résultats","Results"],"stats"],[["Méthode","Method"],"methode"],[["La fondatrice","The founder"],"fondatrice"],[["Votre avis","Feedback"],"avis"],[["FAQ","FAQ"],"faq"],[["Contact","Contact"],"contact"]],
+heroP:["Comment pouvons-nous vous aider ? Stratégie, contenus, vidéos IA et campagnes : une seule interlocutrice, de l'idée jusqu'aux résultats.","How can we help? Strategy, content, AI videos and campaigns: one single contact, from idea to results."],
+seeWork:["Voir les réalisations","See our work"],
+statsT:["Des résultats, pas seulement des visuels","Results, not just visuals"],
+statsSrc:["Chiffres Meta Business Suite, octobre 2026.","Meta Business Suite figures, October 2026."],
+methT:["La méthode CBS","The CBS method"],methL:["Quatre étapes pour passer de l'idée aux ventes.","Four steps from idea to sales."],
+workT:["Réalisations","Our work"],workL:["Un aperçu de projets réels. Touchez une image pour l'agrandir.","A glimpse of real projects. Tap an image to enlarge it."],
+casesT:["Études de cas","Case studies"],casesL:["Le contexte, ce que j'ai fait, ce que ça a donné.","The context, what I did, what it achieved."],
+aboutK:["Bonjour, je suis Prisca","Hello, I'm Prisca"],
+about1:["Basée à Douala, j'accompagne des marques dans leur marketing digital : gestion de pages, stratégie de contenu, visuels et vidéos créés avec l'IA. Mon expérience de vente sur le terrain m'aide à relier chaque contenu aux ventes.","Based in Douala, Cameroon, I help brands with their digital marketing: page management, content strategy, AI-made visuals and videos. My field sales experience helps me link every piece of content to sales."],
+edu:["Master II Vente & Négociation · ESSEC Douala","Master's in Sales & Negotiation · ESSEC Douala"],cert:["Certifiée Inbound Marketing (HubSpot)","Inbound Marketing certified (HubSpot)"],
+toolsT:["Mes outils","My tools"],
+faqT:["Questions fréquentes","Frequently asked questions"],
+ctaT:["Parlons de votre projet","Let's talk about your project"],ctaP:["Choisissez un service, répondez en 2 minutes, et recevez une proposition sur mesure.","Choose a service, answer in 2 minutes, and get a tailored proposal."],
+footAbout:["Marketing, stratégie commerciale et communication digitale. Services délivrés à distance, partout dans le monde.","Marketing, sales strategy and digital communication. Services delivered remotely, worldwide."],
+footNav:["Navigation","Navigation"],footContact:["Contact","Contact"],
+privacy:["Vos réponses servent uniquement à préparer votre proposition. Elles ne sont ni vendues ni partagées.","Your answers are only used to prepare your proposal. They are never sold or shared."],
+rights:["Tous droits réservés.","All rights reserved."],
+modeT:["Comment voulez-vous commencer ?","How would you like to start?"],
+mx:["Brief express","Express brief"],mxT:["2 minutes","2 minutes"],mxD:["Vos coordonnées, votre besoin et votre formule. Je vous recontacte vite.","Your details, your need and your package. I'll get back to you fast."],
+mf:["Questionnaire complet","Full questionnaire"],mfD:["Toutes les questions pour une proposition très précise, dès le premier échange.","Every question for a very precise proposal from the first exchange."],
+complete:["Compléter mon brief (questionnaire complet)","Complete my brief (full questionnaire)"],
+slogan:["Donnez une nouvelle dimension à votre business","Take your business to a new dimension"],
+welcome:["Bienvenue chez CBS","Welcome to CBS"],
+help:["Comment pouvons-nous vous aider ? Choisissez le service qui vous intéresse : un court questionnaire, et je reviens vers vous avec une proposition sur mesure.","How can we help you? Choose the service you need: answer a short questionnaire and I will get back to you with a tailored proposal."],
+choose:["Choisir un service","Choose a service"],
+meet:["Découvrir Prisca","Meet Prisca"],
+badge:["Fondatrice de CBS","Founder of CBS"],
+svcTitle:["Choisissez votre service","Choose your service"],
+svcLead:["Un service, un questionnaire, des formules claires. Vous pouvez en remplir plusieurs.","One service, one questionnaire, clear packages. You can fill in several."],
+from:["À partir de","From"],works:["Voir toutes mes réalisations sur WhatsApp","See all my work on WhatsApp"],more:["et bien d'autres réalisations","and many more projects"],
+start:["Commencer","Start"],
+min:["min","min"],
+profTitle:["Qui suis-je ?","Who am I?"],
+p1:["Je suis Prisca Ornela, fondatrice de Creative Business Solutions (CBS). Stratège en marketing et communication digitale, basée à Douala, j'accompagne les entrepreneurs, les PME et les marques qui veulent être vus, compris et choisis.","I am Prisca Ornela, founder of Creative Business Solutions (CBS). A marketing and digital communication strategist based in Douala, Cameroon, I help entrepreneurs, SMEs and brands get seen, understood and chosen."],
+p2:["Mon rôle : transformer votre visibilité en clients. Stratégie, communication digitale, contenus et accompagnement : chaque action est pensée pour vos objectifs et mesurée par vos résultats.","My role: turning your visibility into customers. Strategy, digital communication, content and support: every action is designed around your goals and measured by your results."],
+follow:["Retrouvez-moi","Find me on"],
+pt1:["Une seule interlocutrice","One single contact"],pt1d:["De la stratégie à la création, vous parlez à la même personne.","From strategy to creation, you talk to the same person."],
+pt2:["Des tarifs accessibles","Affordable rates"],pt2d:["Une qualité d'agence, adaptée à votre budget.","Agency quality, adapted to your budget."],
+pt3:["Un suivi direct","Direct follow-up"],pt3d:["Un accompagnement personnalisé, à distance, partout dans le monde.","Personal support, remotely, anywhere in the world."],
+does:["Ce que je fais","What I do"],
+trust:["Ils m'ont fait confiance","They trusted me"],
+contactMe:["M'écrire sur WhatsApp","Message me on WhatsApp"],
+allSvc:["← Tous les services","← All services"],
+step:["Étape","Step"],
+next:["Continuer","Continue"],prev:["Retour","Back"],seeRecap:["Voir le récapitulatif","See summary"],
+apercu:["Mode aperçu : vous pouvez avancer sans remplir les champs.","Preview mode: you can move on without filling in the fields."],
+missing:["Merci de remplir : ","Please fill in: "],
+maxErr:["3 couleurs maximum.","3 colours maximum."],
+doneT:["Votre demande est prête","Your request is ready"],
+doneL:["Vérifiez vos réponses, puis envoyez-les-moi sur WhatsApp. Je reviens vers vous avec une proposition et un devis.","Check your answers, then send them to me on WhatsApp. I will get back to you with a proposal and a quote."],
+send:["Envoyer sur WhatsApp","Send on WhatsApp"],copy:["Copier mes réponses","Copy my answers"],copied:["Réponses copiées","Answers copied"],
+copyFail:["Copie impossible, sélectionnez le texte","Copy failed, select the text"],
+noteWa:["Si WhatsApp ne s'ouvre pas, copiez vos réponses et envoyez-les au +237 673 77 78 52.","If WhatsApp does not open, copy your answers and send them to +237 673 77 78 52."],
+other:["Un autre service","Another service"],
+received:["✓ Votre demande a bien été reçue par CBS. Cliquez sur WhatsApp pour en discuter avec moi.","✓ Your request has been received by CBS. Tap WhatsApp to discuss it with me."]
+};
+const T=k=>L(U[k]);
+
+/* ---------- formules et prix (FCFA, équivalent euro) ---------- */
+const fmt=(n,en)=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,en?',':' ');
+const eur=n=>Math.round(n/655.957);
+const P=(p,m,fr,en,plus)=>({p,m,plus,d:[fr,en]});
+const priceL=(o,l)=>{const en=l==='en';return fmt(o.p,en)+' FCFA'+(o.m?(en?' /month':' /mois'):'')+(o.plus?(en?' and up':' et plus'):'')+(en?' (≈ €'+eur(o.p)+')':' (≈ '+eur(o.p)+' €)')};
+const R=(a,b,m)=>{const sf=m?[' /mois',' /month']:['',''];
+ if(a==null)return ["Moins de "+fmt(b)+" FCFA"+sf[0],"Under "+fmt(b,1)+" FCFA"+sf[1]];
+ if(b==null)return ["Plus de "+fmt(a)+" FCFA"+sf[0],"Over "+fmt(a,1)+" FCFA"+sf[1]];
+ return [fmt(a)+" – "+fmt(b)+" FCFA"+sf[0],fmt(a,1)+" – "+fmt(b,1)+" FCFA"+sf[1]]};
+
+/* ---------- options réutilisées ---------- */
+const ANC=[["Projet pas encore lancé","Not launched yet"],["Moins d'1 an","Less than 1 year"],["1 à 3 ans","1 to 3 years"],["Plus de 3 ans","Over 3 years"]];
+const DELAI=[["Urgent (moins d'une semaine)","Urgent (under a week)"],["Dans 2 semaines","Within 2 weeks"],["Dans le mois","Within a month"],["Pas pressé","No rush"]];
+const RESEAUX=["Facebook","Instagram","TikTok","LinkedIn","WhatsApp Business","YouTube"];
+const SWATCH=[["#1b2550","Bleu marine","Navy blue"],["#2f6fd6","Bleu","Blue"],["#2a9d8f","Vert émeraude","Emerald green"],["#5a8f3c","Vert nature","Nature green"],["#e0b100","Jaune / or","Yellow / gold"],["#f08a24","Orange","Orange"],["#d62839","Rouge","Red"],["#e07a95","Rose","Pink"],["#7b4fd0","Violet","Purple"],["#8b5e3c","Marron / terre","Brown / earth"],["#111111","Noir","Black"],["#ffffff","Blanc","White"],["#9aa0a6","Gris / argent","Grey / silver"],["#f1e3c8","Beige","Beige"]];
+const COUL={id:'couleurs',q:["Choisissez vos couleurs (3 maximum)","Choose your colours (3 maximum)"],type:'swatch',max:3,h:["Touchez une couleur pour la sélectionner.","Tap a colour to select it."]};
+const TIERQ=["Choisissez votre formule","Choose your package"];
+const TIERH=["Chaque formule précise ce qui est inclus.","Each package shows what is included."];
+
+/* ---------- bibliothèque d'étapes ---------- */
+const ST={
+contact:{t:["Vos coordonnées","Your contact details"],l:["Pour que je puisse revenir vers vous rapidement.","So I can get back to you quickly."],f:[
+ {id:'nom',q:["Votre nom et prénom","Your full name"],type:'text',req:1},
+ {id:'fonction',q:["Votre fonction","Your role"],type:'text',h:["Ex. fondatrice, gérant, responsable marketing","E.g. founder, manager, marketing lead"]},
+ {id:'whatsapp',q:["Votre numéro WhatsApp (avec indicatif)","Your WhatsApp number (with country code)"],type:'tel',req:1,h:["Ex. +237 6XX XX XX XX","E.g. +237 6XX XX XX XX"]},
+ {id:'email',q:["Votre e-mail","Your email"],type:'email'},
+ {id:'pays',q:["Pays et ville","Country and city"],type:'text'},
+ {id:'contactpref',q:["Comment préférez-vous être contacté ?","How do you prefer to be contacted?"],type:'radio',o:["WhatsApp",["Appel","Phone call"],"E-mail"]},
+ {id:'dispo',q:["Meilleur moment pour vous joindre","Best time to reach you"],type:'radio',o:[["Le matin","Morning"],["L'après-midi","Afternoon"],["Le soir","Evening"]]}]},
+dirigeant:{t:["Vous, le dirigeant","You, the business owner"],l:["Derrière chaque marque, il y a une personne. Je veux vous connaître.","Behind every brand, there is a person. I want to know you."],f:[
+ {id:'pourquoi',q:["Pourquoi avez-vous créé cette entreprise ?","Why did you start this business?"],type:'area'},
+ {id:'parcours',q:["Votre parcours en quelques mots","Your background in a few words"],type:'area',h:["Études, expériences, ce qui vous a mené ici.","Studies, experience, what led you here."]},
+ {id:'moi3',q:["Décrivez-vous en 3 mots","Describe yourself in 3 words"],type:'text'},
+ {id:'visage',q:["Êtes-vous le visage de votre marque ?","Are you the face of your brand?"],type:'radio',o:[["Oui, on me connaît personnellement","Yes, people know me personally"],["Non, la marque passe avant moi","No, the brand comes first"]]},
+ {id:'camera',q:["Êtes-vous à l'aise devant la caméra ?","Are you comfortable on camera?"],type:'radio',o:[["Oui","Yes"],["Un peu","A little"],["Pas du tout","Not at all"]]},
+ {id:'temps',q:["Temps que vous pouvez consacrer à votre communication","Time you can give to your communication"],type:'radio',o:[["Moins d'1 h par semaine","Under 1 h a week"],["1 à 3 h par semaine","1 to 3 h a week"],["Plus de 3 h par semaine","Over 3 h a week"]]},
+ {id:'fierte',q:["De quoi êtes-vous le plus fier ?","What are you most proud of?"],type:'area'},
+ {id:'peur',q:["Qu'est-ce qui vous empêche d'avancer aujourd'hui ?","What is holding you back today?"],type:'area'},
+ {id:'vision',q:["Où voyez-vous votre entreprise dans 5 ans ?","Where do you see your business in 5 years?"],type:'area'},
+ {id:'decideur',q:["Qui valide le travail final ?","Who approves the final work?"],type:'radio',o:[["Moi seul","Only me"],["Moi et un associé","Me and a partner"],["Un groupe / comité","A group / committee"]]}]},
+entreprise:{t:["Votre entreprise","Your business"],l:["Le point de départ de tout le travail.","The starting point of everything."],f:[
+ {id:'societe',q:["Nom de votre entreprise","Business name"],type:'text',req:1},
+ {id:'secteur',q:["Secteur d'activité","Industry"],type:'text',h:["Ex. restauration, cosmétiques, BTP, formation","E.g. food, cosmetics, construction, training"]},
+ {id:'activite',q:["Décrivez votre activité en une ou deux phrases","Describe what you do in one or two sentences"],type:'area'},
+ {id:'phare',q:["Votre produit ou service phare, et son prix","Your flagship product or service, and its price"],type:'text'},
+ {id:'stade',q:["Âge de l'entreprise","Age of the business"],type:'radio',o:ANC},
+ {id:'taille',q:["Taille de l'équipe","Team size"],type:'radio',o:[["Je travaille seul","Just me"],["2 à 5 personnes","2 to 5 people"],["6 à 20 personnes","6 to 20 people"],["Plus de 20 personnes","Over 20 people"]]},
+ {id:'lieu',q:["Où se trouve votre activité ?","Where is your business?"],type:'radio',o:[["Boutique / bureau physique","Shop / office"],["En ligne uniquement","Online only"],["Les deux","Both"]]},
+ {id:'diff',q:["Qu'est-ce qui vous rend différent de vos concurrents ?","What makes you different from competitors?"],type:'area'},
+ {id:'valeurs',q:["Vos 3 valeurs principales","Your 3 core values"],type:'text',h:["Ex. confiance, qualité, proximité","E.g. trust, quality, closeness"]},
+ {id:'presence',q:["Où êtes-vous présent en ligne ?","Where are you online?"],type:'check',o:[...RESEAUX,["Site web","Website"],["Nulle part encore","Nowhere yet"]]},
+ {id:'liens',q:["Liens de vos pages (Facebook, Instagram, TikTok, site…)","Links to your pages (Facebook, Instagram, TikTok, website…)"],type:'area'}]},
+evaluation:{t:["Évaluez votre marque aujourd'hui","Rate your brand today"],l:["Soyez honnête : c'est ce qui me permet de vous faire progresser.","Be honest: it helps me help you grow."],f:[
+ {id:'note',q:["Quelle note donnez-vous à votre image actuelle ?","How would you rate your current image?"],type:'radio',o:[["1 · Très faible","1 · Very poor"],["2 · Faible","2 · Poor"],["3 · Moyenne","3 · Average"],["4 · Bonne","4 · Good"],["5 · Excellente","5 · Excellent"]]},
+ {id:'notoriete',q:["Votre marque est…","Your brand is…"],type:'radio',o:[["Peu connue","Little known"],["Connue localement","Known locally"],["Bien connue dans mon secteur","Well known in my industry"]]},
+ {id:'reflete',q:["Votre image reflète-t-elle la qualité de votre travail ?","Does your image reflect the quality of your work?"],type:'radio',o:[["Oui","Yes"],["En partie","Partly"],["Pas du tout","Not at all"]]},
+ {id:'forces',q:["Vos points forts","Your strengths"],type:'check',o:[["Qualité","Quality"],["Prix","Price"],["Service client","Customer service"],["Rapidité","Speed"],["Expérience","Experience"],["Innovation","Innovation"],["Proximité","Closeness"]]},
+ {id:'faiblesse',q:["Votre principale faiblesse aujourd'hui","Your main weakness today"],type:'area'},
+ {id:'avis',q:["Que disent vos clients de vous ?","What do your customers say about you?"],type:'area'},
+ {id:'dejaagence',q:["Avez-vous déjà travaillé avec une agence ou un freelance ?","Have you worked with an agency or freelancer before?"],type:'radio',o:[["Non, jamais","No, never"],["Oui, j'étais satisfait","Yes, I was satisfied"],["Oui, j'ai été déçu","Yes, I was disappointed"]]},
+ {id:'decu',q:["Si déçu : qu'est-ce qui n'a pas marché ?","If disappointed: what went wrong?"],type:'area'}]},
+positionnement:{t:["Votre positionnement","Your positioning"],l:["La place que vous voulez occuper dans la tête de vos clients.","The place you want in your customers' minds."],f:[
+ {id:'percu',q:["Comment voulez-vous être perçu ?","How do you want to be perceived?"],type:'radio',o:[["Le moins cher","The cheapest"],["Le meilleur rapport qualité-prix","Best value for money"],["Premium","Premium"],["Exclusif / luxe","Exclusive / luxury"]]},
+ {id:'role',q:["Votre place sur le marché","Your place in the market"],type:'radio',o:[["Le leader","The leader"],["Le challenger qui monte","The rising challenger"],["Le spécialiste d'une niche","The niche specialist"]]},
+ {id:'argument',q:["Votre argument numéro 1","Your number 1 selling point"],type:'radio',o:[["La qualité","Quality"],["Le prix","Price"],["La proximité","Closeness"],["L'innovation","Innovation"]]},
+ {id:'ambition',q:["Votre ambition à 3 ans","Your 3-year ambition"],type:'radio',o:[["Ma ville","My city"],["Tout mon pays","My whole country"],["L'Afrique","Africa"],["Le monde","The world"]]},
+ {id:'phrase',q:["La phrase que vous rêvez d'entendre de vos clients","The sentence you dream of hearing from customers"],type:'text'}]},
+clients:{t:["Vos clients","Your customers"],l:["Tout part de ceux qui achètent.","Everything starts with the people who buy."],f:[
+ {id:'cible',q:["Vous vendez surtout à…","You mainly sell to…"],type:'check',o:[["Particuliers","Individuals"],["Entreprises","Businesses"],["Institutions / ONG","Institutions / NGOs"],["Jeunes","Young people"],["Familles","Families"],["Femmes","Women"],["Hommes","Men"],["Clientèle haut de gamme","High-end clients"]]},
+ {id:'age',q:["Âge principal de vos clients","Main age of your customers"],type:'radio',o:[["18-25 ans","18-25"],["25-35 ans","25-35"],["35-50 ans","35-50"],["Plus de 50 ans","Over 50"]]},
+ {id:'zone',q:["Zone de vos clients","Where your customers are"],type:'radio',o:[["Ma ville","My city"],["Mon pays","My country"],["Afrique","Africa"],["International","International"]]},
+ {id:'prix',q:["Votre gamme de prix","Your price range"],type:'radio',o:[["Accessible","Affordable"],["Milieu de gamme","Mid-range"],["Premium","Premium"],["Luxe","Luxury"]]},
+ {id:'probleme',q:["Quel problème réglez-vous pour vos clients ?","What problem do you solve for customers?"],type:'area'},
+ {id:'clientideal',q:["Décrivez votre client idéal","Describe your ideal customer"],type:'area',h:["Âge, métier, habitudes, où il passe son temps.","Age, job, habits, where they spend their time."]}]},
+/* LOGO */
+logoNom:{t:["Le nom de votre logo","Your logo name"],l:["L'orthographe exacte compte.","Exact spelling matters."],f:[
+ {id:'nomlogo',q:["Nom exact à écrire sur le logo","Exact name to write on the logo"],type:'text',req:1,h:["Respectez majuscules, accents et espaces.","Mind capitals, accents and spaces."]},
+ {id:'signif',q:["Que signifie ce nom ? Son histoire ?","What does the name mean? Its story?"],type:'area'},
+ {id:'sloganlogo',q:["Slogan à intégrer (si oui, lequel ?)","Slogan to include (if so, which one?)"],type:'text'},
+ {id:'existant',q:["Avez-vous déjà un logo ?","Do you already have a logo?"],type:'radio',o:[["Non, c'est une création","No, it's a new one"],["Oui, je veux le moderniser","Yes, I want to modernise it"],["Oui, je veux en changer complètement","Yes, I want a completely new one"]]},
+ {id:'garder',q:["Si oui : qu'est-ce qu'on garde ?","If so: what do we keep?"],type:'text'},
+ {id:'objlogo',q:["Ce que le logo doit vous apporter","What the logo should bring you"],type:'check',o:[["Inspirer confiance","Build trust"],["Attirer une nouvelle clientèle","Attract new customers"],["Se démarquer","Stand out"],["Monter en gamme","Move upmarket"],["S'ouvrir à l'international","Go international"],["Paraître plus professionnel","Look more professional"]]}]},
+personnalite:{t:["La personnalité de votre marque","Your brand personality"],l:["Placez le curseur là où se situe votre marque.","Move the slider to where your brand stands."],f:[
+ {id:'perso',type:'scale',o:[[["Classique","Classic"],["Moderne","Modern"]],[["Sérieuse","Serious"],["Ludique","Playful"]],[["Féminine","Feminine"],["Masculine","Masculine"]],[["Simple","Simple"],["Détaillée","Detailed"]],[["Discrète","Subtle"],["Audacieuse","Bold"]],[["Abordable","Affordable"],["Luxueuse","Luxurious"]],[["Locale","Local"],["Internationale","International"]]]},
+ {id:'ton',q:["Le ton de votre marque","Your brand's tone"],type:'radio',o:[["Chaleureux","Warm"],["Expert","Expert"],["Audacieux","Bold"]]},
+ {id:'adj',q:["3 mots que vos clients doivent ressentir","3 words your customers should feel"],type:'text'},
+ {id:'personne',q:["Si votre marque était une personne, qui serait-elle ?","If your brand were a person, who would it be?"],type:'area'},
+ {id:'adjnon',q:["Ce que le logo ne doit surtout pas évoquer","What the logo must not suggest"],type:'text'}]},
+style:{t:["Le style de logo","Logo style"],l:["Plusieurs choix possibles.","Several answers possible."],f:[
+ {id:'typelogo',q:["Quel type de logo vous attire ?","Which type of logo do you like?"],type:'check',o:[["Le nom seul","The name only"],["Les initiales (monogramme)","Initials (monogram)"],["Un symbole + le nom","A symbol + the name"],["Un symbole seul","A symbol only"],["Un emblème / badge","An emblem / badge"],["Une mascotte","A mascot"],["Je laisse l'experte choisir","I'll let the expert choose"]]},
+ {id:'rendu',q:["Plutôt…","Rather…"],type:'radio',o:[["Épuré et minimaliste","Clean and minimal"],["Riche en détails","Rich in detail"]]},
+ {id:'forme',q:["Format préféré","Preferred shape"],type:'radio',o:[["Horizontal","Horizontal"],["Vertical","Vertical"],["Carré / rond","Square / round"],["Peu importe","No preference"]]},
+ {id:'symbole',q:["Un symbole ou une idée à intégrer ?","A symbol or idea to include?"],type:'area'},
+ {id:'eviter',q:["Des éléments à éviter absolument ?","Anything to avoid?"],type:'area'}]},
+couleurs:{t:["Les couleurs","Colours"],l:["3 couleurs maximum pour une marque forte et mémorable.","3 colours maximum for a strong, memorable brand."],f:[
+ COUL,
+ {id:'ambiance',q:["Ambiance souhaitée","Desired mood"],type:'radio',o:[["Vive","Bright"],["Douce / pastel","Soft / pastel"],["Sombre et élégante","Dark and elegant"],["Je vous fais confiance","I trust you"]]},
+ {id:'coulcode',q:["Codes couleur que vous avez déjà (facultatif)","Colour codes you already use (optional)"],type:'text'},
+ {id:'coulnon',q:["Couleurs interdites","Colours to avoid"],type:'text'}]},
+typo:{t:["L'écriture","Lettering"],l:["Le style des lettres du nom.","The style of the letters."],f:[
+ {id:'typostyle',q:["Style d'écriture préféré","Preferred lettering style"],type:'check',o:[["Classique avec empattements","Classic serif"],["Moderne et épurée","Modern and clean"],["Manuscrite / signature","Handwritten / signature"],["Arrondie et chaleureuse","Rounded and friendly"],["Grasse et impactante","Bold and strong"],["Je laisse l'experte choisir","I'll let the expert choose"]]},
+ {id:'epaisseur',q:["Des lettres plutôt…","Letters rather…"],type:'radio',o:[["Fines","Thin"],["Épaisses","Thick"]]},
+ {id:'casse',q:["Le nom plutôt en…","The name rather in…"],type:'radio',o:[["MAJUSCULES","CAPITALS"],["minuscules","lowercase"],["Première lettre en majuscule","First letter capital"],["Peu importe","No preference"]]}]},
+inspirations:{t:["Vos inspirations","Your inspirations"],l:["Ce que vous aimez, et ce que vous n'aimez pas.","What you like, and what you don't."],f:[
+ {id:'concurrents',q:["Vos principaux concurrents","Your main competitors"],type:'area'},
+ {id:'aime',q:["Logos ou marques que vous aimez, et pourquoi","Logos or brands you like, and why"],type:'area'},
+ {id:'aimepas',q:["Ce que vous n'aimez pas, et pourquoi","What you don't like, and why"],type:'area'},
+ {id:'pistes',q:["Combien de propositions souhaitez-vous ?","How many proposals would you like?"],type:'radio',o:[["1 piste","1 option"],["2 pistes","2 options"],["3 pistes","3 options"]]}]},
+supports:{t:["Où sera utilisé le logo","Where the logo will be used"],l:["Pour qu'il soit lisible partout.","So it reads well everywhere."],f:[
+ {id:'supp',q:["Supports prévus","Planned uses"],type:'check',o:[["Réseaux sociaux","Social media"],["Site web","Website"],["Cartes de visite","Business cards"],["Enseigne / façade","Shop sign"],["Emballages / étiquettes","Packaging / labels"],["Tenues / t-shirts","Uniforms / t-shirts"],["Véhicules","Vehicles"],["Documents","Documents"],["Flyers et affiches","Flyers and posters"]]},
+ {id:'brode',q:["Sera-t-il brodé, gravé ou imprimé en une couleur ?","Will it be embroidered, engraved or one-colour printed?"],type:'radio',o:[["Oui","Yes"],["Non","No"],["Je ne sais pas","I don't know"]]}]},
+budgetLogo:{t:["Votre formule logo","Your logo package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budlogo',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(30000,0,"Logo simple : 1 proposition, 2 retouches, fichiers PNG","Simple logo: 1 proposal, 2 revisions, PNG files"),
+  P(60000,0,"2 propositions, déclinaisons couleur, noir et blanc, fichiers impression et web","2 proposals, colour, black and white versions, print and web files"),
+  P(100000,0,"Identité visuelle : 3 propositions, charte graphique, mises en situation","Visual identity: 3 proposals, brand guidelines, mockups"),
+  P(200000,0,"Identité complète : charte, kit réseaux sociaux, cartes de visite, affiche de lancement","Full identity: guidelines, social media kit, business cards, launch poster",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI},
+ {id:'apres',q:["Après le logo, souhaitez-vous être accompagné pour…","After the logo, would you like support with…"],type:'check',o:[["Community management","Social media management"],["Affiches PRO IA","AI posters"],["Vidéos IA et montage","AI videos and editing"],["Motion design","Motion design"],["Stratégie et campagnes","Strategy and campaigns"],["Site web","Website"],["Pas pour l'instant","Not for now"]]},
+ {id:'budaccomp',q:["Budget mensuel prévu pour cet accompagnement","Monthly budget planned for that support"],type:'radio',o:[R(50000,100000,1),R(100000,200000,1),R(200000,null,1),["Pas pour l'instant","Not for now"]]}]},
+/* COMMUNITY MANAGEMENT */
+cm:{t:["Vos réseaux sociaux","Your social media"],l:["Pour animer vos pages comme une grande marque.","To run your pages like a big brand."],f:[
+ {id:'cmres',q:["Réseaux à gérer","Networks to manage"],type:'check',o:RESEAUX},
+ {id:'abonnes',q:["Nombre d'abonnés actuel (environ)","Current followers (approx.)"],type:'text'},
+ {id:'cmqui',q:["Qui gère vos pages aujourd'hui ?","Who runs your pages today?"],type:'radio',o:[["Personne","Nobody"],["Moi-même","Myself"],["Quelqu'un d'autre","Someone else"]]},
+ {id:'cmobj',q:["Vos objectifs","Your goals"],type:'check',o:[["Plus d'abonnés","More followers"],["Plus de ventes","More sales"],["Plus de notoriété","More awareness"],["Fidéliser mes clients","Customer loyalty"],["Recruter","Recruiting"]]},
+ {id:'cmcontenu',q:["Avez-vous des photos et vidéos de vos produits ?","Do you have photos and videos of your products?"],type:'radio',o:[["Oui, beaucoup","Yes, many"],["Quelques-unes","A few"],["Non, tout est à créer","No, everything to create"]]},
+ {id:'cmmsg',q:["Qui répond aux messages des clients ?","Who answers customer messages?"],type:'radio',o:[["Moi","Me"],["Mon équipe","My team"],["Je veux que CBS s'en occupe","I want CBS to handle it"]]},
+ {id:'pub',q:["Budget publicité prévu (payé par vous à Facebook / TikTok, en plus de la formule)","Ad budget planned (paid by you to Facebook / TikTok, on top of the package)"],type:'radio',o:[["Pas de publicité","No ads"],R(null,25000,1),R(25000,75000,1),R(75000,null,1)]},
+ {id:'cmconc',q:["Pages concurrentes ou modèles que vous aimez","Competitor or model pages you like"],type:'area'}]},
+budgetCM:{t:["Votre formule community management","Your social media package"],l:["Formules mensuelles.","Monthly packages."],f:[
+ {id:'budcm',q:["Combien de pages voulez-vous confier à CBS ?","How many pages do you want CBS to manage?"],h:["50 000 FCFA par page et par mois. Le contenu exact de votre formule sera précisé avec vous.","50,000 FCFA per page per month. The exact content of your package will be set with you."],type:'tier',req:1,o:[
+  P(50000,1,"1 page : publications, visuels, légendes et calendrier éditorial","1 page: posts, visuals, captions and content calendar"),
+  P(100000,1,"2 pages","2 pages"),
+  P(150000,1,"3 pages","3 pages"),
+  P(200000,1,"4 pages et plus","4 pages or more",1)]},
+ {id:'cmduree',q:["Durée d'engagement","Commitment length"],type:'radio',o:[["1 mois pour tester","1 month trial"],["3 mois","3 months"],["6 mois","6 months"],["12 mois","12 months"]]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* STRATÉGIE ET CAMPAGNES */
+strat:{t:["Votre situation","Your situation"],l:["Où vous en êtes, et où vous voulez aller.","Where you are, and where you want to go."],f:[
+ {id:'stobj',q:["Votre objectif principal","Your main goal"],type:'radio',o:[["Avoir plus de clients","Get more customers"],["Augmenter mon chiffre d'affaires","Increase revenue"],["Lancer un produit ou service","Launch a product or service"],["Structurer mon entreprise","Structure my business"]]},
+ {id:'objchiffre',q:["Votre objectif chiffré dans 3 mois","Your target in 3 months"],type:'text',h:["Ex. 30 clients par mois, 1 million FCFA de ventes","E.g. 30 customers a month, 1 million FCFA in sales"]},
+ {id:'ca',q:["Chiffre d'affaires mensuel actuel (facultatif)","Current monthly revenue (optional)"],type:'radio',o:[R(null,500000,1),R(500000,2000000,1),R(2000000,10000000,1),R(10000000,null,1),["Je préfère ne pas dire","I'd rather not say"]]},
+ {id:'clientsmois',q:["Combien de clients par mois aujourd'hui ?","How many customers a month today?"],type:'radio',o:[["Moins de 10","Under 10"],["10 à 50","10 to 50"],["50 à 200","50 to 200"],["Plus de 200","Over 200"]]},
+ {id:'panier',q:["Montant moyen dépensé par un client","Average amount a customer spends"],type:'text'},
+ {id:'fidel',q:["Vos clients reviennent-ils ?","Do your customers come back?"],type:'radio',o:[["La plupart","Most do"],["Certains","Some"],["Rarement","Rarely"]]},
+ {id:'defis',q:["Vos plus grands défis","Your biggest challenges"],type:'check',o:[["Trouver des clients","Finding customers"],["Convaincre et vendre","Convincing and selling"],["Fidéliser","Retaining customers"],["Fixer mes prix","Setting prices"],["Me démarquer","Standing out"],["Manque de temps","Lack of time"]]},
+ {id:'canaux',q:["Comment vos clients vous trouvent-ils ?","How do customers find you?"],type:'check',o:[["Bouche-à-oreille","Word of mouth"],["Réseaux sociaux","Social media"],["Publicité payante","Paid ads"],["WhatsApp","WhatsApp"],["Recherche Google","Google search"],["Passage en boutique","Walk-ins"],["Partenaires / revendeurs","Partners / resellers"]]},
+ {id:'equipe',q:["Avez-vous une équipe commerciale ?","Do you have a sales team?"],type:'radio',o:[["Non","No"],["1 à 2 personnes","1 to 2 people"],["Plus de 2 personnes","More than 2"]]}]},
+marche:{t:["Votre marché","Your market"],l:["Pour bâtir une stratégie qui tient face à la concurrence.","To build a strategy that beats the competition."],f:[
+ {id:'concur',q:["Vos 3 principaux concurrents, et ce qu'ils font mieux que vous","Your 3 main competitors, and what they do better"],type:'area'},
+ {id:'prixvs',q:["Vos prix par rapport aux concurrents","Your prices compared to competitors"],type:'radio',o:[["Moins chers","Cheaper"],["Pareils","The same"],["Plus chers","Higher"]]},
+ {id:'objections',q:["Pourquoi certains prospects n'achètent pas ?","Why do some prospects not buy?"],type:'area',h:["Les objections que vous entendez le plus.","The objections you hear most."]},
+ {id:'saison',q:["Vos périodes fortes et faibles dans l'année","Your strong and weak periods in the year"],type:'area'},
+ {id:'essaye',q:["Ce que vous avez déjà essayé, et le résultat","What you have tried, and the result"],type:'area'}]},
+campagne:{t:["Vos campagnes de communication","Your communication campaigns"],l:["Une campagne, c'est un message fort, au bon moment, sur les bons canaux.","A campaign is a strong message, at the right time, on the right channels."],f:[
+ {id:'camptype',q:["Avez-vous besoin d'une campagne ?","Do you need a campaign?"],type:'radio',o:[["Oui, pour un lancement","Yes, for a launch"],["Oui, pour une promotion","Yes, for a promotion"],["Oui, pour la notoriété","Yes, for awareness"],["Non, la stratégie seulement","No, strategy only"]]},
+ {id:'campoffre',q:["L'offre ou le produit à mettre en avant","The offer or product to push"],type:'area'},
+ {id:'campdate',q:["Période ou événement visé","Target period or event"],type:'text',h:["Ex. Noël, rentrée, Saint-Valentin, ouverture","E.g. Christmas, back to school, Valentine's, opening"]},
+ {id:'campcanaux',q:["Canaux envisagés","Planned channels"],type:'check',o:["Facebook","Instagram","TikTok","WhatsApp",["Affichage terrain","Street posters"],["Radio / télé","Radio / TV"],["Événement","Event"],["Influenceurs","Influencers"]]},
+ {id:'campres',q:["Ressources disponibles","Available resources"],type:'check',o:[["Photos de mes produits","Product photos"],["Vidéos","Videos"],["Clients prêts à témoigner","Customers ready to give testimonials"],["Une équipe pour exécuter","A team to execute"],["Rien pour l'instant","Nothing yet"]]},
+ {id:'camppub',q:["Budget publicité prévu (payé par vous, en plus de la formule)","Ad budget planned (paid by you, on top of the package)"],type:'radio',o:[["Pas de publicité","No ads"],R(null,50000),R(50000,150000),R(150000,null)]},
+ {id:'campprev',q:["Vos campagnes passées et leurs résultats","Your past campaigns and their results"],type:'area'}]},
+budgetStrat:{t:["Votre formule stratégie","Your strategy package"],l:["Plus je vous accompagne, plus la formule est complète.","The more I support you, the fuller the package."],f:[
+ {id:'budstrat',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(70000,0,"La stratégie établie : diagnostic et plan d'action écrit, sans accompagnement","The strategy itself: diagnosis and written action plan, no follow-up"),
+  P(150000,0,"Stratégie + plan de campagne (messages, calendrier, canaux) + séance d'explication","Strategy + campaign plan (messages, calendar, channels) + walkthrough session"),
+  P(300000,0,"Stratégie + campagne + accompagnement 1 mois pour la mise en œuvre (point chaque semaine)","Strategy + campaign + 1 month of hands-on support (weekly check-in)"),
+  P(500000,0,"Accompagnement 3 mois : mise en œuvre, suivi des résultats et ajustements","3-month support: execution, results tracking and adjustments",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* VIDÉO & MOTION */
+video:{t:["Votre projet vidéo","Your video project"],l:["Vidéos IA, montage et motion design.","AI videos, editing and motion design."],f:[
+ {id:'vtype',q:["Quel type de vidéo ?","What kind of video?"],type:'check',o:[["Publicité / film promotionnel","Ad / promo film"],["Reels et TikTok","Reels and TikTok"],["Présentation d'entreprise","Company presentation"],["Témoignage client","Customer testimonial"],["Animation de logo","Logo animation"],["Affiche animée","Animated poster"],["Infographie animée","Animated infographic"],["Montage de mes vidéos","Editing my footage"]]},
+ {id:'vobj',q:["Objectif de la vidéo","Video goal"],type:'radio',o:[["Me faire connaître","Get known"],["Convaincre","Convince"],["Vendre tout de suite","Sell now"]]},
+ {id:'vformat',q:["Formats","Formats"],type:'check',o:[["Vertical 9:16 (TikTok, Reels, Status)","Vertical 9:16 (TikTok, Reels, Status)"],["Portrait 4:5 (Facebook, Instagram)","Portrait 4:5 (Facebook, Instagram)"],["Horizontal 16:9 (YouTube, écran)","Landscape 16:9 (YouTube, screen)"]]},
+ {id:'vduree',q:["Durée idéale","Ideal length"],type:'radio',o:[["15 secondes","15 seconds"],["30 secondes","30 seconds"],["1 minute","1 minute"],["Plus d'1 minute","Over 1 minute"]]},
+ {id:'voix',q:["Voix off","Voice-over"],type:'radio',o:[["Voix IA","AI voice"],["Ma propre voix","My own voice"],["Sans voix, texte à l'écran","No voice, on-screen text"]]},
+ {id:'vlangue',q:["Langue de la vidéo","Video language"],type:'check',o:[["Français","French"],["Anglais","English"],["Langue locale","Local language"]]},
+ {id:'vmusique',q:["Ambiance musicale","Music mood"],type:'radio',o:[["Entraînante","Upbeat"],["Émouvante","Emotional"],["Élégante","Elegant"]]},
+ {id:'vfournis',q:["Ce que vous pouvez fournir","What you can provide"],type:'check',o:[["Logo","Logo"],["Photos","Photos"],["Vidéos","Videos"],["Textes","Texts"],["Rien, tout est à créer","Nothing, create it all"]]},
+ {id:'vmsg',q:["Le message principal à faire passer","The main message"],type:'area'}]},
+budgetVideo:{t:["Votre formule vidéo","Your video package"],l:["Le montage demande du temps et du soin : les formules commencent à 25 000 FCFA.","Editing takes time and care: packages start at 25,000 FCFA."],f:[
+ {id:'budvid',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(25000,0,"1 vidéo courte (jusqu'à 30 s) : montage, sous-titres, musique","1 short video (up to 30 s): editing, subtitles, music"),
+  P(50000,0,"1 vidéo jusqu'à 60 s : script, voix off IA, motion design simple","1 video up to 60 s: script, AI voice-over, simple motion design"),
+  P(100000,0,"3 vidéos, ou 1 film publicitaire IA complet","3 videos, or 1 full AI ad film"),
+  P(200000,0,"Campagne vidéo : 6 vidéos et plus, animations de logo et d'affiches","Video campaign: 6+ videos, logo and poster animations",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* AFFICHES */
+affiche:{t:["Vos affiches","Your posters"],l:["Des visuels PRO créés avec l'IA.","PRO visuals created with AI."],f:[
+ {id:'ause',q:["Pour quelle occasion ?","For what occasion?"],type:'check',o:[["Promotion","Promotion"],["Lancement de produit","Product launch"],["Événement","Event"],["Fête (Noël, Saint-Valentin…)","Holiday (Christmas, Valentine's…)"],["Recrutement","Recruiting"],["Liste de prix / menu","Price list / menu"],["Image de marque","Brand image"]]},
+ {id:'aformat',q:["Formats","Formats"],type:'check',o:[["Publication 4:5","Post 4:5"],["Statut / story 9:16","Status / story 9:16"],["Carré","Square"],["Impression A4 / A3","Print A4 / A3"],["Bannière / kakémono","Banner / roll-up"]]},
+ {id:'astyle',q:["Style souhaité","Desired style"],type:'radio',o:[["Premium et élégant","Premium and elegant"],["Coloré et festif","Colourful and festive"],["Minimaliste","Minimalist"],["Corporate","Corporate"]]},
+ {id:'acharte',q:["Avez-vous une charte graphique ?","Do you have brand guidelines?"],type:'radio',o:[["Oui, logo et couleurs","Yes, logo and colours"],["Juste un logo","Just a logo"],["Rien","Nothing"]]},
+ COUL,
+ {id:'aphotos',q:["Avez-vous des photos à intégrer ?","Do you have photos to include?"],type:'radio',o:[["Oui","Yes"],["Quelques-unes","A few"],["Non, créez-les avec l'IA","No, create them with AI"]]},
+ {id:'atexte',q:["Textes à mettre sur l'affiche","Text to put on the poster"],type:'area',h:["Titre, offre, prix, date, contacts…","Title, offer, price, date, contacts…"]}]},
+budgetAffiche:{t:["Votre formule affiches","Your poster package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budaff',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(10000,0,"1 affiche, 1 format","1 poster, 1 format"),
+  P(25000,0,"3 affiches, ou 1 affiche déclinée en 3 formats","3 posters, or 1 poster in 3 formats"),
+  P(50000,0,"Campagne de 6 affiches cohérentes","Campaign of 6 matching posters"),
+  P(100000,0,"15 affiches et plus, ou abonnement mensuel","15+ posters, or a monthly plan",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* SITE WEB */
+web:{t:["Votre site web","Your website"],l:["Un site qui présente, rassure et fait vendre.","A website that presents, reassures and sells."],f:[
+ {id:'wtype',q:["Quel type de site ?","What kind of website?"],type:'radio',o:[["Page de présentation unique","Single landing page"],["Site vitrine","Showcase website"],["Boutique en ligne","Online shop"],["Site de réservation","Booking website"],["Portfolio","Portfolio"],["Blog","Blog"]]},
+ {id:'wexist',q:["Avez-vous déjà un site ?","Do you already have a website?"],type:'radio',o:[["Non","No"],["Oui, à refaire","Yes, to rebuild"],["Oui, à améliorer","Yes, to improve"]]},
+ {id:'wurl',q:["Si oui, son adresse","If so, its address"],type:'text'},
+ {id:'wobj',q:["Ce que le site doit vous apporter","What the site should bring you"],type:'check',o:[["Présenter mon activité","Present my business"],["Recevoir des demandes sur WhatsApp","Get WhatsApp enquiries"],["Vendre en ligne","Sell online"],["Prendre des rendez-vous","Take bookings"],["Paraître crédible","Look credible"],["Toucher l'international","Reach international clients"]]},
+ {id:'wpages',q:["Pages souhaitées","Pages you want"],type:'check',o:[["Accueil","Home"],["À propos","About"],["Services / produits","Services / products"],["Réalisations","Portfolio"],["Tarifs","Pricing"],["Témoignages","Testimonials"],["Blog","Blog"],["Questions fréquentes","FAQ"],["Contact","Contact"]]},
+ {id:'wfonc',q:["Fonctionnalités","Features"],type:'check',o:[["Bouton WhatsApp","WhatsApp button"],["Formulaire de contact","Contact form"],["Paiement en ligne","Online payment"],["Réservation","Booking"],["Catalogue de produits","Product catalogue"],["Galerie photos / vidéos","Photo / video gallery"],["Français et anglais","French and English"],["Carte Google Maps","Google Maps"]]},
+ {id:'wpay',q:["Moyens de paiement (si vente en ligne)","Payment methods (if selling online)"],type:'check',o:["Orange Money","MTN Mobile Money",["Carte bancaire","Bank card"],"PayPal",["Paiement à la livraison","Cash on delivery"]]},
+ {id:'wnb',q:["Nombre de produits à mettre en ligne","Number of products to list"],type:'radio',o:[["Aucun","None"],["Moins de 20","Under 20"],["20 à 100","20 to 100"],["Plus de 100","Over 100"]]},
+ {id:'wcont',q:["Vos textes et photos sont-ils prêts ?","Are your texts and photos ready?"],type:'radio',o:[["Oui","Yes"],["En partie","Partly"],["Non, tout est à créer","No, create it all"]]},
+ {id:'wdom',q:["Avez-vous un nom de domaine (ex. monentreprise.com) ?","Do you have a domain name (e.g. mybusiness.com)?"],type:'radio',o:[["Oui","Yes"],["Non, à acheter","No, to buy"],["Je ne sais pas ce que c'est","I don't know what it is"]]},
+ {id:'wstyle',q:["Style souhaité","Desired style"],type:'radio',o:[["Premium et élégant","Premium and elegant"],["Moderne et coloré","Modern and colourful"],["Minimaliste","Minimalist"],["Corporate","Corporate"]]},
+ COUL,
+ {id:'wref',q:["Sites que vous aimez (liens) et pourquoi","Websites you like (links) and why"],type:'area'},
+ {id:'wmaj',q:["Qui mettra le site à jour ?","Who will update the site?"],type:'radio',o:[["Moi-même","Myself"],["CBS, avec un suivi mensuel","CBS, with monthly maintenance"],["Pas besoin de mises à jour","No updates needed"]]}]},
+budgetWeb:{t:["Votre formule site web","Your website package"],l:["Choisissez ce que vous souhaitez recevoir.","Choose what you want to receive."],f:[
+ {id:'budweb',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(100000,0,"Page de présentation unique avec bouton WhatsApp","Single landing page with WhatsApp button"),
+  P(200000,0,"Site vitrine jusqu'à 5 pages, formulaire de contact","Showcase site up to 5 pages, contact form"),
+  P(350000,0,"Site complet : catalogue ou réservation, français et anglais","Full site: catalogue or booking, French and English"),
+  P(600000,0,"Boutique en ligne avec paiement","Online shop with payment",1)]},
+ {id:'delai',q:["Pour quand ?","By when?"],type:'radio',o:DELAI}]},
+/* COMPLET */
+complet:{t:["Votre accompagnement complet","Your full package"],l:["Stratégie, community management et vidéos, avec une seule interlocutrice.","Strategy, social media and videos, with one single contact."],f:[
+ {id:'cprio',q:["Votre priorité numéro 1","Your number 1 priority"],type:'radio',o:[["Être visible","Be visible"],["Vendre plus","Sell more"],["Avoir une image pro","Look professional"],["Lancer ma marque","Launch my brand"]]},
+ {id:'cres',q:["Réseaux à gérer","Networks to manage"],type:'check',o:RESEAUX},
+ {id:'cobj',q:["Votre objectif chiffré","Your target in numbers"],type:'text',h:["Ex. 20 nouveaux clients par mois, 1 000 abonnés de plus","E.g. 20 new customers a month, 1,000 more followers"]},
+ {id:'cextra',q:["Besoins en plus (facturés à part)","Extra needs (billed separately)"],type:'check',o:[["Logo","Logo"],["Affiches supplémentaires","Extra posters"],["Site web","Website"],["Rien d'autre","Nothing else"]]}]},
+budgetComplet:{t:["Votre formule accompagnement complet","Your full package"],l:["Formules mensuelles. Le budget publicité reste à votre charge, en plus de la formule.","Monthly packages. Ad spend is paid by you, on top of the package."],f:[
+ {id:'budcomp',q:TIERQ,h:TIERH,type:'tier',req:1,o:[
+  P(150000,1,"Stratégie du mois + community management 1 réseau (12 publications) + 2 vidéos","Monthly strategy + 1 network (12 posts) + 2 videos"),
+  P(250000,1,"Stratégie + 2 réseaux (20 publications) + 4 vidéos + 4 affiches","Strategy + 2 networks (20 posts) + 4 videos + 4 posters"),
+  P(400000,1,"Stratégie + 3 réseaux (30 publications) + 6 vidéos + 1 campagne par mois + rapport","Strategy + 3 networks (30 posts) + 6 videos + 1 campaign a month + report"),
+  P(700000,1,"Premium : tous vos réseaux, publication quotidienne, 10 vidéos, campagnes, suivi chaque semaine","Premium: all networks, daily posts, 10 videos, campaigns, weekly follow-up",1)]},
+ {id:'cduree',q:["Durée de l'accompagnement","Length of support"],type:'radio',o:[["3 mois","3 months"],["6 mois","6 months"],["12 mois","12 months"]]},
+ {id:'delai',q:["Quand voulez-vous démarrer ?","When do you want to start?"],type:'radio',o:DELAI}]},
+docs:{t:["Vos documents","Your documents"],l:["Logo, photos, cahier des charges, présentation… tout ce qui peut m'aider.","Logo, photos, brief, presentation… anything that can help."],f:[
+ {id:'liensdocs',q:["Liens utiles","Useful links"],type:'area',h:["Google Drive, Dropbox, pages, photos, vidéos…","Google Drive, Dropbox, pages, photos, videos…"]},
+ {id:'fichiers',q:["Vos fichiers (Word, PDF, images)","Your files (Word, PDF, images)"],type:'files',h:["Sélectionnez-les ici, puis joignez-les dans la conversation WhatsApp après l'envoi : je saurai quels fichiers attendre.","Select them here, then attach them in the WhatsApp chat after sending: I will know which files to expect."]}]},
+contactX:{t:["Vos coordonnées","Your contact details"],l:["Pour que je puisse revenir vers vous rapidement.","So I can get back to you quickly."],f:[
+ {id:'nom',q:["Votre nom et prénom","Your full name"],type:'text',req:1},
+ {id:'whatsapp',q:["Votre numéro WhatsApp (avec indicatif)","Your WhatsApp number (with country code)"],type:'tel',req:1,h:["Ex. +237 6XX XX XX XX","E.g. +237 6XX XX XX XX"]},
+ {id:'email',q:["Votre e-mail","Your email"],type:'email'},
+ {id:'pays',q:["Pays et ville","Country and city"],type:'text'}]},
+express:{t:["Votre besoin","Your need"],l:["En quelques mots, l'essentiel.","In a few words, the essentials."],f:[
+ {id:'societe',q:["Nom de votre entreprise","Business name"],type:'text',req:1},
+ {id:'secteur',q:["Secteur d'activité","Industry"],type:'text'},
+ {id:'besoin',q:["Décrivez votre besoin","Describe your need"],type:'area',h:["Ce que vous voulez obtenir, pour quand, et tout ce qui peut m'aider.","What you want to achieve, by when, and anything that can help."]},
+ {id:'liens',q:["Liens de vos pages (facultatif)","Links to your pages (optional)"],type:'text'}]},
+fin:{t:["Pour finir","To finish"],l:["Merci pour votre temps !","Thank you for your time!"],f:[
+ {id:'source',q:["Comment avez-vous connu CBS ?","How did you hear about CBS?"],type:'radio',o:["Facebook","Instagram","TikTok","WhatsApp","LinkedIn",["Recommandation","Referral"]]},
+ {id:'plus',q:["Autre chose à me dire ?","Anything else to tell me?"],type:'area'}]}
+};
+
+/* ---------- services ---------- */
+const IC={
+logo:'<path d="M12 3l2.6 5.6L20 9.3l-4 4 1 5.7L12 16.3 7 19l1-5.7-4-4 5.4-.7z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>',
+cm:'<path d="M4 5h16v10H9l-5 4z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>',
+strat:'<path d="M4 19l5-6 4 3 7-9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h5v5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>',
+video:'<rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M16 10l5-3v10l-5-3z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>',
+affiche:'<rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M5 15l4-4 4 4 2-2 4 4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="14.5" cy="8" r="1.6" fill="#fff"/>',
+web:'<rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M3 9h18" stroke="#fff" stroke-width="1.8"/><circle cx="6.5" cy="6.5" r=".9" fill="#fff"/><circle cx="9.5" cy="6.5" r=".9" fill="#fff"/>',
+complet:'<path d="M4 10l8-6 8 6M6 9v10h12V9" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 19v-5h4v5" fill="none" stroke="#fff" stroke-width="1.8"/>'};
+const SV=[
+{id:'logo',c:'#1b2550',from:30000,n:["Création de logo","Logo design"],d:["Un logo unique qui vous ressemble, avec ses déclinaisons et votre charte.","A unique logo that looks like you, with variations and brand guidelines."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','logoNom','personnalite','style','couleurs','typo','inspirations','supports','budgetLogo','docs','fin']},
+{id:'cm',c:'#1b2550',from:50000,mo:1,n:["Community management","Social media management"],d:["Animation de vos pages, calendrier éditorial et gestion de vos publicités.","Page management, content calendar and ad management."],m:8,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','cm','budgetCM','docs','fin']},
+{id:'strat',c:'#1b2550',from:70000,n:["Stratégie et campagnes de communication","Strategy and communication campaigns"],d:["Un plan clair et des campagnes pour attirer, convaincre et convertir.","A clear plan and campaigns to attract, convince and convert."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','strat','marche','campagne','budgetStrat','docs','fin']},
+{id:'video',c:'#1b2550',from:25000,n:["Vidéos IA, montage et motion design","AI videos, editing and motion design"],d:["Films publicitaires, Reels, TikTok, animations de logo et d'affiches.","Ad films, Reels, TikTok, logo and poster animations."],m:6,
+ s:['contact','entreprise','positionnement','clients','video','budgetVideo','docs','fin']},
+{id:'affiche',c:'#1b2550',from:10000,n:["Affiches PRO IA","AI PRO posters"],d:["Affiches, visuels de campagne et flyers premium qui font vendre.","Posters, campaign visuals and premium flyers that sell."],m:5,
+ s:['contact','entreprise','positionnement','clients','affiche','budgetAffiche','docs','fin']},
+{id:'web',c:'#1b2550',from:100000,n:["Site web","Website"],d:["Site vitrine, page de présentation ou boutique en ligne, relié à votre WhatsApp.","Showcase site, landing page or online shop, linked to your WhatsApp."],m:8,
+ s:['contact','dirigeant','entreprise','positionnement','clients','web','budgetWeb','docs','fin']},
+{id:'complet',c:'#1b2550',full:1,from:150000,mo:1,n:["Accompagnement complet","Full package"],d:["Stratégie, community management et vidéos chaque mois : je m'occupe de tout.","Strategy, social media and videos every month: I handle everything."],m:12,
+ s:['contact','dirigeant','entreprise','evaluation','positionnement','clients','strat','complet','budgetComplet','docs','fin']}];
+const WORK=[
+ {s:["Community management","Social media management"],b:["TCHM Formations (William Tchemi)","Grace Clean","Babo Wipe"]},
+ {s:["Affiches PRO IA","AI PRO posters"],b:["NaturAfrik","Visite Kribi","Awe's Rent Cars","PaySika","KTLMS Group"]},
+ {s:["Motion design et montage vidéo","Motion design and video editing"],b:["Visite Kribi","Grace Clean","TCHM Formations (William Tchemi)"]}];
+
+/* ---------- contenu agence ---------- */
+const CLIENTS=["William Tchemi · TCHM Formations","Grace Clean","Visit Kribi","NaturAfrik","Sublime by Estelle","Awe's Rent Cars","PaySika","KTLMS Group","Babo Wipe","3M Fashion"];
+const CLIENTS_OLD=["TCHM Formations","Grace Clean","Visit Kribi","Babo Wipe","KTLMS Group","Sublime by Estelle","NaturAfrik","Awe's Rent Cars","PaySika","3M Fashion"];
+const STATS=[{n:10,s:"+",l:["marques accompagnées","brands supported"]},{n:29.9,s:" K",d:1,l:["vues en 28 jours sur la page TCHM","views in 28 days on the TCHM page"]},{n:96,s:" %",l:["de ces vues hors abonnés","of those views from non-followers"]},{n:15.6,s:" K",d:1,l:["vues en 28 jours sur la page Grace Clean","views in 28 days on the Grace Clean page"]}];
+const METHOD=[[["Écoute","Listen"],["Votre brief, vos objectifs, vos clients : je comprends votre business avant de créer.","Your brief, goals and customers: I understand your business before creating."]],[["Stratégie","Strategy"],["Le bon message, pour la bonne cible, sur le bon réseau, au bon moment.","The right message, for the right audience, on the right network, at the right time."]],[["Création","Creation"],["Visuels, vidéos IA, textes et campagnes, dans votre charte.","Visuals, AI videos, copy and campaigns, in your brand style."]],[["Résultats","Results"],["Publication, suivi des chiffres et ajustements pour vendre plus.","Publishing, tracking the numbers and adjusting to sell more."]]];
+const CATS=[["all",["Tout","All"]],["cm",["Community management","Social media"]],["video",["Vidéos & motion","Video & motion"]],["aff",["Affiches & campagnes","Posters & campaigns"]],["id",["Identité visuelle","Visual identity"]]];
+const GAL=[];
+const CASES=[];
+const TOOLS=["Canva","CapCut","ChatGPT","Claude","PixVerse","HeyGen","Higgsfield","Suno","Meta Business Suite","HubSpot"];
+const FAQ=[
+ [["Je ne suis pas à Douala, pouvez-vous travailler avec moi ?","I'm not in Douala, can you work with me?"],["Oui. Tous les services sont réalisés à distance, pour des clients en Afrique, en Europe et ailleurs. Nous échangeons sur WhatsApp et par e-mail.","Yes. All services are delivered remotely, for clients in Africa, Europe and beyond. We talk on WhatsApp and by email."]],
+ [["Comment se passe une commande ?","How does an order work?"],["Vous remplissez le brief, je vous envoie une proposition et un devis, vous validez, je crée, puis vous recevez vos fichiers et les retouches prévues dans votre formule.","You fill in the brief, I send a proposal and a quote, you approve, I create, then you receive your files and the revisions included in your package."]],
+ [["Quels sont les délais ?","What are the timelines?"],["Ils dépendent du service et de la formule. La date de livraison est fixée avec vous dans le devis, avant le démarrage.","They depend on the service and package. The delivery date is agreed with you in the quote, before we start."]],
+ [["Comment se fait le paiement ?","How do I pay?"],["Les modalités de paiement sont précisées dans votre devis.","Payment terms are set out in your quote."]],
+ [["Le budget publicité est-il compris ?","Is the ad budget included?"],["Non. Le budget publicité est payé directement par vous à Facebook, Instagram ou TikTok, en plus de la formule.","No. The ad budget is paid by you directly to Facebook, Instagram or TikTok, on top of the package."]],
+ [["Puis-je commencer par une petite formule ?","Can I start with a small package?"],["Oui. Chaque service commence par une formule d'entrée, et vous pouvez évoluer ensuite vers un accompagnement plus complet.","Yes. Each service starts with an entry package, and you can move up to fuller support later."]]];
+const WA_ICON='<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>';
+
+const VALUES2=[
+ [["Créativité","Creativity"],["Des idées neuves et des visuels qui arrêtent le scroll, pensés pour votre marque.","Fresh ideas and scroll-stopping visuals, designed for your brand."],'<path d="M12 3a6 6 0 0 0-3.5 10.9V17h7v-3.1A6 6 0 0 0 12 3zM9.5 20h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'],
+ [["Fiabilité","Reliability"],["Des délais tenus, une communication claire et un suivi à chaque étape.","Deadlines met, clear communication and follow-up at every step."],'<path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>'],
+ [["Réactivité","Responsiveness"],["Une réponse rapide sur WhatsApp et des ajustements dès que vos chiffres le demandent.","Fast replies on WhatsApp and adjustments as soon as your numbers call for it."],'<path d="M13 3L5 14h6l-1 7 8-11h-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>']];
+const TESTI=[]; // vrais témoignages à ajouter : {t:["texte FR","texte EN"],n:"Nom",r:"Entreprise",s:5}
+const STAT_IC=['<path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>','<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.6"/>','<path d="M16 19v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M9 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM22 19v-1a4 4 0 0 0-3-3.9M16 4.1a3 3 0 0 1 0 5.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>','<path d="M4 17l6-6 4 4 7-7M15 8h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'];
+/* ---------- état ---------- */
+let D={};try{D=JSON.parse(localStorage.getItem('cbs-data'))||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('cbs-data',JSON.stringify(D))}catch(e){}};
+let svc=null,cur=0,started=false,sent=false,mode=null,galf='all',galn=12;
+const post=(name,obj)=>fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':name,...obj}).toString()}).then(r=>r.ok);
+const base=()=>({service:FR(svc.n)+(mode==='express'?' (express)':''),nom:D.nom||'',whatsapp:D.whatsapp||'',email:D.email||'',langue:lang==='en'?'anglais':'français'});
+const formule=()=>{for(const st of steps())for(const f of st.f)if(f.type==='tier'&&D[f.id]!=null)return val(f);return ''};
+
+/* ---------- rendu accueil ---------- */
+const zz=(c,w)=>`<svg class="zzanim" viewBox="0 0 260 40" width="${w}" aria-hidden="true"><path d="M0 30 L20 8 L40 30 L60 8 L80 30 L100 8 L120 30 L140 8 L160 30 L180 8 L200 30 L220 8 L240 30 L260 8" fill="none" stroke="${c}" stroke-width="5" stroke-linejoin="round"/></svg>`;
+const zs='<svg viewBox="0 0 60 16" aria-hidden="true"><path d="M0 12 L7.5 4 L15 12 L22.5 4 L30 12 L37.5 4 L45 12 L52.5 4 L60 12" fill="none" stroke="#e07a95" stroke-width="2.4" stroke-linejoin="round"/></svg>';
+const K=k=>`<span class="kick sk">${zs}${esc(T(k))}</span>`;
+const fmtN=(n,d)=>{const v=d?n.toFixed(d):String(Math.round(n));return lang==='en'?v:v.replace('.',',')};
+const galList=()=>GAL.filter(g=>galf==='all'||g[1]===galf);
+const galHTML=()=>galList().slice(0,galn).map(g=>`<button type="button" class="gi" data-img="${g[0]}" data-cap="${esc(g[2])}"><img src="${g[0]}.webp" alt="${esc(g[2])}" loading="lazy"><small>${esc(g[2])}</small></button>`).join('');
+const SLIDES=[
+ {k:'slogan',h:["Bienvenue chez CBS","Welcome to CBS"],p:'heroP',img:'prisca.webp',round:1,b:[['services','startP','pri'],['realisations','seeWork','ghost']],h1:1},
+ {k:["Qui sommes-nous ?","Who are we?"],h:["Une agence complète, une seule interlocutrice","A full agency, one single contact"],p:["De la stratégie à la création, CBS accompagne entrepreneurs, PME et marques en Afrique, en Europe et au-delà, avec des tarifs accessibles et un suivi direct.","From strategy to creation, CBS supports entrepreneurs, SMEs and brands in Africa, Europe and beyond, with affordable rates and direct follow-up."],img:'c-kribi-affiche.webp',b:[['apropos',["Découvrir CBS","Discover CBS"],'pri']]},
+ {k:["Ce que nous faisons","What we do"],h:["Des contenus qui attirent, des stratégies qui font vendre","Content that attracts, strategies that sell"],p:["Community management, vidéos IA, affiches PRO, stratégie, campagnes et sites web.","Social media management, AI videos, PRO posters, strategy, campaigns and websites."],img:'r-gc-newweek.webp',b:[['services',["Nos services","Our services"],'pri']]},
+ {k:["Nos résultats","Our results"],h:["29,9 K vues en 28 jours pour TCHM Formations","29.9K views in 28 days for TCHM Formations"],p:["96 % de ces vues viennent de personnes qui ne suivaient pas encore la page (Meta Business Suite, octobre 2026).","96% of those views came from people who did not follow the page yet (Meta Business Suite, October 2026)."],img:'r-tchm-novembre.webp',b:[['realisations','seeWork','pri']]}];
+const tx=v=>Array.isArray(v)?L(v):T(v);
+const VALS=[[["Une seule interlocutrice","One single contact"],["De la stratégie à la création, vous parlez à la même personne.","From strategy to creation, you talk to the same person."],'<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 20c0-4 3.6-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'],
+ [["Des tarifs accessibles","Affordable rates"],["Une qualité d'agence, des formules claires adaptées à votre budget.","Agency quality, clear packages that fit your budget."],'<path d="M4 12l8-8 8 8-8 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'],
+ [["Un suivi direct","Direct follow-up"],["Un accompagnement personnalisé, à distance, partout dans le monde.","Personal support, remotely, anywhere in the world."],'<path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>']];
+const E=k=>`<span class="eyebrow">${zs}${esc(tx(k))}</span>`;
+const home=()=>`<section class="slider" id="top" aria-roledescription="carousel"><video class="hbg" id="hbg" muted loop playsinline preload="none" poster="hero-loop.webp" aria-hidden="true"><source src="hero-loop.mp4" type="video/mp4"></video><div class="hshade"></div><div class="sbar"><i id="sbar"></i></div>
+${SLIDES.map((s,i)=>`<div class="slide${i===0?' on':''}" aria-hidden="${i!==0}"><div class="txt">${E(s.k)}${s.h1?`<h1>${esc(L(s.h))}</h1>`:`<h2>${esc(L(s.h))}</h2>`}<p>${esc(tx(s.p))}</p>
+<div class="row">${s.b.map(b=>`<button type="button" class="btn ${b[2]}" data-go="${b[0]}">${esc(tx(b[1]))}</button>`).join('')}</div></div>
+<div class="vis${s.round?' round':''}"><img src="${s.img}" alt="" ${i?'loading="lazy"':''}></div></div>`).join('')}
+<div class="sctl"><div class="in"><div class="dots">${SLIDES.map((s,i)=>`<button type="button" data-sl="${i}" aria-label="${i+1}" aria-current="${i===0}"></button>`).join('')}</div><button type="button" class="arr" id="sprev" aria-label="Précédent">←</button><button type="button" class="arr" id="snext" aria-label="Suivant">→</button></div></div>
+</section>
+<div class="clients5" aria-label="${esc(T('trust'))}"><div class="tr">${[...CLIENTS,...CLIENTS].map(c=>`<span>${esc(c)}</span>`).join('')}</div></div>
+<section class="sec5 rv" id="apropos"><div class="in about5">
+ <div>${E(["Qui sommes-nous ?","Who are we?"])}<h2 class="h2">${esc(L(["Creative Business Solutions","Creative Business Solutions"]))}</h2>
+ <p class="lead5" style="margin-bottom:18px">${esc(L(["CBS est une agence de marketing, de stratégie commerciale et de communication digitale. Nous aidons les marques à être vues, comprises et choisies, avec des contenus pensés pour vendre.","CBS is a marketing, sales strategy and digital communication agency. We help brands get seen, understood and chosen, with content built to sell."]))}</p>
+ <p class="lead5">${esc(T('p2'))}</p></div>
+ <div class="vals">${VALS.map(v=>`<div class="val"><span class="vi"><svg viewBox="0 0 24 24" aria-hidden="true">${v[2]}</svg></span><div><b>${esc(L(v[0]))}</b><p>${esc(L(v[1]))}</p></div></div>`).join('')}</div>
+</div>
+<div class="in" style="margin-top:clamp(40px,6vw,70px)"><div class="center">${E('kVal')}<h3 class="h2" style="font-size:clamp(24px,3.4vw,32px)">${esc(T('valT'))}</h3></div><div class="vcards">${VALUES2.map(v=>`<div class="vcard"><span class="vci"><svg viewBox="0 0 24 24" aria-hidden="true">${v[2]}</svg></span><b>${esc(L(v[0]))}</b><p>${esc(L(v[1]))}</p></div>`).join('')}</div>
+</div></section>
+<section class="sec5 rv" id="services"><div class="in">
+ ${E('kSvc')}<h2 class="h2">${esc(T('svcTitle'))}</h2><p class="lead5">${esc(T('svcLead'))}</p>
+ <div class="svc5">${SV.map(s=>`<button type="button" data-s="${s.id}"><span class="si"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[s.id]}</svg></span><h3>${esc(L(s.n))}</h3><p>${esc(L(s.d))}</p><span class="go5">${esc(T('start'))} →</span></button>`).join('')}</div>
+</div></section>
+<section class="sec5 dark rv" id="showreel"><div class="in">
+ ${E(["Nos vidéos","Our videos"])}<h2 class="h2">${esc(L(["Des spots qui arrêtent le scroll","Ads that stop the scroll"]))}</h2><p class="lead5">${esc(L(["Spots publicitaires, storytelling et motion design créés par CBS. Appuyez sur lecture.","Video ads, storytelling and motion design created by CBS. Press play."]))}</p>
+ <div class="vids">${SHOW.map(v=>`<figure class="vid dk"><video controls playsinline preload="none" poster="${v[0]}.webp"><source src="${v[0]}.mp4" type="video/mp4"></video><figcaption><b>${esc(L(v[1]))}</b><span>${esc(v[2])}</span></figcaption></figure>`).join('')}</div>
+</div></section>
+<section class="sec5 alt rv" id="realisations"><div class="in">
+ ${E('kWork')}<h2 class="h2">${esc(T('workT'))}</h2><p class="lead5">${esc(L(["Une sélection de projets. Touchez une couverture pour voir tout ce que j'ai réalisé : vidéos et visuels.","A selection of projects. Tap a cover to see everything I made for them: videos and visuals."]))}</p>
+ ${clientCards()}
+ <p class="others"><span>${esc(L(["Ils nous ont aussi fait confiance","They also trusted us"]))} :</span> ${OTHERS.map(o=>`<b>${esc(o)}</b>`).join(' · ')} ${esc(L(["et bien d'autres.","and many more."]))}</p>
+</div></section>
+<section class="sec5 dark rv" id="stats"><div class="in">
+ ${E('kRes')}<h2 class="h2">${esc(T('statsT'))}</h2><p class="lead5">${esc(T('statsSrc'))}</p>
+ <div class="stats5">${STATS.map((x,i)=>`<div><span class="sti"><svg viewBox="0 0 24 24" aria-hidden="true">${STAT_IC[i]}</svg></span><b data-n="${x.n}" data-d="${x.d||0}" data-s="${x.s}">0${x.s}</b><span>${esc(L(x.l))}</span></div>`).join('')}</div>
+</div></section>
+<section class="sec5 alt rv" id="methode"><div class="in">
+ ${E('kMeth')}<h2 class="h2">${esc(T('methT'))}</h2><p class="lead5">${esc(T('methL'))}</p>
+ <div class="meth5">${METHOD.map((m,i)=>`<div><i>0${i+1}</i><b>${esc(L(m[0]))}</b><p>${esc(L(m[1]))}</p></div>`).join('')}</div>
+</div></section>
+<section class="sec5 rv" id="fondatrice"><div class="in found">
+ <div class="pcard"><img src="prisca.webp" alt="Prisca Ornela"><b>Prisca Ornela</b><small>${esc(L(["Fondatrice de CBS · Douala, Cameroun","Founder of CBS · Douala, Cameroon"]))}</small>
+  <div class="tags">${[["Marketing digital","Digital marketing"],["Contenu & IA","Content & AI"],["Stratégie commerciale","Sales strategy"]].map(t=>`<span>${esc(L(t))}</span>`).join('')}</div>
+  <div class="soc5"><a href="${LI_URL}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2"/><path d="M7 10v7M7 7.2v.1M11 17v-4.2c0-1.6 1-2.6 2.3-2.6s2.2 1 2.2 2.6V17M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></a><a href="${TT_URL}" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#111"/><path d="M13.5 5.5v8.3a2.6 2.6 0 1 1-2.6-2.6M13.5 5.5c.4 1.8 1.6 3 3.6 3.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></a><a href="https://wa.me/${WA}" target="_blank" rel="noopener" aria-label="WhatsApp" style="background:#1f9d55">${WA_ICON.replace('<svg ','<svg style="width:22px;height:22px" ')}</a></div></div>
+ <div>${E(["La fondatrice","The founder"])}<h2 class="h2">Prisca Ornela</h2>
+  <blockquote>${esc(L(["« Chaque contenu doit servir un objectif : vous apporter des clients. »","“Every piece of content must serve one goal: bringing you customers.”"]))}</blockquote>
+  <p class="lead5" style="margin-bottom:24px">${esc(T('about1'))}</p>
+  <a class="btn line" href="https://wa.me/${WA}" target="_blank" rel="noopener">${esc(T('contactMe'))}</a></div>
+</div></section>
+${TESTI.length?`<section class="sec5 rv" id="temoignages"><div class="in"><div class="center">${E('kTes')}<h2 class="h2">${esc(T('tesT'))}</h2></div>
+ <div class="tes">${TESTI.map(t=>`<figure class="tcard"><div class="tst">${'★'.repeat(t.s||5)}</div><blockquote>${esc(L(t.t))}</blockquote><figcaption><b>${esc(t.n)}</b>${esc(t.r)}</figcaption></figure>`).join('')}</div></div></section>`:''}
+<section class="sec5 rv" id="avis"><div class="in">
+ <div class="center">${E('kRev')}<h2 class="h2">${esc(T('revT'))}</h2><p class="lead5">${esc(T('revL'))}</p></div>
+ <form class="rev" id="revform" novalidate>
+  <span class="q" style="display:block;text-align:center;font-weight:600">${esc(T('revNote'))}</span>
+  <div class="stars" role="radiogroup" aria-label="${esc(T('revNote'))}">${[5,4,3,2,1].map(n=>`<input type="radio" name="rnote" id="rn${n}" value="${n}"><label for="rn${n}" aria-label="${n}/5">★</label>`).join('')}</div>
+  <div class="f"><label for="rcom">${esc(T('revCom'))}</label><textarea id="rcom" placeholder="${esc(T('revComH'))}"></textarea></div>
+  <div class="f"><label for="rnom">${esc(T('revNom'))}</label><input type="text" id="rnom"></div>
+  <p class="err" id="rerr" role="alert"></p>
+  <div class="row" style="justify-content:center"><button type="submit" class="btn pri">${esc(T('revSend'))}</button></div>
+  <p class="ok" id="rok"></p><div class="row" id="rwa" style="justify-content:center;display:none"></div>
+ </form>
+</div></section>
+<section class="sec5 alt rv" id="faq"><div class="in faq5 faq">
+ <div class="center">${E('kFaq')}<h2 class="h2">${esc(T('faqT'))}</h2></div>${FAQ.map(f=>`<details><summary>${esc(L(f[0]))}</summary><p>${esc(L(f[1]))}</p></details>`).join('')}
+</div></section>
+<section class="sec5 dark cta5 rv" id="contact"><div class="in">
+ ${E('kCt')}<h2 class="h2">${esc(T('ctaT'))}</h2><p class="lead5" style="margin:0 auto 28px">${esc(T('ctaP'))}</p>
+ <div class="row"><button type="button" class="btn pri" data-go="services">${esc(T('startP'))}</button><a class="btn ghost" href="https://wa.me/${WA}" target="_blank" rel="noopener">${esc(T('contactMe'))}</a></div>
+</div></section>`;
+let sIdx=0,sTimer=null;
+const runBar=()=>{const b=$('sbar');if(!b)return;b.classList.remove('run');void b.offsetWidth;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)b.classList.add('run')};
+const showSlide=i=>{const sl=document.querySelectorAll('.slide');if(!sl.length)return;runBar();sIdx=(i+sl.length)%sl.length;
+ sl.forEach((s,j)=>{s.classList.toggle('on',j===sIdx);s.setAttribute('aria-hidden',j!==sIdx)});
+ document.querySelectorAll('[data-sl]').forEach((d,j)=>d.setAttribute('aria-current',j===sIdx))};
+const startSlider=()=>{clearInterval(sTimer);if(client||svc)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;sTimer=setInterval(()=>{if(!svc&&!client)showSlide(sIdx+1)},5500)};
+
+const SXX={logo:'estelle',cm:'tchm',strat:'kribi',video:'gc',affiche:'natur',web:null,complet:'tchm'};
+const svcIncl=()=>{const st=svc.s.filter(k=>k.startsWith('budget')).pop();const f=ST[st].f.find(x=>x.type==='tier');return f?f.o.map(o=>L(o.d)):[]};
+const svcEx=()=>{const id=SXX[svc.id];if(!id)return `<div class="sex" style="cursor:default"><img src="hero-loop.webp" alt=""><span><b>${esc(L(["Ce site","This website"]))}</b>${esc(L(["Conçu par CBS","Designed by CBS"]))}</span></div>`;const c=CL.find(x=>x.id===id);return `<button type="button" class="sex" data-cl="${c.id}"><img src="${cimg(c.cover)}" alt="${esc(c.n)}"><span><b>${esc(c.n)}</b>${esc(L(["Voir le projet","See the project"]))} →</span></button>`};
+const chooser=()=>{const c='#e07a95';return `<button type="button" class="back" id="home">${esc(T('allSvc'))}</button>
+ <div class="panel step" style="--c:${c}"><div class="fhead"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[svc.id]}</svg></span><div><small>CBS</small><b>${esc(L(svc.n))}</b></div></div>
+ <p class="lead" style="margin:4px 0 18px">${esc(L(svc.d))}</p>
+ <div class="sdet"><div><h3 style="font:500 20px Newsreader,serif;margin:0 0 12px">${esc(T('incT'))}</h3><ul>${svcIncl().map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h3 style="font:500 20px Newsreader,serif;margin:0 0 12px">${esc(T('exT'))}</h3>${svcEx()}</div></div>
+ <h2>${esc(T('modeT'))}</h2>
+ <div class="modes"><button type="button" class="mode" data-m="express"><span class="t">${esc(T('mxT'))}</span><b>${esc(T('mx'))}</b><p>${esc(T('mxD'))}</p></button>
+ <button type="button" class="mode" data-m="full"><span class="t">${svc.m} ${esc(T('min'))}</span><b>${esc(T('mf'))}</b><p>${esc(T('mfD'))}</p></button></div>
+ <p class="privacy">${esc(T('privacy'))}</p></div>`};
+const foot=()=>`<div class="in"><div><div class="logo"><img src="logo-cbs.png" alt="CBS"></div><p>${esc(T('footAbout'))}</p><p style="color:var(--rose);font:italic 17px Newsreader,serif">${esc(T('slogan'))}</p></div>
+ <div><b>${esc(T('footNav'))}</b>${U.nav.map(n=>`<button type="button" data-go="${n[1]}">${esc(L(n[0]))}</button>`).join('')}</div>
+ <div><b>${esc(T('footContact'))}</b><a href="https://wa.me/${WA}" target="_blank" rel="noopener">WhatsApp +237 673 77 78 52</a><a href="mailto:priscabikoi97@gmail.com">priscabikoi97@gmail.com</a><span style="display:block;padding:4px 0">Douala, Cameroun</span><a href="https://www.linkedin.com/in/prisca-ornela-bikoi-a222a0335" target="_blank" rel="noopener">LinkedIn · Prisca Ornela Bikoi</a><a href="https://www.tiktok.com/@ornela.priss" target="_blank" rel="noopener">TikTok · @ornela.priss</a></div></div>
+
+ <div class="in nl"><div><b style="font:500 22px Newsreader,serif;color:#fff">${esc(T('nlT'))}</b><p style="margin:4px 0 0">${esc(T('nlP'))}</p></div>
+ <form id="nlform" class="nlf" novalidate><input type="email" id="nlmail" placeholder="${esc(T('nlPh'))}" aria-label="${esc(T('nlPh'))}"><button type="submit" class="btn pri" aria-label="OK">→</button><p id="nlmsg" class="nlmsg" role="status"></p></form></div>
+ <div class="in" style="display:block"><details class="pol"><summary>${esc(T('polT'))}</summary>${U.pol.map(x=>`<p>${esc(L(x))}</p>`).join('')}</details>
+ <p class="legal">© 2026 CBS – Creative Business Solutions · Prisca Ornela. ${esc(T('rights'))} ${esc(T('privacy'))}</p></div>`;
+
+/* ---------- rendu formulaire ---------- */
+const field=f=>{
+ const r=f.req&&!APERCU?' <span class="req">*</span>':(f.req?' <span class="req">*</span>':'');const h=f.h?`<p class="help">${esc(L(f.h))}</p>`:'';
+ if(f.type==='text'||f.type==='tel'||f.type==='email')return `<div class="f"><label for="${f.id}">${esc(L(f.q))}${r}</label>${h}<input type="${f.type}" id="${f.id}" value="${esc(D[f.id]||'')}"></div>`;
+ if(f.type==='area')return `<div class="f"><label for="${f.id}">${esc(L(f.q))}${r}</label>${h}<textarea id="${f.id}">${esc(D[f.id]||'')}</textarea></div>`;
+ if(f.type==='radio'||f.type==='check'){const v=D[f.id];const t=f.type==='radio'?'radio':'checkbox';
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}${r}</span>${h}<div class="chips">${f.o.map((o,i)=>`<label><input type="${t}" name="${f.id}" value="${i}" ${(t==='radio'?v===i:Array.isArray(v)&&v.includes(i))?'checked':''}>${esc(L(o))}</label>`).join('')}</div></div>`}
+ if(f.type==='swatch'){const v=Array.isArray(D[f.id])?D[f.id]:[];
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}<span class="count" id="cnt">${v.length}/${f.max}</span></span>${h}<div class="chips">${SWATCH.map((c,i)=>`<label><input type="checkbox" name="${f.id}" data-max="${f.max}" value="${i}" ${v.includes(i)?'checked':''}><span class="dot" style="background:${c[0]}"></span>${esc(lang==='en'?c[2]:c[1])}</label>`).join('')}</div></div>`}
+ if(f.type==='tier'){const v=D[f.id];
+  return `<div class="f" role="group"><span class="q">${esc(L(f.q))}${r}</span>${h}<div class="tiers">${f.o.map((o,i)=>`<label><input type="radio" name="${f.id}" value="${i}" ${v===i?'checked':''}><b>${esc(priceL(o,lang))}</b><span>${esc(L(o.d))}</span></label>`).join('')}</div></div>`}
+ if(f.type==='files'){const v=Array.isArray(D[f.id])?D[f.id]:[];
+  return `<div class="f"><label for="${f.id}">${esc(L(f.q))}</label>${h}<input type="file" id="${f.id}" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,image/*" data-files="1"><p class="help" id="${f.id}-list">${v.map(esc).join(' · ')}</p></div>`}
+ if(f.type==='scale')return `<div class="f">${f.o.map((p,i)=>`<div class="sc"><span>${esc(L(p[0]))}</span><input type="range" min="1" max="5" step="1" id="${f.id}${i}" aria-label="${esc(L(p[0])+' / '+L(p[1]))}" value="${D[f.id+i]||3}"><span>${esc(L(p[1]))}</span></div>`).join('')}</div>`;
+};
+const steps=()=>(mode==='express'?['contactX','express',svc.s.filter(k=>k.startsWith('budget')).pop(),'fin']:svc.s).map(k=>ST[k]);
+const form=()=>{
+ const S=steps(),n=S.length+1,c='#e07a95';
+ let body;
+ if(cur<S.length){const s=S[cur];body=`<div class="step"><h2>${esc(L(s.t))}</h2><p class="lead">${esc(L(s.l))}</p>${s.f.map(field).join('')}</div>`}
+ else body=`<div class="step"><h2>${esc(T('doneT'))}</h2><p class="lead">${esc(T('doneL'))}</p><div class="recap" id="recap"></div>
+  <div class="row"><a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">${esc(T('send'))}</a><button type="button" class="btn sec" id="copy">${esc(T('copy'))}</button><button type="button" class="btn sec" id="other">${esc(T('other'))}</button></div>
+  <p class="ok" id="status"></p>${mode==='express'?`<button type="button" class="btn sec" id="complete" style="margin-top:12px">${esc(T('complete'))}</button>`:''}<p class="note">${esc(T('noteWa'))}</p></div>`;
+ return `<button type="button" class="back" id="home">${esc(T('allSvc'))}</button>
+ <form class="panel" id="form" novalidate style="--c:${c}">
+  <div class="fhead"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[svc.id]}</svg></span><div><small>CBS</small><b>${esc(L(svc.n))}</b></div></div>
+  ${APERCU?`<p class="apercu">${esc(T('apercu'))}</p>`:''}
+  <div class="prog"><span>${esc(T('step'))} ${Math.min(cur+1,n)} / ${n}</span><div class="bar"><i style="width:${(cur+1)/n*100}%"></i></div></div>
+  ${body}<p class="err" id="err" role="alert"></p>${cur===0?`<p class="privacy">${esc(T('privacy'))}</p>`:''}
+  ${cur<S.length?`<div class="nav"><button type="button" class="btn sec" id="prev" style="visibility:${cur?'visible':'hidden'}">${esc(T('prev'))}</button><button type="submit" class="btn pri" style="background:${c}">${esc(cur===S.length-1?T('seeRecap'):T('next'))}</button></div>`:''}
+ </form>`;
+};
+
+/* ---------- collecte et récapitulatif (toujours en français pour Prisca) ---------- */
+const collect=()=>{const S=steps();if(cur>=S.length)return;for(const f of S[cur].f){
+ if(f.type==='scale')f.o.forEach((p,i)=>D[f.id+i]=+$(f.id+i).value);
+ else if(f.type==='files'){}
+ else if(f.type==='radio'||f.type==='tier'){const c=document.querySelector(`input[name="${f.id}"]:checked`);D[f.id]=c?+c.value:undefined}
+ else if(f.type==='check'||f.type==='swatch')D[f.id]=[...document.querySelectorAll(`input[name="${f.id}"]:checked`)].map(c=>+c.value);
+ else D[f.id]=$(f.id).value.trim()}save()};
+const val=f=>{const v=D[f.id];
+ if(f.type==='radio')return v==null?'':FR(f.o[v]);
+ if(f.type==='tier')return v==null?'':priceL(f.o[v],'fr')+' – '+f.o[v].d[0];
+ if(f.type==='files')return (v||[]).length?(v.join(', ')+' (à joindre sur WhatsApp)'):'';
+ if(f.type==='check')return (v||[]).map(i=>FR(f.o[i])).join(', ');
+ if(f.type==='swatch')return (v||[]).map(i=>SWATCH[i][1]+' '+SWATCH[i][0]).join(', ');
+ return v||''};
+const recap=()=>{let o=`*CBS – ${FR(svc.n).toUpperCase()}*\nType : ${mode==='express'?'brief express':'questionnaire complet'}\n${new Date()<new Date('2027-01-07T00:00:00+01:00')?'Offre de Noël : -5 %\n':''}Langue du client : ${lang==='en'?'anglais':'français'}\n`;
+ for(const s of steps()){o+=`\n*${FR(s.t).toUpperCase()}*\n`;for(const f of s.f){
+  if(f.type==='scale'){f.o.forEach((p,i)=>{const v=D[f.id+i]||3;o+=`• ${FR(p[0])} ↔ ${FR(p[1])} : ${v<3?FR(p[0]):v>3?FR(p[1]):'équilibre'} (${v}/5)\n`});continue}
+  o+=`• ${FR(f.q)} : ${val(f)||'—'}\n`}}return o};
+
+const LI_URL='https://www.linkedin.com/in/prisca-ornela-bikoi-a222a0335',TT_URL='https://www.tiktok.com/@ornela.priss';
+const drawerHTML=()=>`<div class="dhead"><img src="logo-cbs.png" alt="CBS Creative Business Solutions"><button type="button" class="dclose" id="dclose" aria-label="Fermer">×</button></div>
+<nav class="dnav"><button type="button" data-go="top">${esc(L(["Accueil","Home"]))}</button>
+<button type="button" data-go="apropos">${esc(L(["Qui sommes-nous","About us"]))}</button>
+<button type="button" id="dsvc" aria-expanded="false" aria-controls="dsub">${esc(L(["Nos services","Our services"]))}<span class="chev"></span></button>
+<div class="dsub" id="dsub"><div>${SV.map(x=>`<button type="button" data-ms="${x.id}"><span class="mi"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[x.id]}</svg></span>${esc(L(x.n))}</button>`).join('')}</div></div>
+${U.nav.filter(n=>!['apropos','services'].includes(n[1])).map(n=>`<button type="button" data-go="${n[1]}">${esc(L(n[0]))}</button>`).join('')}</nav>
+<button type="button" class="btn pri dcta" data-go="services">${esc(T('startP'))}</button>
+<div class="dsoc"><a href="${LI_URL}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0a66c2"/><path d="M7 10v7M7 7.2v.1M11 17v-4.2c0-1.6 1-2.6 2.3-2.6s2.2 1 2.2 2.6V17M11 10v7" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></svg></a><a href="${TT_URL}" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#111"/><path d="M13.5 5.5v8.3a2.6 2.6 0 1 1-2.6-2.6M13.5 5.5c.4 1.8 1.6 3 3.6 3.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></a><a href="https://wa.me/${WA}" target="_blank" rel="noopener" aria-label="WhatsApp" style="background:#1f9d55">${WA_ICON.replace('<svg ','<svg style="width:22px;height:22px" ')}</a></div>`;
+/* ---------- réalisations par client ---------- */
+const CL=[
+ {id:'kribi',n:'Visit Kribi',s:["Tourisme · Kribi","Tourism · Kribi"],tag:["Campagne · Spot vidéo · Affiches","Campaign · Video ad · Posters"],cover:'c-kribi-affiche',
+  d:["« Un clac, t'es à Kribi » : vendre des séjours de fin d'année aux visiteurs de Douala, de Yaoundé et de la diaspora, sans budget publicitaire. Concept de campagne, 4 packs, visuels et spot vidéo.","\"One snap, you're in Kribi\": selling year-end stays to visitors from Douala, Yaoundé and the diaspora, with no ad budget. Campaign concept, 4 packages, visuals and a video ad."],
+  k:[["4",["packs","packages"]],["45 s",["spot publicitaire","video ad"]]],
+  v:[["v-kribi",["Spot « Un clac, t'es à Kribi »","Ad \"One snap, you're in Kribi\""],"45 s · 4:3"]],
+  i:[["c-kribi-affiche",["Décembre à Kribi, c'est maintenant","December in Kribi is now"]],["c-kribi-escale",["Pack Escale des Fêtes","Holiday Stopover package"]],["c-kribi-noel",["Pack Noël en famille","Family Christmas package"]],["c-kribi-reveillon",["Pack Réveillon Océan","Ocean New Year's Eve package"]],["c-kribi-prestige",["Pack Kribi Prestige","Kribi Prestige package"]],["r-kribi-packs",["Affiche récapitulative des packs","Package summary poster"]]]},
+ {id:'estelle',n:'Sublime by Estelle',s:["Bijoux","Jewellery"],tag:["Logo · Identité visuelle · Collection","Logo · Visual identity · Collection"],cover:'c-estelle-logo',
+  d:["Du logo à la collection : création du logo, de l'identité visuelle et d'une série d'affiches pour présenter chaque bijou.","From logo to collection: logo, visual identity and a poster series presenting each piece."],
+  k:[["1",["logo","logo"]],["6",["visuels de collection","collection visuals"]]],v:[],
+  i:[["c-estelle-logo",["Logo et signature de marque","Logo and brand signature"]],["c-estelle-douce",["Elle est douce","She is gentle"]],["c-estelle-couleur",["Elle ose la couleur","She dares colour"]],["c-estelle-facettes",["Mille facettes","A thousand facets"]],["c-estelle-delicate",["Elle est délicate","She is delicate"]],["c-estelle-vous",["Elle, c'est vous","She is you"]]]},
+ {id:'gc',n:'Grace Clean',s:["Produits d'entretien · Douala","Cleaning products · Douala"],tag:["Community management · Vidéos · Mascotte 3D","Social media · Videos · 3D mascot"],cover:'r-gc-newweek',
+  d:["Savon liquide et eau de Javel : calendrier orienté ventes, storytelling, mascotte et chanson de marque, carrousels éducatifs et vidéos.","Liquid soap and bleach: sales-driven calendar, storytelling, brand mascot and song, educational carousels and videos."],
+  k:[["15,6 K",["vues en 28 jours","views in 28 days"]],["82 %",["hors abonnés","non-followers"]],["1,9 K",["vues sur le quiz","quiz views"]]],
+  v:[["v-gc-noel",["Vidéo de Noël","Christmas video"],"30 s · 4:5"]],
+  i:[["r-gc-newweek",["Happy New Week","Happy New Week"]],["r-gc-doux",["Lessiver n'a jamais été aussi doux","Washing has never been so gentle"]],["r-gc-lessive",["Comment faire la lessive","How to do the laundry"]],["r-gc-novembre",["Novembre Bleu","Blue November"]],["r-v-mascotte",["Clip animé 3D avec la mascotte","3D animated clip with the mascot"]],["r-v-javel",["Sensibilisation : la Javel ne se boit pas","Awareness: bleach is not a drink"]],["r-rose-gc",["Octobre Rose","Pink October"]]]},
+ {id:'tchm',n:'William Tchemi · TCHM Formations',s:["Formation Excel & Power BI","Excel & Power BI training"],tag:["Community management · Vidéos IA · Événements","Social media · AI videos · Events"],cover:'r-tchm-novembre',
+  d:["Stratégie sur 90 jours, calendrier éditorial, quiz, astuces, vidéos IA du formateur William Tchemi et communication des masterclass.","90-day strategy, content calendar, quizzes, tips, AI videos of trainer William Tchemi and masterclass promotion."],
+  k:[["29,9 K",["vues en 28 jours","views in 28 days"]],["96 %",["hors abonnés","non-followers"]],["+21,3 %",["d'interactions","interactions"]]],
+  v:[["v-tchm",["Vidéo promo « Le diplôme ne suffit plus »","Promo video \"A degree is no longer enough\""],"32 s · vertical"]],
+  i:[["r-tchm-novembre",["Novembre Bleu","Blue November"]],["r-tchm-excel",["Raccourci Excel","Excel shortcut"]],["r-tchm-quiz",["Quiz : la pièce manquante","Quiz: the missing piece"]],["r-tchm-masterclass",["Masterclass Excel & Power BI","Excel & Power BI masterclass"]],["r-tchm-formation",["Formation tableau de bord des ventes","Sales dashboard training"]],["r-v-tchm",["Vidéo IA du formateur","AI trainer video"]]]},
+ {id:'cbs',n:'CBS',s:["Ma marque","My own brand"],tag:["Spots publicitaires · Motion design","Video ads · Motion design"],cover:'v-cbs-03s',
+  d:["Les vidéos de ma propre marque : spots publicitaires créés avec l'IA, storytelling et motion design.","Videos for my own brand: AI-made video ads, storytelling and motion design."],k:[],
+  v:[["v-cbs-03s",["Spot « 0,3 seconde »","Ad \"0.3 seconds\""],"38 s · 16:9"],["v-cbs-futur",["Spot « Un message du futur »","Ad \"A message from the future\""],"72 s · 9:16"],["v-cbs-motion",["Présentation en motion design","Motion design presentation"],"53 s · 16:9"],["v-cbs-story",["Storytelling de marque","Brand storytelling"],"110 s · 4:5"]],i:[]},
+ {id:'natur',n:'NaturAfrik',s:["Gari · Bitsong SARL, Douala","Gari · Bitsong SARL, Douala"],tag:["Affiches publicitaires","Ad posters"],cover:'c-natur-pepite',
+  d:["Une série de visuels dans la charte de la marque : origine du produit, prix, recettes, quiz d'engagement et témoignages, toujours avec un appel clair à la commande.","A series of on-brand visuals: product origin, price, recipes, engagement quizzes and testimonials, always with a clear call to order."],k:[],v:[],
+  i:[["c-natur-pepite",["Pépite du Mboa","Pépite du Mboa"]],["c-natur-manioc",["Du manioc au gari","From cassava to gari"]],["r-natur-craques",["Tu craques pour lequel ?","Which one do you prefer?"]],["r-natur-tapioca",["Impossible de résister à un bon tapioca","Impossible to resist a good tapioca"]]]},
+ {id:'awes',n:"Awe's Rent Cars",s:["Location de voitures avec chauffeur","Chauffeur car rental"],tag:["Affiches · Refonte","Posters · Redesign"],cover:'r-awes-vacances',
+  d:["Des affiches qui racontent une histoire : un voyage d'affaires, des vacances entre amis. Chaque visuel montre une situation réelle d'utilisation.","Posters that tell a story: a business trip, holidays with friends. Each visual shows a real use case."],k:[],v:[],
+  i:[["r-awes-vacances",["Vos vacances, votre rythme","Your holidays, your pace"]],["r-awes-deplacement",["Un déplacement prévu ?","A trip planned?"]],["r-avap-awes",["Avant / après : refonte d'affiche","Before / after: poster redesign"]]]},
+ {id:'paysika',n:'PaySika',s:["Carte bancaire virtuelle","Virtual bank card"],tag:["Refonte d'affiche","Poster redesign"],cover:'r-avap-paysika',d:["Même client, même message, un autre niveau : une affiche reprise pour la rendre claire, professionnelle et prête à publier.","Same client, same message, another level: a poster reworked to be clear, professional and ready to publish."],k:[],v:[],
+  i:[["r-avap-paysika",["Avant / après","Before / after"]]]},
+ {id:'ktlm',n:'KTLMS Group',s:["Bâtiment et travaux · Kribi","Construction · Kribi"],tag:["Community management","Social media"],cover:'r-ktlm',d:["Gestion de la page et visuels pour une entreprise de bâtiment et travaux à Kribi.","Page management and visuals for a construction company in Kribi."],k:[],v:[],i:[["r-ktlm",["Vous imaginez, nous construisons","You imagine, we build"]]]},
+ {id:'babo',n:'Babo Wipe',s:["Nettoyage professionnel","Professional cleaning"],tag:["Community management","Social media"],cover:'r-babowipe',d:["Gestion de la page et visuels de lancement pour une entreprise de nettoyage professionnel.","Page management and launch visuals for a professional cleaning company."],k:[],v:[],i:[["r-babowipe",["Coming soon","Coming soon"]]]},
+ {id:'rose',n:'Octobre Rose',s:["Sensibilisation au cancer du sein","Breast cancer awareness"],tag:["Visuels personnalisés","Personalised visuals"],cover:'r-rose-3m',d:["Messages courts et visuels personnalisés pour des cheffes d'entreprise et des femmes professionnelles, qui invitent toutes les femmes à se faire dépister.","Short messages and personalised visuals for women business owners and professionals, inviting every woman to get screened."],k:[],v:[],i:[["r-rose-3m",["3M Fashion","3M Fashion"]],["r-rose-gc",["Grace Clean","Grace Clean"]]]}];
+let client=null;
+const FEAT=['tchm','gc','kribi','natur','estelle'];const CLF=FEAT.map(id=>CL.find(c=>c.id===id));
+const OTHERS=["Awe's Rent Cars","PaySika","KTLMS Group","Babo Wipe","3M Fashion"];
+const SHOW=CL.find(c=>c.id==='cbs').v;
+const cimg=x=>x.startsWith('v-')?x+'.webp':x+'.webp';
+const count=c=>{const a=[];if(c.v.length)a.push(c.v.length+' '+L(c.v.length>1?["vidéos","videos"]:["vidéo","video"]));if(c.i.length)a.push(c.i.length+' '+L(c.i.length>1?["visuels","visuals"]:["visuel","visual"]));return a.join(' · ')};
+const clientCards=()=>`<div class="ccards">${CLF.map(c=>`<button type="button" class="ccard" data-cl="${c.id}"><span class="cim"><img src="${cimg(c.cover)}" alt="${esc(c.n)}" loading="lazy">${c.v.length?'<span class="play" aria-hidden="true">▶</span>':''}</span><span class="ctx"><small>${esc(L(c.s))}</small><b>${esc(c.n)}</b><span class="cm">${esc(count(c))}</span><span class="go5">${esc(L(["Voir le projet","See the project"]))} →</span></span></button>`).join('')}</div>`;
+const clientPage=()=>{const c=CL.find(x=>x.id===client);const i=CLF.indexOf(c),nx=CLF[(i+1)%CLF.length];
+ return `<div class="cpage"><div class="chead"><div class="in"><button type="button" class="back5" id="clback">← ${esc(L(["Toutes les réalisations","All projects"]))}</button>
+ <span class="eyebrow">${zs}${esc(L(c.tag))}</span><h1 class="h2" style="font-size:clamp(34px,5vw,52px)">${esc(c.n)}</h1><p class="lead5" style="margin-bottom:14px">${esc(L(c.s))}</p><p style="max-width:62ch;margin:0">${esc(L(c.d))}</p>
+ ${c.k.length?`<div class="ckp">${c.k.map(k=>`<div><b>${esc(k[0])}</b><span>${esc(L(k[1]))}</span></div>`).join('')}</div>${c.meta?`<p class="src" style="color:#c9cde4">${esc(T('statsSrc'))}</p>`:''}`:''}</div></div>
+ <div class="in cbody">
+ ${c.v.length?`<h3 class="ct">${esc(L(["Vidéos","Videos"]))}</h3><div class="vids">${c.v.map(v=>`<figure class="vid"><video controls playsinline preload="none" poster="${v[0]}.webp"><source src="${v[0]}.mp4" type="video/mp4"></video><figcaption><b>${esc(L(v[1]))}</b><span>${esc(v[2])}</span></figcaption></figure>`).join('')}</div>`:''}
+ ${c.i.length?`<h3 class="ct">${esc(L(["Visuels","Visuals"]))}</h3><div class="gal">${c.i.map(g=>`<button type="button" class="gi" data-img="${g[0]}" data-cap="${esc(c.n+' · '+L(g[1]))}"><img src="${g[0]}.webp" alt="${esc(L(g[1]))}" loading="lazy"><small>${esc(L(g[1]))}</small></button>`).join('')}</div>`:''}
+ <div class="cnav"><button type="button" class="btn line" data-cl="${nx.id}">${esc(L(["Projet suivant","Next project"]))} : ${esc(nx.n)} →</button><button type="button" class="btn pri" data-go="services">${esc(T('startP'))}</button></div>
+ </div></div>`};
+
+/* ---------- navigation ---------- */
+const view=$('view'),tn=$('topnav');
+const reveal=()=>{const els=document.querySelectorAll('.rv:not(.in)');
+ if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(e=>e.classList.add('in'));countAll(true);return}
+ const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');if(en.target.id==='stats')countAll();io.unobserve(en.target)}}),{threshold:.05,rootMargin:'0px 0px -5% 0px'});
+ els.forEach(e=>io.observe(e))};
+const countAll=(now)=>document.querySelectorAll('b[data-n]').forEach(b=>{const n=+b.dataset.n,d=+b.dataset.d,sf=b.dataset.s;
+ if(now){b.textContent=fmtN(n,d)+sf;return}const t0=performance.now();const tick=t=>{const k=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-k,3);b.textContent=fmtN(n*e,d)+sf;if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)});
+const closeMenu=()=>{document.body.classList.remove('menu-open');$('menubtn').setAttribute('aria-expanded','false')};
+const openMenu=()=>{document.body.classList.add('menu-open');$('menubtn').setAttribute('aria-expanded','true')};
+const go=id=>{closeMenu();
+ const jump=()=>{if(id==='top'){window.scrollTo({top:0,behavior:'smooth'});return}const el=$(id);if(el){const y=el.getBoundingClientRect().top+window.scrollY-66;window.scrollTo({top:y,behavior:'smooth'})}};
+ if(svc||client){svc=null;mode=null;client=null;draw(1);setTimeout(jump,60)}else jump()};
+const draw=(top)=>{document.documentElement.lang=lang;
+ document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T(e.dataset.t));
+ document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang));
+ $('drawer').innerHTML=drawerHTML();drawX();
+ $('foot').innerHTML=foot();
+ view.innerHTML=client?clientPage():svc?(mode?form():chooser()):home();
+ if(svc&&mode&&cur>=steps().length){const t=recap();$('recap').textContent=t;$('wa').href=`https://wa.me/${WA}?text=${encodeURIComponent(t)}`}
+ if(!svc&&!client){reveal();sIdx=0;startSlider();runBar();const hv=$('hbg');const sd=navigator.connection&&navigator.connection.saveData;if(hv&&!sd&&!matchMedia('(prefers-reduced-motion: reduce)').matches){hv.preload='auto';hv.load();const pp=hv.play();if(pp)pp.catch(()=>{})}}
+ view.classList.add('swap');void view.offsetWidth;view.classList.remove('swap');
+ if(top)window.scrollTo({top:0})};
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();go(g.dataset.go)}});
+$('menubtn').addEventListener('click',()=>document.body.classList.contains('menu-open')?closeMenu():openMenu());
+$('scrim').addEventListener('click',closeMenu);
+$('drawer').addEventListener('click',e=>{
+ if(e.target.closest('#dclose')){closeMenu();return}
+ const t=e.target.closest('#dsvc');if(t){const o=t.getAttribute('aria-expanded')!=='true';t.setAttribute('aria-expanded',o);$('dsub').classList.toggle('on',o);return}
+ const b=e.target.closest('[data-ms]');if(b){closeMenu();client=null;svc=SV.find(x=>x.id===b.dataset.ms);mode=null;cur=0;started=false;sent=false;draw(1)}});
+$('fab').innerHTML=WA_ICON;
+const lb=$('lb');
+const closeLb=()=>{lb.classList.remove('on');$('lbimg').src=''};
+$('lbx').addEventListener('click',closeLb);lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeMenu()}});
+view.addEventListener('click',e=>{
+ const dl=e.target.closest('[data-sl]');if(dl){showSlide(+dl.dataset.sl);startSlider();return}
+ if(e.target.id==='snext'){showSlide(sIdx+1);startSlider();return}
+ if(e.target.id==='sprev'){showSlide(sIdx-1);startSlider();return}
+ const cl=e.target.closest('[data-cl]');if(cl){client=cl.dataset.cl;svc=null;mode=null;draw(1);return}
+ if(e.target.id==='clback'){client=null;draw(1);setTimeout(()=>go('realisations'),60);return}
+ const s=e.target.closest('[data-s]');if(s){client=null;svc=SV.find(x=>x.id===s.dataset.s);mode=null;cur=0;started=false;sent=false;draw(1);return}
+ const m=e.target.closest('[data-m]');if(m){mode=m.dataset.m;cur=0;draw(1);return}
+ const f=e.target.closest('[data-f]');if(f){galf=f.dataset.f;document.querySelectorAll('[data-f]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===galf));galn=12;$('gal').innerHTML=galHTML();$('more').style.display=galList().length>galn?'inline-flex':'none';return}
+ const gi=e.target.closest('.gi');if(gi){$('lbimg').src=gi.dataset.img+'.webp';$('lbimg').alt=gi.dataset.cap;$('lbcap').textContent=gi.dataset.cap;lb.classList.add('on');return}
+ const id=e.target.id;
+ if(id==='more'){galn+=12;$('gal').innerHTML=galHTML();$('more').style.display=galList().length>galn?'inline-flex':'none';return}
+ if(id==='home'||id==='other'){svc=null;mode=null;draw(1);setTimeout(()=>go('services'),60)}
+ else if(id==='complete'){mode='full';cur=0;sent=false;started=true;draw(1)}
+ else if(id==='prev'){collect();cur--;draw(1)}
+ else if(id==='copy'){const b=e.target;navigator.clipboard.writeText(recap()).then(()=>b.textContent=T('copied')).catch(()=>b.textContent=T('copyFail'))}
+});
+view.addEventListener('change',e=>{const i=e.target;
+ if(i.dataset&&i.dataset.files){D[i.id]=[...i.files].map(x=>x.name);save();$(i.id+'-list').textContent=D[i.id].join(' · ');return}
+ if(!i.dataset||!i.dataset.max)return;
+ const all=[...document.querySelectorAll(`input[name="${i.name}"]:checked`)];
+ if(all.length>+i.dataset.max){i.checked=false;$('err').textContent=T('maxErr')}else $('err').textContent='';
+ $('cnt').textContent=Math.min(all.length,+i.dataset.max)+'/'+i.dataset.max});
+view.addEventListener('submit',e=>{e.preventDefault();
+ if(e.target.id==='revform'){const n=(document.querySelector('input[name=rnote]:checked')||{}).value||'',c=$('rcom').value.trim(),nm=$('rnom').value.trim();
+  if(!n&&!c){$('rerr').textContent=T('revNeed');return}$('rerr').textContent='';
+  const msg=`*Avis sur le site CBS*\nNote : ${n?n+'/5':'—'}\nCommentaire : ${c||'—'}\nNom : ${nm||'—'}`;
+  const done=()=>{$('rok').textContent=T('revThx');e.target.querySelector('button[type=submit]').disabled=true;const w=$('rwa');w.style.display='flex';w.innerHTML=`<a class="btn line" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${esc(T('revWa'))}</a>`};
+  post('avis',{note:n,commentaire:c,nom:nm,langue:lang==='en'?'anglais':'français'}).then(done).catch(done);return}
+ collect();
+ const miss=steps()[cur].f.filter(f=>f.req&&(D[f.id]==null||D[f.id]===''));
+ if(miss.length&&!APERCU){$('err').textContent=T('missing')+miss.map(f=>L(f.q)).join(', ');return}
+ if(cur===0&&!started){started=true;post('debut',base()).catch(()=>{})}
+ cur++;draw(1);
+ if(cur>=steps().length&&!sent){sent=true;const st=$('status');
+  post('brief',{...base(),entreprise:D.societe||'',formule:formule(),fichiers:(D.fichiers||[]).join(', '),reponses:recap()})
+   .then(ok=>{if(st)st.textContent=ok?T('received'):''}).catch(()=>{})}
+});
+document.querySelector('.lang').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(svc&&mode)collect();lang=b.dataset.l;try{localStorage.setItem('cbs-lang',lang)}catch(x){}draw(0)});
+let tx0=null;view.addEventListener('touchstart',e=>{if(e.target.closest('.slider'))tx0=e.touches[0].clientX},{passive:true});
+view.addEventListener('touchend',e=>{if(tx0==null)return;const dx=e.changedTouches[0].clientX-tx0;tx0=null;if(Math.abs(dx)>50){showSlide(sIdx+(dx<0?1:-1));startSlider()}});
+$('foot').addEventListener('submit',e=>{if(e.target.id!=='nlform')return;e.preventDefault();const m=$('nlmail').value.trim();
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){$('nlmsg').textContent=T('nlErr');return}
+ const ok=()=>{$('nlmsg').textContent=T('nlOk');$('nlmail').value=''};post('newsletter',{email:m,langue:lang==='en'?'anglais':'français'}).then(ok).catch(ok)});
+const pg5=$('prog5');addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;pg5.style.width=(h>0?scrollY/h*100:0)+'%'},{passive:true});
+const XEND=new Date('2027-01-07T00:00:00+01:00');let xOff=false;try{xOff=sessionStorage.getItem('cbs-xmas')==='0'}catch(x){}
+const xmasOn=()=>new Date()<XEND;
+const drawX=()=>{const x=$('xmas');if(!xmasOn()||xOff){x.hidden=true;return}x.hidden=false;x.innerHTML=`${L(U.xm)} · <button type="button" class="go" data-go="services">${esc(T('xmGo'))} →</button><button type="button" class="xx" id="xx" aria-label="Fermer">×</button>`};
+$('xmas').addEventListener('click',e=>{if(e.target.id==='xx'){xOff=true;try{sessionStorage.setItem('cbs-xmas','0')}catch(x){}drawX()}});
+(()=>{const c=$('snow');if(!xmasOn()||matchMedia('(prefers-reduced-motion: reduce)').matches){c.remove();return}
+ const x=c.getContext('2d');let W,H,fl=[];const N=innerWidth<600?20:38;
+ const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(d,0,0,d,0,0)};
+ size();addEventListener('resize',size);
+ for(let i=0;i<N;i++)fl.push({x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*2.6,v:.35+Math.random()*.8,w:Math.random()*6.28,p:Math.random()<.3});
+ let on=true;document.addEventListener('visibilitychange',()=>{on=!document.hidden;if(on)requestAnimationFrame(t)});
+ const t=()=>{if(!on)return;x.clearRect(0,0,W,H);for(const f of fl){f.y+=f.v;f.w+=.012;f.x+=Math.sin(f.w)*.45;if(f.y>H+6){f.y=-6;f.x=Math.random()*W}
+  x.beginPath();x.arc(f.x,f.y,f.r,0,6.283);x.fillStyle=f.p?'rgba(224,122,149,.55)':'rgba(255,255,255,.75)';x.shadowColor='rgba(27,37,80,.25)';x.shadowBlur=f.p?0:3;x.fill()}requestAnimationFrame(t)};
+ requestAnimationFrame(t)})();
+const hideLoader=()=>setTimeout(()=>$('loader').classList.add('off'),900);
+let seen=false;try{seen=sessionStorage.getItem('cbs-seen')==='1';sessionStorage.setItem('cbs-seen','1')}catch(x){}
+if(seen)$('loader').classList.add('off');else if(document.readyState==='complete')hideLoader();else window.addEventListener('load',hideLoader);
+draw(0);
+}
+</script>
+</body>
+</html>
